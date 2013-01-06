@@ -1,0 +1,12 @@
+%h1 Просмотр меню
+
+%h4 ID
+%p= @menu.id
+%h4 Название меню
+%p= @menu.name
+%h4 Описание
+%p= @menu.description
+
+= link_to "Редактировать", edit_admin_menu_path(@menu), class: 'btn btn-primary'
+= link_to "Элементы меню", admin_menu_menu_items_path(@menu), class: 'btn btn-info'
+= link_to "Назад к списку меню", admin_menus_path, class: 'btn'

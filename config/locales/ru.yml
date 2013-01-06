@@ -1,0 +1,50 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+ru:
+  views:
+
+    subscribers:
+      success_subscribe: 'Спасибо за вашу подписку!'
+      
+    sessions:
+      user_successfully_logged_in: "Аутентификация прошла успешно!"
+      invalid_email_or_password: "Неверное имя пользователя или пароль!"
+      new:
+        title: "Вход"
+
+    admin:
+      users:
+        index:
+          title: "Список пользователей"
+          add_new_user: "Добавить нового пользователя"
+          edit_user: "Редактировать"
+          delete_user: "Удалить"
+        new:
+          title: "Создание нового пользователя"
+        edit:
+          title: "Редактирование пользователя"
+      pages:
+        index:
+          title: "Список страниц"
+          add_new_page: "Добавить новую страницу"
+          edit_page: "Редактировать"
+          delete_page: "Удалить"
+        new:
+          title: "Создание новой страницы"
+        edit:
+          title: "Редактирование страницы"
+
+  activerecord:
+    models:
+      user: "пользователя"
+    attributes:
+      user:
+        first_name: "Имя"
+        last_name: "Фамилия"
+        password: "Пароль"
+      page:
+        title: "Название"
+        content: "Содержимое"
+        author: "Автор"
+        slug: "УРЛ"

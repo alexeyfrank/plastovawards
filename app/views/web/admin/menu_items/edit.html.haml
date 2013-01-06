@@ -1,0 +1,9 @@
+= simple_form_for(@item, url: admin_menu_menu_item_path(@item.menu_id), validate: true) do |f|
+  .modal-header
+    %a.close(data-dismiss="modal" aria-hidden="true") ×
+    %h3  Редактирование элемента меню
+  .modal-body
+    = render 'form', f: f
+  .modal-footer
+    %a.btn(data-dismiss="modal" aria-hidden="true") Закрыть
+    = f.submit class: 'btn btn-primary'

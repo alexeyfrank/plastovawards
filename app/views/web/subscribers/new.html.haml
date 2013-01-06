@@ -1,0 +1,11 @@
+= simple_form_for(@subscriber, url: subscribers_path, validate: true) do |f|
+  .modal-header
+    %h3 Сообщать мне о событиях Центра
+  .modal-body
+    = f.input :fio, label: false, placeholder: 'ФИО', input_html: { class: 'span4' }
+    = f.input :phone, label: false, placeholder: 'Ваш телефон', input_html: { class: 'span4' }
+    = f.input :email, label: false, placeholder: 'Email', input_html: { class: 'span4' }
+    = f.input :notify_about_center_events
+    = f.input :processing_personal_data
+  .modal-footer
+    = f.submit 'Подписаться!', class: 'btn btn-success'

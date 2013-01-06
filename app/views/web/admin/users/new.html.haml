@@ -1,0 +1,4 @@
+%h1= t('views.admin.users.new.title')
+
+= simple_form_for(@user, :url => admin_users_path) do |f|
+  = render 'form', :f => f

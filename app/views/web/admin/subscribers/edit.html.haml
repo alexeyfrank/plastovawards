@@ -1,0 +1,3 @@
+%h1= t('views.admin.subscribers.edit.title')
+= simple_form_for(@subscriber, :url => admin_subscriber_path(@subscriber), :validate => true) do |f|
+  = render 'form', :f => f

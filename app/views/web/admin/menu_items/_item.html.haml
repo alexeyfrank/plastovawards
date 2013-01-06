@@ -1,0 +1,19 @@
+%li
+  .block
+    %span
+      %strong Название:
+      = item.name
+    %span
+      %strong УРЛ:
+      = item.slug
+    %span
+      %strong Сорт.:
+      = item.position
+      %br
+      = link_to "Редактировать", edit_admin_menu_menu_item_path(@menu.id, item.id), class: 'edit-menu-item-btn'
+      |
+      = link_to "Удалить", admin_menu_menu_item_path(@menu.id, item.id), class: 'delete-menu-item-btn', method: :delete
+  - if item.has_children?
+    %ul
+      - item.children.each do |child|
+        = render 'item', item: child    

@@ -1,0 +1,13 @@
+%h1= "Элементы меню #{@menu.name}"
+
+.menu-items-modal.modal.hide.fade
+
+%br
+= link_to "Добавить элемент меню", new_admin_menu_menu_item_path, class: 'add-menu-item-btn btn btn-primary'
+%br
+%br
+
+%ul.menu-items
+  - @items.each do |item|
+    = render 'item', item: item
+

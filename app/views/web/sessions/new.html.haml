@@ -1,0 +1,6 @@
+
+= simple_form_for(:user, :url => session_path, :html => { :class => 'form-signin' }) do |f|
+  %h2.form-signin-heading= t 'views.sessions.new.title'
+  = f.input :email, :placeholder => 'Email', :label => false, :input_html => { :class => 'input-block-level' }
+  = f.input :password, :placeholder => 'Пароль', :label => false, :input_html => { :class => 'input-block-level' }
+  = f.submit 'Вход', :class => 'btn btn-primary btn-large'

@@ -1,0 +1,4 @@
+%h1 Создание нового меню
+
+= simple_form_for(@menu, :url => admin_menus_path) do |f|
+  = render 'form', :f => f

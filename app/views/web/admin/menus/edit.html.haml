@@ -1,0 +1,3 @@
+%h1 Редактирование меню
+= simple_form_for(@menu, :url => admin_menu_path(@menu), :validate => true) do |f|
+  = render 'form', :f => f
