@@ -1,0 +1,50 @@
+@font-face {
+	font-family: 'siemens_sansroman';
+	src: url('../fonts/siemenssans-roman-webfont.eot');
+	src: url('../fonts/siemenssans-roman-webfont.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/siemenssans-roman-webfont.woff') format('woff'),
+	url('../fonts/siemenssans-roman-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'siemens_slabregular';
+	src: url('../fonts/siemensslab-roman-webfont.eot');
+	src: url('../fonts/siemensslab-roman-webfont.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/siemensslab-roman-webfont.woff') format('woff'),
+	url('../fonts/siemensslab-roman-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'siemens_slabbold';
+	src: url('../fonts/siemensslab-bold-webfont.eot');
+	src: url('../fonts/siemensslab-bold-webfont.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/siemensslab-bold-webfont.woff') format('woff'),
+	url('../fonts/siemensslab-bold-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'siemens_slabbold_italic';
+	src: url('../fonts/siemensslab-bolditalic-webfont.eot');
+	src: url('../fonts/siemensslab-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/siemensslab-bolditalic-webfont.woff') format('woff'),
+	url('../fonts/siemensslab-bolditalic-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'siemens_slab_blackregular';
+	src: url('../fonts/siemensslab-black-webfont.eot');
+	src: url('../fonts/siemensslab-black-webfont.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/siemensslab-black-webfont.woff') format('woff'),
+	url('../fonts/siemensslab-black-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+

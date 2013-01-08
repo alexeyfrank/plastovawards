@@ -1,6 +1,8 @@
 class MenuItem < ActiveRecord::Base
   attr_accessible :ancestry, :klass, :name, :slug, :menu_id, :position, :parent_id
   belongs_to :menu
+  
+  translates :name
 
   validates :name, presence: true
   validates :slug, presence: true, slug: true

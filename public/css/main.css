@@ -1,0 +1,1408 @@
+/*
+ * HTML5 Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+@import "fonts.css";
+
+html,
+button,
+input,
+select,
+textarea {
+	color: #222;
+}
+
+html,body {
+	height: 100%;
+}
+
+html {
+	background: url(../img/pattern.png) repeat;
+}
+
+
+body {
+	background: url(../img/bg.png) no-repeat center top;
+	font: 16px/24px "siemens_sansroman";
+	color: #000000;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+	background: #fff019;
+	text-shadow: none;
+}
+
+::selection {
+	background: #fff019;
+	text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em 0;
+	padding: 0;
+}
+
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+
+img {
+	vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+	resize: vertical;
+}
+
+/* ==========================================================================
+   Chrome Frame prompt
+   ========================================================================== */
+
+.chromeframe {
+	margin: 0.2em 0;
+	background: #ccc;
+	color: #000;
+	padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+a {
+	color: #0083c0;
+	text-decoration: none;
+}
+
+a.dashed {
+	border-bottom: 1px dashed #000000;
+}
+
+a.dashed:hover {
+	border: 0;
+}
+
+/*
+a:visited {
+	color: #7a5daa;
+}
+*/
+
+a:hover {
+	color: #ff0606;
+}
+
+h1 {
+	font: 24px "siemens_slabbold";
+	text-transform: uppercase;
+	margin: 0 0 20px;
+}
+
+h2 {
+	font: 20px "siemens_slabbold";
+	margin: 0 0 20px;
+}
+
+h3 {
+
+}
+
+p {
+	margin: 0 0 15px;
+}
+
+blockquote {
+	font: 18px/26px "siemens_slabbold_italic";
+	background: url(../img/bg-blockquote.png) no-repeat left center;
+	padding: 15px 0 0 60px;
+	min-height: 200px;
+	margin: 25px 40px 25px 195px;
+}
+
+#wrapper {
+	width: 100%;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+}
+
+.wrap {
+	width: 978px;
+	margin: 0 auto;
+}
+
+.delim {
+	background: url(../img/delim.png) center no-repeat;
+	width: 100%;
+	height: 13px;
+	z-index: -1;
+}
+
+.delim2 {
+	background: url(../img/delim2.png) center no-repeat;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.center {
+	text-align: center;
+}
+
+.overflow {
+	overflow: hidden;
+}
+
+/* Lists */
+ul, ol {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.content ul,
+.content ol {
+	margin: 0 0 15px 15px;
+	font-size: 14px;
+}
+
+.content ul li {
+	padding-left: 17px;
+	background: url(../img/marker-list.png) left 10px no-repeat;
+}
+
+.content ol li span {
+	color: #d44a43;
+	display: inline-block;
+	margin-right: 6px;
+}
+
+.content ul li ul {
+	margin: 5px 0 25px 15px;
+}
+
+.content ol li ul {
+	margin: 5px 0 25px 32px;
+}
+
+.content ul li ul li,
+.content ol li ul li {
+	background: url(../img/marker1-list.png) left 10px no-repeat;
+}
+
+/* Table */
+.content table {
+	width: 100%;
+	background-color: #ffffff;
+	margin-bottom: 15px;
+}
+
+.content table th,
+.content table td {
+	vertical-align: top;
+	text-align: left;
+	border-bottom: 1px solid #dbdbdb;
+}
+
+.content table th {
+	font: 18px "siemens_slabbold";
+	padding: 20px;
+	background: url(../img/border-th.jpg) left center no-repeat;
+}
+
+.content table th:first-child {
+	background: none;
+}
+
+.content table td {
+	font-size: 13px;
+	padding: 15px 20px;
+}
+
+/* Header
+-----------------------------------------------------------------------------*/
+#header {
+	margin-bottom: 27px;
+}
+
+/* Header Top */
+.header-top {
+	background: #000000;
+	height: 31px;
+}
+
+.header-top .service-menu {
+	float: left;
+	margin: 3px 337px 0 12px;
+}
+
+.header-top .service-menu li {
+	float: left;
+	margin-right: 11px;
+}
+
+.header-top .service-menu li:first-child {
+	margin-right: 7px;
+}
+
+.header-top .service-menu li a {
+	display: inline-block;
+	vertical-align: middle;
+	width: 26px;
+	height: 26px;
+	background: url(../img/bg-service-menu.png) 0 0 no-repeat;
+}
+
+.header-top .service-menu li a.service-main-page:hover {
+	background-position: 0 -26px;
+}
+
+.header-top .service-menu li a.service-mail {
+	background-position: -38px 0;
+}
+
+.header-top .service-menu li a.service-mail:hover {
+	background-position: -38px -26px;
+}
+
+.header-top .service-menu li a.service-map {
+	background-position: -71px 0;
+}
+
+.header-top .service-menu li a.service-map:hover {
+	background-position: -71px -26px;
+}
+
+.header-top .select-lang {
+	float: left;
+	margin-top: 3px;
+}
+
+.header-top .select-lang li {
+	float: left;
+	margin-right: 7px;
+}
+
+.header-top .select-lang li a {
+	display: inline-block;
+	vertical-align: middle;
+	width: 26px;
+	height: 26px;
+	background: url(../img/bg-select-lang.png) 0 0 no-repeat;
+}
+
+.header-top .select-lang li a.lang-rus:hover {
+	background-position: 0 -26px;
+}
+
+.header-top .select-lang li a.lang-en {
+	background-position: -35px 0;
+}
+
+.header-top .select-lang li a.lang-en:hover {
+	background-position: -35px -26px;
+}
+
+.header-top .select-lang li a.lang-de {
+	background-position: -66px 0;
+}
+
+.header-top .select-lang li a.lang-de:hover {
+	background-position: -66px -26px;
+}
+
+.header-top .social-networks {
+	float: right;
+	margin: 6px 100px 0 0;
+}
+
+.header-top .social-networks li {
+	float: left;
+	line-height: 15px;
+	background: url(../img/delim-social-networks.png) left 2px no-repeat;
+	padding: 0 15px;
+}
+
+.header-top .social-networks li:first-child {
+	background: none;
+}
+
+/* Header Middle */
+.header-middle {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+/* Header Bottom */
+.header-bottom {
+	z-index: 1;
+	position: relative;
+}
+
+.header-bottom .delim {
+	position: absolute;
+	top: 30px;
+	left: 0;
+}
+
+.wrap-main-menu {
+	width: 1001px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.main-menu {
+	background: url(../img/bg-main-menu.png) center no-repeat;
+	height: 77px;
+}
+
+.main-menu ul {
+	padding: 25px 60px 0 60px;
+	text-align: justify;
+	line-height: 0;
+	text-align-last: justify;
+	position: relative;
+}
+
+.lt-ie8 .main-menu ul {
+	text-justify: newspaper;
+	zoom:1;
+}
+
+.main-menu ul:after {
+	width: 100%;
+	height: 0;
+	visibility: hidden;
+	overflow: hidden;
+	content: '';
+	display: inline-block;
+}
+
+.main-menu ul li {
+	display: inline-block;
+	text-align: left;
+	line-height: normal;
+	vertical-align: top;
+	position: relative;
+}
+
+.lt-ie8 .main-menu ul li {
+	//display : inline;
+	//zoom : 1;
+}
+
+.main-menu ul li a {
+	color: #ffffff;
+	text-transform: uppercase;
+}
+
+.main-menu ul li.hover > a,
+.main-menu ul li a:hover {
+	color: #ffeb14;
+}
+
+.main-menu ul li a span {
+	padding-bottom: 3px;
+}
+
+.lt-ie8 .main-menu ul li a span {
+	zoom: 1;
+	cursor: pointer;
+}
+
+.main-menu ul li.hover a span,
+.main-menu ul li a:hover span {
+	background: url(../img/border-main-menu.png) center bottom no-repeat;
+}
+
+.main-menu ul li.item2.hover a span,
+.main-menu ul li.item2 a:hover span {
+	background: url(../img/border2-main-menu.png) center bottom no-repeat;
+}
+
+.main-menu ul li.item3.hover a span,
+.main-menu ul li.item3 a:hover span {
+	background: url(../img/border3-main-menu.png) center bottom no-repeat;
+}
+
+.main-menu ul li.item4.hover a span,
+.main-menu ul li.item4 a:hover span {
+	background: url(../img/border4-main-menu.png) center bottom no-repeat;
+}
+
+.main-menu ul li.item5.hover a span,
+.main-menu ul li.item5 a:hover span {
+	background: url(../img/border5-main-menu.png) center bottom no-repeat;
+}
+
+.main-menu ul li.item6.hover a span,
+.main-menu ul li.item6 a:hover span {
+	background: url(../img/border6-main-menu.png) center bottom no-repeat;
+}
+
+.main-menu ul li.sub-menu a {
+	padding-right: 15px;
+	background: url(../img/arrow-main-menu.png) right 7px no-repeat;
+}
+
+.main-menu ul li.sub-menu.hover a,
+.main-menu ul li.sub-menu a:hover {
+	background-position: right -38px;
+}
+
+.main-menu ul li.sub-menu ul {
+	display: none;
+}
+
+/* Sub Menu */
+.wrap-sub-menu {
+	z-index: -1;
+	position: absolute;
+	top: 16px;
+	left: 0;
+}
+
+.wrap-sub-menu ul {
+	padding: 67px 0 0 31px;
+	width: 256px;
+	height: 215px;
+	background: url(../img/bg-sub-menu.png) no-repeat;
+}
+
+.wrap-sub-menu ul li {
+	margin-bottom: 6px;
+}
+
+.wrap-sub-menu ul li a {
+	font-size: 14px;
+	text-transform: uppercase;
+	color: #000000;
+	padding-left: 12px;
+	background: url(../img/arrow-sub-menu.png) 0 3px no-repeat;
+}
+
+.wrap-sub-menu ul li a:hover {
+	color: #0083c0;
+	background-position: 0 -89px;
+}
+
+
+
+/* Middle
+-----------------------------------------------------------------------------*/
+.content {
+	padding: 0 0 249px;
+}
+
+/* Reviews */
+.b-reviews {
+	width: 840px;
+	margin-bottom: 35px;
+	font-size: 15px;
+}
+
+.b-reviews article:first-child {
+	margin: 0;
+	padding-top: 0;
+	background: none;
+}
+
+.b-reviews article {
+	padding: 42px 50px 0 0;
+	margin-top: 30px;
+	background: url(../img/delim1.png) left top no-repeat;
+}
+
+.b-reviews article header {
+	font-family: "siemens_slabregular";
+	margin-bottom: 6px;
+}
+
+.b-reviews article header strong {
+	font-family: "siemens_slab_blackregular";
+}
+
+.b-reviews article p {
+	padding-left: 30px;
+	margin-left: 10px;
+	background: url(../img/review-top-quotes.png) left 3px no-repeat;
+}
+
+.b-reviews article p .review-bottom-quotes {
+	display: inline-block;
+	width: 18px;
+	height: 14px;
+	background: url(../img/review-bottom-quotes.png) no-repeat;
+	margin-left: 5px;
+}
+
+/* List */
+.content ol.list {
+	margin: 0 0 20px;
+}
+
+.content ol.list li {
+	overflow: hidden;
+}
+
+.content ol.list .list-marker {
+	display: inline-block;
+	width: 172px;
+	height: 125px;
+	float: left;
+	background-image: url(../img/marker-big-list.png);
+	background-repeat: no-repeat;
+}
+
+.content ol.list .list-marker b {
+	display: inline-block;
+	width: 75px;
+	height: 75px;
+	text-align: center;
+	font: 36px/75px "siemens_slabbold";
+	margin: 13px 0 0 55px;
+}
+
+.content ol.list .list1 .list-marker {
+	background-position: 0 0;
+}
+
+.content ol.list .list2 .list-marker {
+	background-position: 0 -643px;
+}
+
+.content ol.list .list3 .list-marker {
+	background-position: 0 -1404px;
+}
+
+.content ol.list .list-body {
+	padding: 20px 0 0 172px;
+	font-size: 16px;
+}
+
+.content ol.list .list-body h2 {
+	margin-bottom: 5px;
+}
+
+/* Two Column Text */
+.content ul.two-column {
+	font-size: 16px;
+	margin: 0 0 25px;
+	overflow: hidden;
+}
+
+.content ul.two-column li {
+	background: none;
+	padding: 0;
+	float: left;
+	width: 460px;
+	padding-right: 14px;
+	margin-left: 30px;
+}
+
+.content ul.two-column li:first-child {
+	margin-left: 0;
+}
+
+.content ul.two-column li h2 {
+	margin-bottom: 5px;
+}
+
+/* Three Column Text */
+.content ul.three-column {
+	font-size: 16px;
+	margin: 0 0 25px;
+	overflow: hidden;
+}
+
+.content ul.three-column li {
+	background: none;
+	padding: 0;
+	float: left;
+	width: 300px;
+	padding-right: 6px;
+	margin-left: 30px;
+}
+
+.content ul.three-column li:first-child {
+	margin-left: 0;
+}
+
+.content ul.three-column li h2 {
+	margin-bottom: 5px;
+}
+
+/* Text Blocks */
+.b-text {
+	overflow: hidden;
+}
+
+.b-text img {
+	position: absolute;
+}
+
+.b-text-picture {
+	position: relative;
+}
+
+.b-text-frame {
+	display: inline-block;
+	position: relative;
+	z-index: 1;
+}
+
+.b-text-picture1 {
+	float: left;
+	margin-right: 10px;
+}
+
+.b-text-picture1 .b-text-frame {
+	width: 327px;
+	height: 333px;
+	background: url(../img/picture/frame1.png) no-repeat;
+}
+
+.b-text-picture1 img {
+	top: 56px;
+	left: 58px;
+}
+
+.b-text-picture2 {
+	float: right;
+	margin-left: 30px;
+}
+
+.b-text-picture2 .b-text-frame {
+	width: 409px;
+	height: 318px;
+	background: url(../img/picture/frame2.png) no-repeat;
+}
+
+.b-text-picture2 img {
+	top: 47px;
+	left: 47px;
+}
+
+.b-text-picture3 {
+	float: left;
+	margin-right: 10px;
+}
+
+.b-text-picture3 .b-text-frame {
+	width: 495px;
+	height: 341px;
+	background: url(../img/picture/frame3.png) no-repeat;
+}
+
+.b-text-picture3 img {
+	top: 55px;
+	left: 55px;
+}
+
+.b-text-italic p:first-child {
+	width: 222px;
+	margin-right: 30px;
+	float: left;
+	text-align: right;
+	font: 14px/24px "Georgia";
+	font-style: italic;
+	color: #666666;
+}
+
+.b-text-italic p {
+	width: 726px;
+	float: right;
+}
+
+/* Main Page */
+.about-plastov {
+	position: relative;
+	width: 1023px;
+	height: 467px;
+	background: url(../img/about-main.png) no-repeat;
+	margin: 0 auto;
+}
+
+.about-plastov h1 {
+	position: absolute;
+	font: 50px/25px "siemens_slabregular";
+	text-transform: uppercase;
+	top: 200px;
+	left: 275px;
+}
+
+.lt-ie8 .about-plastov h1 {
+	line-height: 35px;
+}
+
+.about-plastov h1 span {
+	font-size: 24px;
+	letter-spacing: 3.2px;
+}
+
+.about-plastov .button {
+	background: url(../img/buttons.png) no-repeat;
+	width: 175px;
+	height: 56px;
+	line-height: 48px;
+	display: inline-block;
+	text-align: center;
+	text-transform: uppercase;
+	color: #ffffff;
+	position: absolute;
+	top: 270px;
+	left: 345px;
+}
+
+.b-entry {
+	margin-bottom: 50px;
+}
+/* Events */
+.b-events {
+	overflow: hidden;
+	padding-top: 40px;
+	width: 1004px;
+	margin: 0 auto;
+}
+
+.b-events > div {
+	float: left;
+	width: 1004px;
+	height: 360px;
+}
+
+.b-events .b-event {
+	float: left;
+	position: relative;
+}
+
+.b-events .b-event h2 {
+	text-transform: uppercase;
+	margin-bottom: 7px;
+}
+
+.b-events p {
+	margin: 0;
+}
+
+.b-events .b-event h2 a {
+	color: #000000;
+}
+
+.b-events .b-event p {
+	font: 13px/18px "Georgia";
+	font-style: italic;
+	color: #666666;
+}
+
+/* Event 1*/
+.b-event1 {
+	width: 380px;
+}
+
+.b-event1-date {
+	display: inline-block;
+	background: url(../img/circle/circle1.png) no-repeat;
+	width: 212px;
+	height: 162px;
+	position: absolute;
+	top: -51px;
+	left: 6px;
+	z-index: -1;
+}
+
+.b-event1-date span {
+	position: absolute;
+	top: 50px;
+	left: 78px;
+	font: 24px "siemens_slabbold";
+	text-align: center;
+}
+
+.b-event1-arrow-right {
+	display: inline-block;
+	position: absolute;
+	background: url(../img/arrow-right-event.png);
+	width: 56px;
+	height: 17px;
+	right: 7px;
+	top: 9px;
+}
+
+.b-event1-body {
+	width: 190px;
+	float: right;
+}
+
+/* Event 2*/
+.b-event2 {
+	width: 403px;
+}
+
+.b-event2-date {
+	display: inline-block;
+	background: url(../img/circle/circle2.png) no-repeat;
+	width: 151px;
+	height: 154px;
+	position: absolute;
+	top: -44px;
+	left: -4px;
+	z-index: -1;
+}
+
+.b-event2-date span {
+	position: absolute;
+	top: 54px;
+	left: 41px;
+	font: 24px "siemens_slabbold";
+}
+
+.b-event2-arrow-right {
+	display: inline-block;
+	position: absolute;
+	background: url(../img/arrow-right-event.png);
+	width: 56px;
+	height: 17px;
+	right: 30px;
+	top: 9px;
+	cursor: pointer;
+}
+
+.b-event2-body {
+	width: 285px;
+	float: right;
+}
+
+/* Event 3 */
+.b-event3 {
+	width: 403px;
+}
+
+.b-event3-date {
+	display: inline-block;
+	background: url(../img/circle/circle3.png) no-repeat;
+	width: 146px;
+	height: 183px;
+	position: absolute;
+	top: -75px;
+	left: 20px;
+	z-index: -1;
+}
+
+.b-event3-date span {
+	position: absolute;
+	top: 85px;
+	left: 45px;
+	font: 24px "siemens_slabbold";
+}
+
+.b-event3-arrow-left {
+	display: inline-block;
+	position: absolute;
+	background: url(../img/arrow-left-event.png);
+	width: 56px;
+	height: 17px;
+	left: 0;
+	top: 9px;
+	cursor: pointer;
+}
+
+.b-event3-arrow-right {
+	display: inline-block;
+	position: absolute;
+	background: url(../img/arrow-right-event.png);
+	width: 56px;
+	height: 17px;
+	right: 30px;
+	top: 9px;
+}
+
+.b-event3-body {
+ 	width: 252px;
+	float: right;
+}
+
+/* Event 4 */
+.b-event4 {
+	width: 315px;
+}
+
+.b-event4-date {
+	display: inline-block;
+	background: url(../img/circle/circle4.png) no-repeat;
+	width: 160px;
+	height: 138px;
+	position: absolute;
+	top: -27px;
+	left: -38px;
+	z-index: -1;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.b-event4-date span {
+	position: absolute;
+	top: 33px;
+	left: 46px;
+	font: 24px/21px "siemens_slabbold";
+}
+
+.b-event4-arrow-right {
+	display: inline-block;
+	position: absolute;
+	background: url(../img/arrow-right-event.png);
+	width: 56px;
+	height: 17px;
+	right: 16px;
+	top: 10px;
+}
+
+.b-event4-date span b {
+	font-size: 18px;
+}
+
+.b-event4-body {
+	width: 225px;
+	float: right;
+}
+
+/* Event 5 */
+.b-event5 {
+	width: 285px;
+}
+
+.b-event5-date {
+	display: inline-block;
+	background: url(../img/circle/circle5.png) no-repeat;
+	width: 212px;
+	height: 162px;
+	position: absolute;
+	top: -52px;
+	left: -62px;
+	z-index: -1;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.b-event5-date span {
+	position: absolute;
+	top: 56px;
+	left: 69px;
+	font: 24px/21px "siemens_slabbold";
+}
+
+.b-event5-date span b {
+	font-size: 18px;
+}
+
+.b-event5-body {
+	width: 160px;
+	float: right;
+}
+
+
+/* Laureate */
+.wrap-laureate {
+	padding-top: 25px;
+}
+
+.wrap-laureate h1 {
+	margin-bottom: 33px;
+}
+
+.b-laureate-item {
+	width: 978px;
+	height: 500px;
+	position: relative;
+}
+
+.b-laureate-item img {
+	position: absolute;
+}
+
+.b-laureate {
+	position: absolute;
+}
+
+.b-laureate .b-laureate-frame {
+	display: inline-block;
+	z-index: 1;
+	position: relative;
+}
+
+.b-laureate1 {
+	left: 3px;
+	top: 13px;
+	z-index: 10;
+}
+
+.b-laureate1 .b-laureate-frame {
+	width: 247px;
+	height: 306px;
+	background: url(../img/picture/frame4.png) no-repeat;
+}
+
+.b-laureate1 img {
+	top: 31px;
+	left: 32px;
+}
+
+.b-laureate2 {
+	left: 222px;
+	top: 32px;
+}
+
+.b-laureate2 .b-laureate-frame {
+	width: 255px;
+	height: 205px;
+	background: url(../img/picture/frame5.png) no-repeat;
+}
+
+.b-laureate2 img {
+	top: 29px;
+	left: 24px;
+}
+
+.b-laureate3 {
+	left: 483px;
+	top: 2px;
+}
+
+.b-laureate3 .b-laureate-frame {
+	width: 303px;
+	height: 256px;
+	background: url(../img/picture/frame6.png) no-repeat;
+}
+
+.b-laureate3 img {
+	top: 35px;
+	left: 35px;
+}
+
+.b-laureate4 {
+	left: 788px;
+	top: 0;
+ }
+
+.b-laureate4 .b-laureate-frame {
+	width: 181px;
+	height: 226px;
+	background: url(../img/picture/frame7.png) no-repeat;
+}
+
+.b-laureate4 img {
+	top: 15px;
+	left: 24px;
+}
+
+.b-laureate5 {
+	left: 125px;
+	top: 249px;
+	z-index: 11;
+}
+
+.b-laureate5 .b-laureate-frame {
+	width: 268px;
+	height: 227px;
+	background: url(../img/picture/frame8.png) no-repeat;
+}
+
+.b-laureate5 img {
+	top: 35px;
+	left: 35px;
+}
+
+.b-laureate6 {
+	left: 388px;
+	top: 231px;
+}
+
+.b-laureate6 .b-laureate-frame {
+	width: 193px;
+	height: 167px;
+	background: url(../img/picture/frame9.png) no-repeat;
+}
+
+.b-laureate6 img {
+	top: 28px;
+	left: 28px;
+}
+
+.b-laureate7 {
+	left: 590px;
+	top: 224px;
+}
+
+.b-laureate7 .b-laureate-frame {
+	width: 276px;
+	height: 234px;
+	background: url(../img/picture/frame10.png) no-repeat;
+}
+
+.b-laureate7 img {
+	top: 35px;
+	left: 30px;
+}
+
+/* Footer
+-----------------------------------------------------------------------------*/
+#footer {
+	background: url(../img/bg-footer.png) center no-repeat;
+	margin: -249px auto 0;
+	height: 249px;
+	position: relative;
+}
+
+#footer .wrap {
+	overflow: hidden;
+	padding-top: 150px;
+}
+
+#footer .copyright {
+	line-height: 15px;
+	font-size: 13px;
+	width: 306px;
+	float: left;
+	padding: 35px 0 0 90px;
+}
+
+#footer .footer-logo {
+	float: right;
+	padding: 0 235px 0 0;
+}
+
+#footer .footer-logo li {
+	float: left;
+	margin-left: 40px;
+}
+
+#footer .footer-logo li:first-child {
+	padding-top: 5px;
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Image replacement
+ */
+
+.ir {
+	background-color: transparent;
+	border: 0;
+	overflow: hidden;
+	/* IE 6/7 fallback */
+	*text-indent: -9999px;
+}
+
+.ir:before {
+	content: "";
+	display: block;
+	width: 0;
+	height: 100%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+	display: none !important;
+	visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+	clip: auto;
+	height: auto;
+	margin: 0;
+	overflow: visible;
+	position: static;
+	width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+	visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+	content: " "; /* 1 */
+	display: table; /* 2 */
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+	*zoom: 1;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   Theses examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+	/* Style adjustments for viewports that meet the condition */
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min-resolution: 144dpi) {
+	/* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+	* {
+		background: transparent !important;
+		color: #000 !important; /* Black prints faster: h5bp.com/s */
+		box-shadow: none !important;
+		text-shadow: none !important;
+	}
+
+	a,
+	a:visited {
+		text-decoration: underline;
+	}
+
+	a[href]:after {
+		content: " (" attr(href) ")";
+	}
+
+	abbr[title]:after {
+		content: " (" attr(title) ")";
+	}
+
+	/*
+	 * Don't show links for images, or javascript/internal links
+	 */
+
+	.ir a:after,
+	a[href^="javascript:"]:after,
+	a[href^="#"]:after {
+		content: "";
+	}
+
+	pre,
+	blockquote {
+		border: 1px solid #999;
+		page-break-inside: avoid;
+	}
+
+	thead {
+		display: table-header-group; /* h5bp.com/t */
+	}
+
+	tr,
+	img {
+		page-break-inside: avoid;
+	}
+
+	img {
+		max-width: 100% !important;
+	}
+
+	@page {
+		margin: 0.5cm;
+	}
+
+	p,
+	h2,
+	h3 {
+		orphans: 3;
+		widows: 3;
+	}
+
+	h2,
+	h3 {
+		page-break-after: avoid;
+	}
+}

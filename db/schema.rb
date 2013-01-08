@@ -11,7 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121219175412) do
+ActiveRecord::Schema.define(:version => 20130108121026) do
+
+  create_table "bid_states", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
@@ -28,6 +34,40 @@ ActiveRecord::Schema.define(:version => 20121219175412) do
 
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
+
+  create_table "competition_states", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "members", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "birth_year"
+    t.string   "country"
+    t.string   "city"
+    t.string   "phone"
+    t.string   "email"
+    t.integer  "competition_state_id"
+    t.integer  "bid_state_id"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
+
+  add_index "members", ["bid_state_id"], :name => "index_members_on_bid_state_id"
+  add_index "members", ["competition_state_id"], :name => "index_members_on_competition_state_id"
+
+  create_table "menu_item_translations", :force => true do |t|
+    t.integer  "menu_item_id"
+    t.string   "locale"
+    t.string   "name"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "menu_item_translations", ["locale"], :name => "index_menu_item_translations_on_locale"
+  add_index "menu_item_translations", ["menu_item_id"], :name => "index_menu_item_translations_on_menu_item_id"
 
   create_table "menu_items", :force => true do |t|
     t.string   "name"
@@ -53,14 +93,27 @@ ActiveRecord::Schema.define(:version => 20121219175412) do
 
   add_index "menus", ["name"], :name => "index_menus_on_name"
 
+  create_table "page_translations", :force => true do |t|
+    t.integer  "page_id"
+    t.string   "locale"
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "page_translations", ["locale"], :name => "index_page_translations_on_locale"
+  add_index "page_translations", ["page_id"], :name => "index_page_translations_on_page_id"
+
   create_table "pages", :force => true do |t|
     t.integer  "author_id"
     t.string   "title"
     t.string   "content"
     t.string   "state"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
     t.string   "slug"
+    t.boolean  "is_home_page"
   end
 
   add_index "pages", ["author_id"], :name => "index_pages_on_author_id"

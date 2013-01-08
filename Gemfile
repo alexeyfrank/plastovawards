@@ -19,6 +19,7 @@ group :development, :test do
 end
 
 
+gem 'globalize3'
 gem 'timepad'
 gem 'less-rails'
 gem 'unicorn'

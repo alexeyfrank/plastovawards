@@ -1,5 +1,6 @@
 class Web::PagesController < Web::ApplicationController
   def index
+    @page = Page.home_page.first
   end
 
   def show

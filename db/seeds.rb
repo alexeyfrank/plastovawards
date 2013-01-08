@@ -9,10 +9,10 @@
 admin = User.create!(email: 'admin@admin.com', password: '12345')
 
 # region default settings
-  Settings.site_name = 'Master IT'
-  Settings.phone = "11 11 11"
-  Settings.emergency_call = ""
-  Settings.emergency_call_enabled = false
+  Settings.site_name = 'Plastov Awards'
+  # Settings.phone = "11 11 11"
+  #   Settings.emergency_call = ""
+  #   Settings.emergency_call_enabled = false
 # endregion
 
 # region default menu
