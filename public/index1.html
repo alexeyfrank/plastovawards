@@ -11,12 +11,14 @@
 	<meta name="viewport" content="width=device-width">
 
 	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/jquery.jscrollpane.css">
 	<link rel="stylesheet" href="css/main.css">
 	<script src="js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
+<div class="parallax1"></div>
+<div class="parallax2"></div>
 <div id="wrapper">
-
 	<header id="header">
 		<section class="header-top">
 			<div class="wrap">
@@ -99,7 +101,7 @@
 			<ul class="two-column">
 				<li>
 					<p>Международная ежегодная премия в области изобразительного искусства имени классика советской живописи <a href="#">Аркадия Пластова</a>.</p>
-					<p>Учреждена <a href="#" class="dashed">Губернатором Ульяновской области</a> совместно с Всероссийским творческим общественным объединением «Союз художников России».</p>
+					<p>Учреждена <a href="#" class="dashed open-pop-up">Губернатором Ульяновской области</a> совместно с Всероссийским творческим общественным объединением «Союз художников России».</p>
 				</li>
 				<li>
 					<p>Премии присуждаются талантливым художникам — авторам произведений, исполненных в традициях реалистического искусства, последователям творческого наследия А.А.Пластова и мастеров изобразительного искусства второй половины XX—начала XXI веков России и зарубежных стран, воплощающим в своём творчестве яркие национальные черты и многообразие форм реалистического искусства.</p>
@@ -162,40 +164,147 @@
 		<section class="about-plastov">
 			<h1>о пластове<br /><span>факты и биография</span></h1>
 			<a href="#" class="button">Подробнее</a>
+			<div class="parallax3"></div>
 		</section>
 
 		<section class="delim delim2"></section>
 
 		<section class="wrap wrap-laureate">
 			<h1>ЛАУРЕАТЫ 2012 ГОДА</h1>
-			<div class="b-laureate-item">
-				<div class="b-laureate b-laureate1">
-					<span class="b-laureate-frame"></span>
-					<img src="./img/picture/picture4.jpg" width="162" height="213" alt="" title="" />
-				</div>
-				<div class="b-laureate b-laureate2">
-					<span class="b-laureate-frame"></span>
-					<img src="./img/picture/picture5.jpg" width="186" height="124" alt="" title="" />
-				</div>
-				<div class="b-laureate b-laureate3">
-					<span class="b-laureate-frame"></span>
-					<img src="./img/picture/picture6.jpg" width="219" height="156" alt="" title="" />
-				</div>
-				<div class="b-laureate b-laureate4">
-					<span class="b-laureate-frame"></span>
-					<img src="./img/picture/picture7.jpg" width="116" height="167" alt="" title="" />
-				</div>
-				<div class="b-laureate b-laureate5">
-					<span class="b-laureate-frame"></span>
-					<img src="./img/picture/picture8.jpg" width="175" height="130" alt="" title="" />
-				</div>
-				<div class="b-laureate b-laureate6">
-					<span class="b-laureate-frame"></span>
-					<img src="./img/picture/picture9.jpg" width="123" height="93" alt="" title="" />
-				</div>
-				<div class="b-laureate b-laureate7">
-					<span class="b-laureate-frame"></span>
-					<img src="./img/picture/picture10.jpg" width="204" height="130" alt="" title="" />
+			<span class="prev-laureate"></span>
+			<span class="next-laureate"></span>
+			<div class="scroll-pane horizontal-only">
+				<div class="b-wrap-laureate-item">
+			        <div class="b-laureate-item">
+						<div class="b-laureate b-laureate1">
+							<span class="b-laureate-frame"></span>
+							<img src="./img/picture/picture4.jpg" width="139" height="194" alt="" title="" />
+							<span class="b-laureate-desc">
+								<span class="b-laureate-desc-author">Мария Иванова,</span>
+								<span class="b-laureate-desc-city">г.Ульяновск</span>
+								<span class="b-laureate-desc-picture">«Ребятишки у речки»</span>
+							</span>
+						</div>
+						<div class="b-laureate b-laureate2">
+							<span class="b-laureate-frame"></span>
+							<img src="./img/picture/picture5.jpg" width="173" height="117" alt="" title="" />
+							<span class="b-laureate-desc">
+								<span class="b-laureate-desc-author">Мария Иванова,</span>
+								<span class="b-laureate-desc-city">г.Ульяновск</span>
+								<span class="b-laureate-desc-picture">«Ребятишки у речки»</span>
+							</span>
+						</div>
+						<div class="b-laureate b-laureate3">
+							<span class="b-laureate-frame"></span>
+							<img src="./img/picture/picture6.jpg" width="195" height="141" alt="" title="" />
+							<span class="b-laureate-desc">
+								<span class="b-laureate-desc-author">Мария Иванова,</span>
+								<span class="b-laureate-desc-city">г.Ульяновск</span>
+								<span class="b-laureate-desc-picture">«Ребятишки у речки»</span>
+							</span>
+						</div>
+						<div class="b-laureate b-laureate4">
+							<span class="b-laureate-frame"></span>
+							<img src="./img/picture/picture7.jpg" width="107" height="146" alt="" title="" />
+							<span class="b-laureate-desc">
+								<span class="b-laureate-desc-author">Мария Иванова,</span>
+								<span class="b-laureate-desc-city">г.Ульяновск</span>
+								<span class="b-laureate-desc-picture">«Ребятишки у речки»</span>
+							</span>
+						</div>
+						<div class="b-laureate b-laureate5">
+							<span class="b-laureate-frame"></span>
+							<img src="./img/picture/picture8.jpg" width="166" height="120" alt="" title="" />
+							<span class="b-laureate-desc">
+								<span class="b-laureate-desc-author">Мария Иванова,</span>
+								<span class="b-laureate-desc-city">г.Ульяновск</span>
+								<span class="b-laureate-desc-picture">«Ребятишки у речки»</span>
+							</span>
+						</div>
+						<div class="b-laureate b-laureate6">
+							<span class="b-laureate-frame"></span>
+							<img src="./img/picture/picture9.jpg" width="112" height="80" alt="" title="" />
+							<span class="b-laureate-desc">
+								<span class="b-laureate-desc-author">Мария Иванова,</span>
+								<span class="b-laureate-desc-city">г.Ульяновск</span>
+								<span class="b-laureate-desc-picture">«Ребятишки у речки»</span>
+							</span>
+						</div>
+						<div class="b-laureate b-laureate7">
+							<span class="b-laureate-frame"></span>
+							<img src="./img/picture/picture10.jpg" width="164" height="118" alt="" title="" />
+							<span class="b-laureate-desc">
+								<span class="b-laureate-desc-author">Мария Иванова,</span>
+								<span class="b-laureate-desc-city">г.Ульяновск</span>
+								<span class="b-laureate-desc-picture">«Ребятишки у речки»</span>
+							</span>
+						</div>
+					</div>
+					<div class="b-laureate-item">
+						<div class="b-laureate b-laureate1">
+							<span class="b-laureate-frame"></span>
+							<img src="./img/picture/picture4.jpg" width="139" height="194" alt="" title="" />
+							<span class="b-laureate-desc">
+								<span class="b-laureate-desc-author">Мария Иванова,</span>
+								<span class="b-laureate-desc-city">г.Ульяновск</span>
+								<span class="b-laureate-desc-picture">«Ребятишки у речки»</span>
+							</span>
+						</div>
+						<div class="b-laureate b-laureate2">
+							<span class="b-laureate-frame"></span>
+							<img src="./img/picture/picture5.jpg" width="173" height="117" alt="" title="" />
+							<span class="b-laureate-desc">
+								<span class="b-laureate-desc-author">Мария Иванова,</span>
+								<span class="b-laureate-desc-city">г.Ульяновск</span>
+								<span class="b-laureate-desc-picture">«Ребятишки у речки»</span>
+							</span>
+						</div>
+						<div class="b-laureate b-laureate3">
+							<span class="b-laureate-frame"></span>
+							<img src="./img/picture/picture6.jpg" width="195" height="141" alt="" title="" />
+							<span class="b-laureate-desc">
+								<span class="b-laureate-desc-author">Мария Иванова,</span>
+								<span class="b-laureate-desc-city">г.Ульяновск</span>
+								<span class="b-laureate-desc-picture">«Ребятишки у речки»</span>
+							</span>
+						</div>
+						<div class="b-laureate b-laureate4">
+							<span class="b-laureate-frame"></span>
+							<img src="./img/picture/picture7.jpg" width="107" height="146" alt="" title="" />
+							<span class="b-laureate-desc">
+								<span class="b-laureate-desc-author">Мария Иванова,</span>
+								<span class="b-laureate-desc-city">г.Ульяновск</span>
+								<span class="b-laureate-desc-picture">«Ребятишки у речки»</span>
+							</span>
+						</div>
+						<div class="b-laureate b-laureate5">
+							<span class="b-laureate-frame"></span>
+							<img src="./img/picture/picture8.jpg" width="166" height="120" alt="" title="" />
+							<span class="b-laureate-desc">
+								<span class="b-laureate-desc-author">Мария Иванова,</span>
+								<span class="b-laureate-desc-city">г.Ульяновск</span>
+								<span class="b-laureate-desc-picture">«Ребятишки у речки»</span>
+							</span>
+						</div>
+						<div class="b-laureate b-laureate6">
+							<span class="b-laureate-frame"></span>
+							<img src="./img/picture/picture9.jpg" width="112" height="80" alt="" title="" />
+							<span class="b-laureate-desc">
+								<span class="b-laureate-desc-author">Мария Иванова,</span>
+								<span class="b-laureate-desc-city">г.Ульяновск</span>
+								<span class="b-laureate-desc-picture">«Ребятишки у речки»</span>
+							</span>
+						</div>
+						<div class="b-laureate b-laureate7">
+							<span class="b-laureate-frame"></span>
+							<img src="./img/picture/picture10.jpg" width="164" height="118" alt="" title="" />
+							<span class="b-laureate-desc">
+								<span class="b-laureate-desc-author">Мария Иванова,</span>
+								<span class="b-laureate-desc-city">г.Ульяновск</span>
+								<span class="b-laureate-desc-picture">«Ребятишки у речки»</span>
+							</span>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -213,10 +322,23 @@
 	</div>
 </footer><!-- #footer -->
 
+<div class="shadow"></div>
+<div class="pop-up">
+	<div class="pop-up-close"></div>
+	<div class="left">
+		<img src="./img/gubernator.png" alt="" title="" width="156" height="178" />
+	</div>
+	<div class="pop-up-body">
+		<p><span class="pop-up-quote-left"></span>В этом году Пластовская премия приобрела статус международной,  и стала весомее, и это еще раз подчеркивает наше стремление к культурному сотрудничеству со странами Содружества. Под эгидой «Пластовской осени» на родине мастера собираются  его последователи, чтобы подчеркнуть — пластовские традиции живы и не имеют национальных границ.<span class="pop-up-quote-right"></span></p>
+		<footer>Губернатор Ульяновской области:  Сергей Морозов.</footer>
+	</div>
+</div>
 
-<script src="js/vendor/jquery-1.8.3.min.js"></script>
-<script src="js/plugins.js"></script>
-<script src="js/main.js"></script>
-<script src="js/jquery.carouFredSel-6.1.0-packed.js"></script>
+<script type="text/javascript" src="js/vendor/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/plugins.js"></script>
+<script type="text/javascript" src="js/jquery.parallax.min.js"></script>
+<script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
+<script type="text/javascript" src="js/jquery.carouFredSel-6.1.0-packed.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
