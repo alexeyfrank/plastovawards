@@ -1,0 +1,17 @@
+class Web::FeedbackController < Web::ApplicationController
+  def new
+    @feed = Feedback.new
+    header_img :default
+  end
+
+  def create
+    header_img :default
+    @feed = Feedback.new params[:feedback]
+    if verify_recaptcha(model: @feed, message: "Invalid code!") && @feed.save 
+      flash[:notice] = "Thank for your question!"
+    else
+      flash[:notice] = "Got some errors!"
+    end
+    render :new
+  end
+end

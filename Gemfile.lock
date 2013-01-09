@@ -163,6 +163,7 @@ GEM
       polyamorous (~> 0.5.0)
     rdoc (3.12)
       json (~> 1.4)
+    recaptcha (0.3.4)
     ref (1.0.2)
     rest-client (1.6.7)
       mime-types (>= 1.16)
@@ -263,6 +264,7 @@ DEPENDENCIES
   pg
   rails
   ransack
+  recaptcha
   rspec-rails
   russian
   sass-rails (~> 3.2.3)

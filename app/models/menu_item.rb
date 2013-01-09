@@ -5,7 +5,7 @@ class MenuItem < ActiveRecord::Base
   translates :name
 
   validates :name, presence: true
-  validates :slug, presence: true, slug: true
+  validates :slug, presence: true #, slug: true
   validates :position, presence: true
   validates :menu, presence: true
 

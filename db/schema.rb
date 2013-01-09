@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130108121026) do
+ActiveRecord::Schema.define(:version => 20130109163157) do
 
   create_table "bid_states", :force => true do |t|
     t.string   "name"
@@ -37,6 +37,14 @@ ActiveRecord::Schema.define(:version => 20130108121026) do
 
   create_table "competition_states", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "feedbacks", :force => true do |t|
+    t.string   "email"
+    t.string   "phone"
+    t.text     "text"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -108,18 +116,13 @@ ActiveRecord::Schema.define(:version => 20130108121026) do
   create_table "pages", :force => true do |t|
     t.integer  "author_id"
     t.string   "title"
-    t.string   "content"
+    t.text     "content"
     t.string   "state"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "slug"
     t.boolean  "is_home_page"
   end
-
-  add_index "pages", ["author_id"], :name => "index_pages_on_author_id"
-  add_index "pages", ["slug"], :name => "index_pages_on_slug"
-  add_index "pages", ["state"], :name => "index_pages_on_state"
-  add_index "pages", ["title"], :name => "index_pages_on_title"
 
   create_table "settings", :force => true do |t|
     t.string   "var",                       :null => false

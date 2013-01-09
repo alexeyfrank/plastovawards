@@ -5,6 +5,7 @@ Masterit::Application.routes.draw do
   scope "(:locale)", :locale => /ru|en|de/ do
     scope :module => :web do
       root to: 'pages#index'
+      resources :feedback
       resource :session
       resources :subscribers
 
@@ -18,6 +19,10 @@ Masterit::Application.routes.draw do
         resources :subscribers
         resources :menus do
           resources :menu_items
+        end
+        
+        resources :feedback do
+          post :respond
         end
       end
 

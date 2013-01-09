@@ -1,0 +1,22 @@
+%h1 Обратная связь
+
+%br
+
+%table.table.table-bordered
+  %thead
+    %tr
+      %th.id-col #
+      %th= t('activerecord.attributes.feedback.email')
+      %th= t('activerecord.attributes.feedback.phone')
+      %th= t('activerecord.attributes.feedback.text')
+      %th.actions-col
+  %tbody
+    - @feeds.each do |feed|
+      %tr
+        %td.id-col= feed.id
+        %td= link_to feed.email, admin_feedback_path(feed)
+        %td= link_to feed.phone, admin_feedback_path(feed)
+        %td= link_to feed.text[0, 50],  admin_feedback_path(feed)
+        %td.actions-col
+          = link_to t('views.admin.feedback.index.show_feed'),  admin_feedback_path(feed), class: 'btn btn-info'
+          = link_to t('views.admin.feedback.index.delete_feed'),  admin_feedback_path(feed), method: :delete, class: 'btn btn-alert'

@@ -19,6 +19,7 @@ group :development, :test do
 end
 
 
+gem "recaptcha", :require => "recaptcha/rails"
 gem 'globalize3'
 gem 'timepad'
 gem 'less-rails'

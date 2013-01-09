@@ -1,0 +1,11 @@
+%h1 Просмотр вопроса
+
+%h4 Email
+%p= @feed.email
+%h4 Телефон
+%p= @feed.phone
+%h4 Вопрос
+%p= @feed.text
+
+= link_to t('views.admin.feedback.index.list'),  admin_feedback_index_path, class: 'btn btn-primary'
+= link_to t('views.admin.feedback.index.delete_feed'),  admin_feedback_path(@feed), method: :delete, class: 'btn btn-error'
