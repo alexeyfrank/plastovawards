@@ -1,5 +1,8 @@
 class FeedbackObserver < ActiveRecord::Observer
   def after_create(model)
-    FeedbackMailer.info_email(model).deliver
+    begin
+      FeedbackMailer.info_email(model).deliver
+    rescue
+    end
   end
 end
