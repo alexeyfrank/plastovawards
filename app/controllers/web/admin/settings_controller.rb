@@ -9,10 +9,14 @@ class Web::Admin::SettingsController < Web::Admin::ApplicationController
     store_settings :site_name
     store_settings :phone
     store_settings :email
-    store_settings :logo
-    store_settings :header_image
-    store_settings :emergency_call
-    store_settings :emergency_call_enabled
+    store_settings :vkontakte_url
+    store_settings :facebook_url
+    store_settings :twitter_url
+    
+    # store_settings :logo
+    # store_settings :header_image
+    # store_settings :emergency_call
+    # store_settings :emergency_call_enabled
 
     flash[:notice] = "Settings was successfully updated"
     redirect_to new_admin_setting_path

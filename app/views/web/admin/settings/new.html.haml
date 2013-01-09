@@ -5,13 +5,18 @@
   = f.input :phone, input_html: { value: @settings[:phone] }, as: :tel, label: false, placeholder: 'Телефон'
   = f.input :email, input_html: { value: @settings[:email] }, as: :email, label: false, placeholder: 'Email'
   
-  %img{ :src => "/#{@settings[:logo]}" }
-  = f.input :logo, input_html: { value: @settings[:logo] }, as: :file
+  = f.input :vkontakte_url, input_html: { value: @settings[:vkontakte_url] }, label: false, placeholder: 'Ссылка на страницу Vkontakte'
+  = f.input :facebook_url, input_html: { value: @settings[:facebook_url] }, label: false, placeholder: 'Ссылка на группу Facebook'
+  = f.input :twitter_url, input_html: { value: @settings[:twitter_url] }, label: false, placeholder: 'Ссылка на ленту Twitter'
   
-  %img{ :src => "/#{@settings[:header_image]}" }
-  = f.input :header_image, input_html: { value: @settings[:header_image] }, as: :file
- 
-  = f.input :emergency_call, input_html: { value: @settings[:emergency_call] }, as: :text, label: false, placeholder: 'Экстренное объявление'
-  = f.input :emergency_call_enabled, input_html: { value: @settings[:emergency_call_enabled] }, label: "Показать экстренное объявление"
- 
+  
+  / %img{ :src => "/#{@settings[:logo]}" }
+  / = f.input :logo, input_html: { value: @settings[:logo] }, as: :file
+  / 
+  / %img{ :src => "/#{@settings[:header_image]}" }
+  / = f.input :header_image, input_html: { value: @settings[:header_image] }, as: :file
+  /  
+  / = f.input :emergency_call, input_html: { value: @settings[:emergency_call] }, as: :text, label: false, placeholder: 'Экстренное объявление'
+  / = f.input :emergency_call_enabled, input_html: { value: @settings[:emergency_call_enabled] }, label: "Показать экстренное объявление"
+  /  
   = f.submit 'Сохранить настройки', class: 'btn btn-primary'
