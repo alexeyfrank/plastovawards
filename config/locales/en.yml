@@ -2,6 +2,24 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  layouts:
+    headers:
+      default: 
+        src: '/img/titles/default.png'
+        width: '1082'
+        height: '324'
+      bio: 
+        src: '/img/titles/about.png'
+        width: '995'
+        height: '307'
+      legacy: 
+        src: '/img/titles/about.png'
+        width: '995'
+        height: '307'
+      award-condition: 
+        src: '/img/titles/about-award.png'
+        width: '1010'
+        height: '264'
   views:
 
     subscribers:
@@ -16,8 +34,8 @@ en:
     admin:
       users:
         index:
-          title: "Users list"
-          add_new_user: "Add new user"
+          title: "Список пользователей"
+          add_new_user: "Добавить нового пользователя"
           edit_user: "Редактировать"
           delete_user: "Удалить"
         new:
