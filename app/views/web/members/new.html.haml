@@ -1,0 +1,24 @@
+%section.wrap
+  %h1 Регистрация на участие
+  
+  = simple_nested_form_for(@member) do |f|
+    = f.input :first_name
+    = f.input :last_name
+    = f.input :birth_year, :collection => 1940..(Time.now.year), :prompt => "Select your birth year"
+    = f.input :country
+    = f.input :city 
+    = f.input :phone
+    = f.input :email
+    
+    %h3 Pictures
+    
+    = f.simple_fields_for :pictures do |picture_form|
+      %h4 New picture
+      = picture_form.input :description
+      = picture_form.input :create_year
+      = picture_form.input :size
+      = picture_form.input :technique
+      = picture_form.link_to_remove "Remove picture"
+      
+    = f.link_to_add "Add picture", :pictures
+    = f.submit

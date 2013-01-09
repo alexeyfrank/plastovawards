@@ -1,5 +1,4 @@
 Masterit::Application.routes.draw do
-
   mount Ckeditor::Engine => '/ckeditor'
 
   scope "(:locale)", :locale => /ru|en|de/ do
@@ -8,10 +7,10 @@ Masterit::Application.routes.draw do
       resources :feedback
       resource :session
       resources :subscribers
+      resources :members
 
       namespace :admin do
         root :to => 'dashboard#index'
-
 
         resources :settings
         resources :users
@@ -24,6 +23,8 @@ Masterit::Application.routes.draw do
         resources :feedback do
           post :respond
         end
+        
+        resources :members
       end
 
       match '/(:slug)' => 'pages#show', as: :page

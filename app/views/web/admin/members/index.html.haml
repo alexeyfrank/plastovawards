@@ -1,0 +1,24 @@
+%h1 Участники
+
+%br
+
+%table.table.table-bordered
+  %thead
+    %tr
+      %th.id-col #
+      %th= t('activerecord.attributes.member.fio')
+      %th= t('activerecord.attributes.member.city')
+      %th= t('activerecord.attributes.member.email')
+      %th= t('activerecord.attributes.member.pictures_count')
+      %th.actions-col
+  %tbody
+    - @members.each do |m|
+      %tr
+        %td.id-col= m.id
+        %td= link_to "#{m.first_name} #{m.last_name}", edit_admin_member_path(m)
+        %td= m.city
+        %td= m.email
+        %td= m.pictures.count
+        %td.actions-col
+          = link_to t('views.admin.members.index.edit'), edit_admin_member_path(m), class: 'btn btn-info'
+          = link_to t('views.admin.members.index.delete'), admin_member_path(m), method: :delete, class: 'btn btn-alert'

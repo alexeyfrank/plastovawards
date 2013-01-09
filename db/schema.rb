@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130109163157) do
+ActiveRecord::Schema.define(:version => 20130109193518) do
 
   create_table "bid_states", :force => true do |t|
     t.string   "name"
@@ -47,6 +47,16 @@ ActiveRecord::Schema.define(:version => 20130109163157) do
     t.text     "text"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "member_pictures", :force => true do |t|
+    t.string   "size"
+    t.text     "description"
+    t.string   "create_year"
+    t.string   "technique"
+    t.integer  "member_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "members", :force => true do |t|
@@ -122,6 +132,16 @@ ActiveRecord::Schema.define(:version => 20130109163157) do
     t.datetime "updated_at"
     t.string   "slug"
     t.boolean  "is_home_page"
+  end
+
+  create_table "pictures", :force => true do |t|
+    t.text     "description"
+    t.date     "create_year"
+    t.string   "size"
+    t.string   "technique"
+    t.integer  "member_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "settings", :force => true do |t|

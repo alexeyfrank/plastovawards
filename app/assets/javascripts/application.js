@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require ckeditor/init
 //= require twitter/bootstrap
+//= require jquery_nested_form
 //= require_tree .
