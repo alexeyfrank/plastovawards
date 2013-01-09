@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails' #, '3.2.8'
+gem 'rails' #, '3.2.10'
 gem 'pg'
 
 group :assets do
@@ -23,7 +23,7 @@ gem 'globalize3'
 gem 'timepad'
 gem 'less-rails'
 gem 'unicorn'
-# gem 'heroku'
+gem 'heroku'
 gem 'dump'
 gem 'ledermann-rails-settings', :require => 'rails-settings'
 gem "ancestry"
