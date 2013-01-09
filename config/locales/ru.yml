@@ -2,6 +2,12 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 ru:
+  layouts:
+    headers:
+      default: 
+        src: '/img/titles/default.png'
+        width: '1082'
+        height: '324'
   views:
 
     subscribers:
