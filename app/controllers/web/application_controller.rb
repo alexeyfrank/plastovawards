@@ -20,12 +20,13 @@ class Web::ApplicationController < ApplicationController
           src: I18n.t!("layouts.headers.#{type}.src"),
           width: I18n.t!("layouts.headers.#{type}.width"),
           height: I18n.t!("layouts.headers.#{type}.height"),
+          body_class: I18n.t!("layouts.headers.#{type}.body_class"),
         }
       rescue I18n::MissingTranslationData
         @header_img = {
           src: I18n.t!("layouts.headers.default.src"),
           width: I18n.t!("layouts.headers.default.width"),
-          height: I18n.t!("layouts.headers.default.height"),
+          body_class: I18n.t!("layouts.headers.default.body_class"),
         }
       end
     end

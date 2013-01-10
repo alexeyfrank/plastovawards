@@ -15,7 +15,7 @@
 	<link rel="stylesheet" href="/css/main.css">
 	<script src="/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
-<body>
+<body class="<%= @header_img[:body_class] %>">
 <div class="parallax1"></div>
 <div class="parallax2"></div>
 
@@ -89,10 +89,10 @@
 
 <script type="text/javascript" src="/js/vendor/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="/js/plugins.js"></script>
+<%= javascript_include_tag :defaults,  "nested_form" %>
 <script type="text/javascript" src="/js/jquery.parallax.min.js"></script>
 <script type="text/javascript" src="/js/jquery.jscrollpane.min.js"></script>
 <script type="text/javascript" src="/js/jquery.carouFredSel-6.1.0-packed.js"></script>
 <script type="text/javascript" src="/js/main.js"></script>
-<%= javascript_include_tag :defaults,  "nested_form" %>
 </body>
 </html>

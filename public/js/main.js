@@ -5,6 +5,11 @@ $(document).ready(function(){
 	initPopUp();
 	initPolozhenie();
 	initLaureate();
+	initFilter();
+	initElementsForm();
+
+
+
 });
 
 initParallax = function() {
@@ -15,9 +20,26 @@ initParallax = function() {
 	});
 };
 
+initFilter = function() {
+	$('.button-toggle-filter').click(function(){
+		$(this).toggleClass('active');
+		$('.filter-work').toggle();
+		return false;
+	});
+};
+
+initElementsForm = function() {
+	$('input[type="checkbox"]').ezMark();
+};
+
 initLaureate = function() {
+	var scroll_pane = $('.scroll-pane');
+	if(!scroll_pane.length) {
+		return false;
+	}
+
 	$('.b-wrap-laureate-item').width($('.b-laureate-item').length*978);
-	var scroll = $('.scroll-pane').jScrollPane({
+	var scroll = scroll_pane.jScrollPane({
 		showArrows: false,
 		horizontalDragMinWidth: 23,
 		horizontalDragMaxWidth: 23,

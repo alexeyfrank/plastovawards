@@ -1,25 +1,75 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
-ru:
+de:
   layouts:
     headers:
       default: 
-        src: '/img/titles/default.png'
-        width: '1082'
-        height: '324'
-      bio: 
-        src: '/img/titles/about.png'
-        width: '995'
-        height: '307'
-      legacy: 
-        src: '/img/titles/about.png'
-        width: '995'
-        height: '307'
-      award-condition: 
-        src: '/img/titles/about-award.png'
+        src: '/img/titles/de-default.png'
         width: '1010'
-        height: '264'
+        height: '280'
+        body_class: ''
+        
+      about-plastov: &about-plastov 
+        src: '/img/titles/de-about.png'
+        width: '1003'
+        height: '263'
+        body_class: 'page-about'
+      gallery:
+        <<: *about-plastov
+      expositions:
+        <<: *about-plastov
+      legacy:
+        <<: *about-plastov
+
+      about-award: &about-award
+        src: '/img/titles/de-about-award.png'
+        width: '1046'
+        height: '252'
+        body_class: 'page-about-award'
+      award-info:
+        <<: *about-award
+      governor-order:
+        <<: *about-award
+      award-condition:
+        <<: *about-award
+      last-winners:
+        <<: *about-award
+      committee:
+        <<: *about-award
+      jury:
+        <<: *about-award
+        
+      participation: &participation
+        src: '/img/titles/de-participation.png'
+        width: '1050'
+        height: '258'
+        body_class: ''
+      how-to-join:
+        <<: *participation
+      contacts:
+        <<: *participation
+        
+      news: &news
+        src: '/img/titles/de-news.png'
+        width: '1136'
+        height: '377'
+        body_class: ''
+      smi:
+        <<: *news
+        
+      members-gallery:
+        src: '/img/titles/de-gallery.png'
+        width: '1077'
+        height: '293'
+        body_class: ''
+        
+      ask-question:
+        src: '/img/titles/ask-question.png'
+        width: '1095'
+        height: '388'
+        body_class: ''
+        
   views:
 
     subscribers:

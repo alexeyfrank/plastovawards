@@ -5,21 +5,71 @@ en:
   layouts:
     headers:
       default: 
-        src: '/img/titles/default.png'
-        width: '1082'
-        height: '324'
-      bio: 
-        src: '/img/titles/about.png'
-        width: '995'
-        height: '307'
-      legacy: 
-        src: '/img/titles/about.png'
-        width: '995'
-        height: '307'
-      award-condition: 
-        src: '/img/titles/about-award.png'
-        width: '1010'
-        height: '264'
+        src: '/img/titles/en-default.png'
+        width: '1065'
+        height: '359'
+        body_class: ''
+        
+      about-plastov: &about-plastov 
+        src: '/img/titles/en-about.png'
+        width: '940'
+        height: '298'
+        body_class: 'page-about'
+      gallery:
+        <<: *about-plastov
+      expositions:
+        <<: *about-plastov
+      legacy:
+        <<: *about-plastov
+
+      about-award: &about-award
+        src: '/img/titles/en-about-award.png'
+        width: '1030'
+        height: '293'
+        body_class: 'page-about-award'
+      award-info:
+        <<: *about-award
+      governor-order:
+        <<: *about-award
+      award-condition:
+        <<: *about-award
+      last-winners:
+        <<: *about-award
+      committee:
+        <<: *about-award
+      jury:
+        <<: *about-award
+        
+      participation: &participation
+        src: '/img/titles/en-participation.png'
+        width: '1051'
+        height: '236'
+        body_class: ''
+      how-to-join:
+        <<: *participation
+      contacts:
+        <<: *participation
+        
+      news: &news
+        src: '/img/titles/en-news.png'
+        width: '1049'
+        height: '228'
+        body_class: ''
+      smi:
+        <<: *news
+        
+      members-gallery:
+        src: '/img/titles/en-gallery.png'
+        width: '767'
+        height: '332'
+        body_class: ''
+        
+      ask-question:
+        src: '/img/titles/ask-question.png'
+        width: '1095'
+        height: '388'
+        body_class: ''
+        
   views:
 
     subscribers:

@@ -10,14 +10,15 @@
     = f.input :phone
     = f.input :email
     
-    %h3 Pictures
+    %h3 Работы
     
     = f.simple_fields_for :pictures do |picture_form|
-      %h4 New picture
+      %h4 Новая работа
       = picture_form.input :description
       = picture_form.input :create_year
       = picture_form.input :size
       = picture_form.input :technique
+      = picture_form.input :file
       = picture_form.link_to_remove "Remove picture"
       
     = f.link_to_add "Add picture", :pictures

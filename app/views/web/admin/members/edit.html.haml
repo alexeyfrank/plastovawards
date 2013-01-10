@@ -1,2 +1,25 @@
-%h1 Web::Admin::Members#edit
-%p Find me in app/views/web/admin/members/edit.html.haml
+%h1 Редактирование участника
+
+= simple_nested_form_for(@member, url: admin_member_path(@member)) do |f|
+  = f.input :first_name
+  = f.input :last_name
+  = f.input :country
+  = f.input :city
+  = f.input :email
+  = f.input :phone
+  = f.input :birth_year
+  
+  %h3 Работы
+  
+  = f.simple_fields_for :pictures do |p|
+    %h4 Работа
+    = p.input :description, input_html: { rows: 5, cols: 60 }
+    = p.input :create_year
+    = p.input :size
+    = p.input :technique
+    = p.input :file, as: :image_preview
+    = p.link_to_remove "Remove picture"
+  
+  = f.link_to_add "Add picture", :pictures
+  = f.submit 
+  
