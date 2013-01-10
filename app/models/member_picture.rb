@@ -4,7 +4,7 @@ class MemberPicture < ActiveRecord::Base
   
   validates :create_year, presence: true
   validates :description, presence: true
-  validates :member, presence: true
+  #validates :member, presence: true
   validates :size, presence: true
   validates :technique, presence: true
 

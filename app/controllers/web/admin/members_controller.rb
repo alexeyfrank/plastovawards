@@ -8,6 +8,8 @@ class Web::Admin::MembersController < Web::Admin::ApplicationController
   end
 
   def edit
+    @bid_states = BidState.all
+    @competition_states = CompetitionState.all
     @member = Member.find params[:id]
   end
 

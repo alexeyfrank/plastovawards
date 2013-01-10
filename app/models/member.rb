@@ -1,5 +1,8 @@
 class Member < ActiveRecord::Base
-  attr_accessible :bid_state, :birth_year, :city, :competition_state, :country, :email, :first_name, :last_name, :phone, :pictures_attributes
+  
+  before_create :set_default_states
+  
+  attr_accessible :bid_state_id, :birth_year, :city, :competition_state_id, :country, :email, :first_name, :last_name, :phone, :pictures_attributes
 
   validates :birth_year, presence: true
   validates :city, presence: true
@@ -15,4 +18,10 @@ class Member < ActiveRecord::Base
   has_many :pictures, class_name: "MemberPicture", dependent: :destroy
   
   accepts_nested_attributes_for :pictures
+  
+  def set_default_states
+    self.bid_state = BidState.find 1
+    self.competition_state = CompetitionState.find 1
+  end
+  
 end
