@@ -1,5 +1,5 @@
 !!! 5
-%html(lang="en")
+%html{ lang: locale }
   %head
     %meta(charset="utf-8")
     %meta(http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1")
@@ -27,22 +27,30 @@
               = link_to "#{ Settings.site_name }", root_path, :class => 'brand'
             .span7
               %ul.nav
-                %li= link_to "Пользователи", admin_users_path
-                %li= link_to "Меню", admin_menus_path
-                %li= link_to "Страницы", admin_pages_path
+                %li.dropdown
+                  = link_to "CMS", "#", class: "dropdown-toggle"
+                  %ul.dropdown-menu{ role: "menu" }
+                    %li= link_to "Пользователи", admin_users_path
+                    %li= link_to "Меню", admin_menus_path
+                    %li= link_to "Страницы", admin_pages_path
+                    %li= link_to "Настройки", new_admin_setting_path
+                %li.dropdown
+                  = link_to "Новости", "#", class: "dropdown-toggle"
+                  %ul.dropdown-menu{ role: "menu" }
+                    %li= link_to "Категории новостей", admin_news_categories_path
+                    %li= link_to "Новости", admin_news_index_path
                 %li= link_to "Участники", admin_members_path
                 %li= link_to "Обр. связь", admin_feedback_index_path
-                %li= link_to "Настройки", new_admin_setting_path
             .span3
               .btn-group
-                %button.btn.btn-small.dropdown-toggle{ :"data-toggle" => "dropdown", :href => "#" }
+                %a.btn.btn-small.dropdown-toggle
                   =current_user.email
                   %span.caret
                 %ul.dropdown-menu
                   %li= link_to "Профиль", edit_admin_user_path(current_user)
                   %li= link_to "Выйти", session_path, :method => :delete
               .btn-group
-                %button.btn.btn-small.btn-info.dropdown-toggle{ :"data-toggle" => "dropdown", :href => "#" }
+                %a.btn.btn-small.btn-info.dropdown-toggle
                   = locale
                   %span.caret
                 %ul.dropdown-menu

@@ -1,0 +1,5 @@
+%section.wrap
+  %h1= @category.title
+  
+  - @category.news.published.each do |news|
+    %h3= link_to news.title, news_category_news_path(@category, news)

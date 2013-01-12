@@ -1,5 +1,8 @@
 class Web::ApplicationController < ApplicationController
   include Web::AuthHelper
+  include Web::LocalizationHelper
+  include Web::ScaffoldHelper
+  
   before_filter :set_locale
  
   def set_locale

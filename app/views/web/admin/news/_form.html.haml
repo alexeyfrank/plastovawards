@@ -1,0 +1,5 @@
+= f.input :title, as: :string
+= f.input :category_id, collection: NewsCategory.all, include_blank: false
+= f.input :state_event, collection: @news.state_events, as: :select
+= f.input :content, as: :ckeditor, input_html: { toolbar: "Full" }
+= f.submit

@@ -52,8 +52,10 @@
 			<div class="delim"></div>
 			<div class="wrap-main-menu">
 				<nav class="main-menu">
-          <%= render_menu id: 1, template: 'web/shared/top_menu' %>
-				</nav>
+          <% cache do %>
+            <%= render_menu id: 1, template: 'web/shared/top_menu' %>
+				  <% end %>
+        </nav>
 				<div class="wrap-sub-menu"></div>
 			</div>
 		</section>

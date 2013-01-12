@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130110065809) do
+ActiveRecord::Schema.define(:version => 20130112124351) do
 
   create_table "bid_states", :force => true do |t|
     t.string   "name"
@@ -111,6 +111,35 @@ ActiveRecord::Schema.define(:version => 20130110065809) do
   end
 
   add_index "menus", ["name"], :name => "index_menus_on_name"
+
+  create_table "news", :force => true do |t|
+    t.text     "title"
+    t.text     "content"
+    t.integer  "author_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "category_id"
+    t.string   "state"
+  end
+
+  create_table "news_categories", :force => true do |t|
+    t.string   "title"
+    t.string   "state"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "news_translations", :force => true do |t|
+    t.integer  "news_id"
+    t.string   "locale"
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "news_translations", ["locale"], :name => "index_news_translations_on_locale"
+  add_index "news_translations", ["news_id"], :name => "index_news_translations_on_news_id"
 
   create_table "page_translations", :force => true do |t|
     t.integer  "page_id"

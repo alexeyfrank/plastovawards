@@ -2,6 +2,42 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 ru:
+  web:
+    admin:
+      pages:
+        index:
+          title: "Список страниц сайта"
+          confirm_destroy_msg: "Вы уверены что хотите удалить страницу?"
+          actions:
+            create: "Создать новую страницу"
+            edit: "Редактировать"
+            destroy: "Удалить"
+          model:
+            title: "Название"
+            slug: "SLUG"
+      news_categories:
+        index:
+          title: "Категории новостей"
+          confirm_destroy_msg: "Вы уверены что хотите удалить категорию?"
+          actions:
+            create: "Создать новую категорию"
+            edit: "Редактировать"
+            destroy: "Удалить"
+          model:
+            title: "Название"
+            state: "Статус"
+      news:
+        index:
+          title: "Список новостей"
+          confirm_destroy_msg: "Вы уверены что хотите удалить новость?"
+          actions:
+            create: "Создать новую новость"
+            edit: "Редактировать"
+            destroy: "Удалить"
+          model:
+            title: "Название"
+            created_at: "Дата создания"
+            state: "Статус"
   layouts:
     headers:
       default: 

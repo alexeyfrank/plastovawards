@@ -1,0 +1,29 @@
+%h1= t l_title
+
+%br
+= link_to t(l_action_btn :create), url_for(controller: params[:controller], action: :new), :class => 'btn btn-primary'
+%br
+%br
+
+%table.table.table-bordered
+  %thead
+    %tr
+      %th.id-col #
+      - locals[:fields].each do |f|
+        %th= t l_field_name(f)
+      - unless locals[:actions].empty?
+        %th.actions-col
+  %tbody
+    - locals[:collection].each do |item|
+      %tr
+        %td.id-col= item.id
+        - locals[:fields].each do |field|
+          %td= item[field]
+        - unless locals[:actions].empty?
+          %td.actions-col
+            - locals[:actions].each do |act|
+              - if act == :destroy
+                = link_to t(l_action_btn(act)), url_for(controller: params[:controller], action: act, id: item.id), class: 'btn btn-danger', confirm: t(l_confirm_destroy_msg), method: :delete
+              - else
+                = link_to t(l_action_btn(act)), url_for(controller: params[:controller], action: act, id: item.id), class: 'btn'
+            

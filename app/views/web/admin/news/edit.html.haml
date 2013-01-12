@@ -1,0 +1,4 @@
+%h1= t l_title
+
+= simple_form_for(@news, url: admin_news_path(@news)) do |f|
+  = render 'form', f: f
