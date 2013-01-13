@@ -2,8 +2,7 @@
 <!--[if lt IE 7]>	<html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
 <!--[if IE 7]>		<html class="no-js lt-ie9 lt-ie8"><![endif]-->
 <!--[if IE 8]>		<html class="no-js lt-ie9"><![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"><!--<![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js"><!--<![endif]-->
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -12,11 +11,13 @@
 	<meta name="viewport" content="width=device-width">
 
 	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="css/ezmark.css">
+	<link rel="stylesheet" href="css/cusel.css">
+	<link rel="stylesheet" href="css/fineuploader.css">
+	<link rel="stylesheet" href="css/jquery.jscrollpane.css">
 	<link rel="stylesheet" href="css/main.css">
 	<script type="text/javascript" src="js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
-<body class="page-personal">
+<body class="page-participation">
 <div id="wrapper">
 	<header id="header">
 		<section class="header-top">
@@ -41,7 +42,7 @@
 
 		<section class="header-middle">
 			<a href="/">
-				<img src="./img/titles/gallery.png" alt="" title="" width="963" height="360"/>
+				<img src="./img/titles/participation.png" alt="" title="" width="872" height="357"/>
 			</a>
 		</section>
 
@@ -80,10 +81,6 @@
 							<ul>
 								<li><a href="#">Распоряжение губернатора</a></li>
 								<li><a href="#">Лауреаты прошлых лет</a></li>
-								<li><a href="#">Эксперты</a></li>
-								<li><a href="#">Распоряжение губернатора</a></li>
-								<li><a href="#">Лауреаты прошлых лет</a></li>
-								<li><a href="#">Эксперты</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -95,90 +92,83 @@
 	</header><!-- #header-->
 
 	<div class="content">
-		<section class="wrap-filter-work">
-			<div class="wrap overflow">
-				<h1>ЛАУРЕАТЫ 2012 ГОДА</h1>
-				<button class="button-toggle-filter"><span>Фильтр</span></button>
-			</div>
-			<div class="filter-work">
-				<form action="/" method="get">
-					<div class="filter-work-nominations">
-						<h2>Номинации:</h2>
-						<ul>
-							<li><input type="checkbox" id="ch1"><label for="ch1">Все</label></li>
-							<li><input type="checkbox" id="ch2"><label for="ch2">Мировые имена</label></li>
-							<li><input type="checkbox" id="ch3"><label for="ch3">Художественное образование</label></li>
-							<li><input type="checkbox" id="ch4"><label for="ch4">Арт-издательство</label></li>
-							<li><input type="checkbox" id="ch5"><label for="ch5">Живая традиция</label></li>
-							<li><input type="checkbox" id="ch6"><label for="ch6">Мировые имена</label></li>
-							<li><input type="checkbox" id="ch7"><label for="ch7">Художественное образование</label></li>
-							<li><input type="checkbox" id="ch8"><label for="ch8">Арт-издательство</label></li>
-						</ul>
-					</div>
-					<div class="filter-work-years">
-						<h2>Года:</h2>
-						<ul>
-							<li><input type="checkbox" id="ch9"><label for="ch9">2013</label></li>
-							<li><input type="checkbox" id="ch10"><label for="ch10">2012</label></li>
-							<li><input type="checkbox" id="ch11"><label for="ch11">2011</label></li>
-						</ul>
-					</div>
-					<div class="filter-work-authors">
-						<h2>Авторы:</h2>
-						<div class="filter-live-search">
-							<input type="text" value="Ива" />
-							<div class="filter-live-result">
-								<a href="#">Иванов</a>
-								<a href="#">Иванченко</a>
-								<a href="#">Иванилов</a>
-							</div>
-						</div>
-					</div>
-					<input type="submit" class="button button-search" value="Найти">
-					<input type="submit" class="button button-filter" value="Отфильтровать">
-					<input type="submit" class="button button-show-all" value="Показать все">
-				</form>
-			</div>
-		</section>
 		<section class="wrap">
-			<section class="b-stat-work">
-				<ul class="b-stat-work1">
-					<li class="b-stat-work-picture">
-						<span class="b-stat-work-frame"></span>
-						<img src="./img/picture/picture11.jpg" width="152" height="213" alt="" title="">
-					</li>
-					<li class="b-stat-work-picture-name">«Ребятишки у речки»</li>
-					<li class="b-stat-work-author"><a href="#">Мария Иванова,</a></li>
-					<li>г.Ульяновск</li>
-				</ul>
-				<ul class="b-stat-work2">
-					<li class="b-stat-work-picture">
-						<span class="b-stat-work-frame"></span>
-						<img src="./img/picture/picture12.jpg" width="175" height="132" alt="" title="">
-					</li>
-					<li class="b-stat-work-picture-name">«Ребятишки у речки»</li>
-					<li class="b-stat-work-author"><a href="#">Мария Иванова,</a></li>
-					<li>г.Ульяновск</li>
-				</ul>
-				<ul class="b-stat-work3">
-					<li class="b-stat-work-picture">
-						<span class="b-stat-work-frame"></span>
-						<img src="./img/picture/picture13.jpg" width="175" height="130" alt="" title="">
-					</li>
-					<li class="b-stat-work-picture-name">«Ребятишки у речки»</li>
-					<li class="b-stat-work-author"><a href="#">Мария Иванова,</a></li>
-					<li>г.Ульяновск</li>
-				</ul>
-				<ul class="b-stat-work4">
-					<li class="b-stat-work-picture">
-						<span class="b-stat-work-frame"></span>
-						<img src="./img/picture/picture14.jpg" width="169" height="130" alt="" title="">
-					</li>
-					<li class="b-stat-work-picture-name">«Ребятишки у речки»</li>
-					<li class="b-stat-work-author"><a href="#">Мария Иванова,</a></li>
-					<li>г.Ульяновск</li>
-				</ul>
-			</section>
+			<h1>Подать заявку на участие</h1>
+			<p>Для участия в премии Вам необходимо отправить фото ваших картин и неорганическое соединение, если принять во внимание воздействие фактора времени, продуцирует краснозём как при нагреве, так и при охлаждении. Пористость растягивает лёсс, однозначно свидетельствуя о неустойчивости процесса в целом.</p>
+		</section>
+
+		<section class="wrap-forms">
+			<div class="web-form web-form-register">
+				<h2>Регистрация участника</h2>
+				<div class="form-line">
+					<input type="text" class="input-lastname" placeholder="Фамилия" />
+				</div>
+				<div class="form-line">
+					<input type="text" class="input-name" placeholder="Имя" />
+				</div>
+				<div class="form-line">
+					<input type="text" class="input-birthday" placeholder="Год рождения" />
+				</div>
+				<div class="form-line">
+					<input type="text" class="input-country" placeholder="Страна" />
+				</div>
+				<div class="form-line">
+					<input type="text" class="input-city" placeholder="Город" />
+				</div>
+				<div class="form-line">
+					<input type="text" class="input-phone" placeholder="Телефон" />
+				</div>
+				<div class="form-line">
+					<input type="text" class="input-email" placeholder="E-mail" />
+				</div>
+				<div class="form-line form-line-photo">
+					<span class="load-photo-preview active"></span>
+					<div class="load-photo"></div>
+				</div>
+				<div class="form-line">
+					<input class="button button-save" type="submit" value="Сохранить" />
+				</div>
+			</div>
+
+			<div class="web-form web-form-load-pictures">
+				<h2>Загрузить картины</h2>
+				<div class="scroll-pane horizontal-only form-line form-line-photo">
+					<div class="form-line form-line-photo">
+						<span class="load-photo-preview active"></span>
+						<span class="load-photo-preview"></span>
+						<span class="load-photo-preview"></span>
+						<span class="load-photo-preview"></span>
+					</div>
+				</div>
+
+				<div class="form-line form-line-load-photo">
+					<div class="load-photo"></div>
+				</div>
+				<div class="form-line">
+					<textarea placeholder="Описание картины"></textarea>
+				</div>
+				<div class="form-line">
+					<input type="text" class="input-year-create" placeholder="Год создания" />
+				</div>
+				<div class="form-line">
+					<input type="text" class="input-year-size" placeholder="Размер картины (см)" />
+				</div>
+				<div class="form-line input-technics">
+					<select>
+						<option value="1">Техника исполнения</option>
+						<option value="2">Натюрморт</option>
+						<option value="3">Пейзаж</option>
+					</select>
+				</div>
+				<div class="form-line">
+					<input class="button button-save" type="submit" value="Загрузить" />
+				</div>
+			</div>
+
+			<div class="wrap-button-register">
+				<input class="button button-register" type="submit" value="Зарегистрироваться" />
+			</div>
+
 		</section>
 	</div><!-- #content-->
 </div><!-- #wrapper -->
@@ -203,5 +193,16 @@
 <script type="text/javascript" src="js/cusel-min-2.5.js"></script>
 <script type="text/javascript" src="js/jquery.ezmark.min.js"></script>
 
+<script type="text/javascript" src="js/fineuploader/util.js"></script>
+<script type="text/javascript" src="js/fineuploader/button.js"></script>
+<script type="text/javascript" src="js/fineuploader/handler.base.js"></script>
+<script type="text/javascript" src="js/fineuploader/handler.form.js"></script>
+<script type="text/javascript" src="js/fineuploader/handler.xhr.js"></script>
+<script type="text/javascript" src="js/fineuploader/uploader.basic.js"></script>
+<script type="text/javascript" src="js/fineuploader/dnd.js"></script>
+<script type="text/javascript" src="js/fineuploader/uploader.js"></script>
+<script type="text/javascript" src="js/fineuploader/jquery-plugin.js"></script>
+
+<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

@@ -1,26 +1,113 @@
+/ 
+/ <section class="wrap-forms">
+/   <div class="web-form web-form-register">
+/     <h2>Регистрация участника</h2>
+/     <div class="form-line">
+/       <input type="text" class="input-lastname" placeholder="Фамилия" />
+/     </div>
+/     <div class="form-line">
+/       <input type="text" class="input-name" placeholder="Имя" />
+/     </div>
+/     <div class="form-line">
+/       <input type="text" class="input-birthday" placeholder="Год рождения" />
+/     </div>
+/     <div class="form-line">
+/       <input type="text" class="input-country" placeholder="Страна" />
+/     </div>
+/     <div class="form-line">
+/       <input type="text" class="input-city" placeholder="Город" />
+/     </div>
+/     <div class="form-line">
+/       <input type="text" class="input-phone" placeholder="Телефон" />
+/     </div>
+/     <div class="form-line">
+/       <input type="text" class="input-email" placeholder="E-mail" />
+/     </div>
+/     <div class="form-line form-line-photo">
+/       <span class="load-photo-preview active"></span>
+/       <div class="load-photo"></div>
+/     </div>
+/     <div class="form-line">
+/       <input class="button button-save" type="submit" value="Сохранить" />
+/     </div>
+/   </div>
+/ 
+/   <div class="web-form web-form-load-pictures">
+/     <h2>Загрузить картины</h2>
+/     <div class="scroll-pane horizontal-only form-line form-line-photo">
+/       <div class="form-line form-line-photo">
+/         <span class="load-photo-preview active"></span>
+/         <span class="load-photo-preview"></span>
+/         <span class="load-photo-preview"></span>
+/         <span class="load-photo-preview"></span>
+/       </div>
+/     </div>
+/ 
+/     <div class="form-line form-line-load-photo">
+/       <div class="load-photo"></div>
+/     </div>
+/     <div class="form-line">
+/       <textarea placeholder="Описание картины"></textarea>
+/     </div>
+/     <div class="form-line">
+/       <input type="text" class="input-year-create" placeholder="Год создания" />
+/     </div>
+/     <div class="form-line">
+/       <input type="text" class="input-year-size" placeholder="Размер картины (см)" />
+/     </div>
+/     <div class="form-line input-technics">
+/       <select>
+/         <option value="1">Техника исполнения</option>
+/         <option value="2">Натюрморт</option>
+/         <option value="3">Пейзаж</option>
+/       </select>
+/     </div>
+/     <div class="form-line">
+/       <input class="button button-save" type="submit" value="Загрузить" />
+/     </div>
+/   </div>
+/ 
+/   <div class="wrap-button-register">
+/     <input class="button button-register" type="submit" value="Зарегистрироваться" />
+/   </div>
+/ 
+/ </section>
+	
+
 %section.wrap
-  %h1 Регистрация на участие
+  %h1 Подать заявку на участие
+  %p Для участия в премии Вам необходимо отправить фото ваших картин.
   
+%section.wrap-forms  
   = simple_nested_form_for(@member) do |f|
-    = f.input :first_name
-    = f.input :last_name
-    = f.input :birth_year, :collection => 1940..(Time.now.year), :prompt => "Select your birth year"
-    = f.input :country
-    = f.input :city 
-    = f.input :phone
-    = f.input :email
-    = f.input :nomination_id, as: :select, collection: Nomination.published, include_blank: false
+    .web-form.web-form-register
+      %h2 Регистрация участника
+      = f.input :first_name, label: false, placeholder: "Фамилия", wrapper_html: { class: "form-line" }, input_html: { class: "input-name" }
+      = f.input :last_name, label: false, placeholder: "Имя", wrapper_html: { class: "form-line" }, input_html: { class: "input-lastname" }
+      = f.input :birth_year, label: false, placeholder: "Год рождения", wrapper_html: { class: "form-line" }, input_html: { class: "input-birthday" }
+      = f.input :country, as: :string, label: false, placeholder: "Страна", wrapper_html: { class: "form-line" }, input_html: { class: "input-country" }
+      = f.input :city, label: false, placeholder: "Город", wrapper_html: { class: "form-line" }, input_html: { class: "input-city" } 
+      = f.input :phone, as: :string, label: false, placeholder: "Телефон", wrapper_html: { class: "form-line" }, input_html: { class: "input-phone" }
+      = f.input :email, as: :string, label: false, placeholder: "E-mail", wrapper_html: { class: "form-line" }, input_html: { class: "input-email" }
+      = f.input :nomination_id, as: :select, collection: Nomination.published, label: false, include_blank: false, wrapper_html: { class: "form-line input-technics" }
     
-    %h3 Работы
     
-    = f.simple_fields_for :pictures do |picture_form|
-      %h4 Новая работа
-      = picture_form.input :description
-      = picture_form.input :create_year
-      = picture_form.input :size
-      = picture_form.input :technique
-      = picture_form.input :file
-      = picture_form.link_to_remove "Remove picture"
+    .web-form.web-form-load-pictures
+      %h2 Загрузить картины
+      .scroll-pane.horizontal-only.form-line.form-line-photo
+        .form-line.form-line-photo
+          %span.load-photo-preview.active
+          %span.load-photo-preview
+          %span.load-photo-preview
+          %span.load-photo-preview
+      = f.simple_fields_for :pictures do |picture_form|
+        %h4 Новая работа
+        = picture_form.input :description
+        = picture_form.input :create_year
+        = picture_form.input :size
+        = picture_form.input :technique
+        = picture_form.input :file
+        = picture_form.link_to_remove "Remove picture"
       
-    = f.link_to_add "Add picture", :pictures
+    / = f.link_to_add "Add picture", :pictures
     = f.submit

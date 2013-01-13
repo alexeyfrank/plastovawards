@@ -7,6 +7,7 @@
   = f.input :city
   = f.input :email
   = f.input :phone
+  = f.input :year
   = f.input :birth_year
   = f.input :nomination_id, as: :select, collection: Nomination.published, include_blank: false
   = f.input :bid_state_id, as: :select, collection: @bid_states, include_blank: false
@@ -20,9 +21,11 @@
     = p.input :create_year
     = p.input :size
     = p.input :technique
+    = p.input :width
+    = p.input :height
     = p.input :file, as: :image_preview
-    = p.link_to_remove "Remove picture"
+    = p.link_to_remove "Удалить картину"
   
-  = f.link_to_add "Add picture", :pictures
+  = f.link_to_add "Добавить картину", :pictures
   = f.submit 
   

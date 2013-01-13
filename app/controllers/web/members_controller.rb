@@ -1,8 +1,14 @@
 class Web::MembersController < Web::ApplicationController
+  
+  def index
+    header_img :participation
+    @members = Member.all
+  end
+  
   def new
     header_img :participation
     @member = Member.new
-    @member.pictures.build
+    4.times { @member.pictures.build }
   end
 
   def create

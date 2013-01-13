@@ -26,4 +26,8 @@ class Member < ActiveRecord::Base
     self.competition_state = CompetitionState.find 1
   end
   
+  def fio
+    "#{ self.first_name } #{ self.last_name }"
+  end
+  
 end

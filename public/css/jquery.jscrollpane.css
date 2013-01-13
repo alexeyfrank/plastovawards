@@ -1,3 +1,7 @@
+.scroll-pane {
+	outline: none;
+}
+
 .jspContainer {
 	overflow: hidden;
 	position: relative;
@@ -19,8 +23,8 @@
 	position: absolute;
 	bottom: 10px;
 	left: 0;
-	width: 809px;
-	height: 7px;
+	width: 100%;
+	height: 6px;
 }
 
 .jspVerticalBar *,
@@ -42,11 +46,19 @@
 	position: relative;
 }
 
+.jspHorizontalBar .jspTrack .jspTrackColor {
+	background: url(../img/jspTrackColor.png) left no-repeat;
+	position: absolute;
+	width: 0;
+	height: 6px;
+	left: 84px;
+}
+
 .jspDrag {
-	background: url(../img/jspDrag.png) no-repeat;
+	background: url(../img/jspDrag.png) center no-repeat;
 	height: 23px;
 	position: relative;
-	top: -7px;
+	top: -9px;
 	left: 0;
 	cursor: pointer;
 }
