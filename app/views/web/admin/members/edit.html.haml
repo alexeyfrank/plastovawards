@@ -8,6 +8,7 @@
   = f.input :email
   = f.input :phone
   = f.input :birth_year
+  = f.input :nomination_id, as: :select, collection: Nomination.published, include_blank: false
   = f.input :bid_state_id, as: :select, collection: @bid_states, include_blank: false
   = f.input :competition_state_id, as: :select, collection: @competition_states, include_blank: false
   

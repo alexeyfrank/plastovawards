@@ -9,6 +9,7 @@
     = f.input :city 
     = f.input :phone
     = f.input :email
+    = f.input :nomination_id, as: :select, collection: Nomination.published, include_blank: false
     
     %h3 Работы
     

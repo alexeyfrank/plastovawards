@@ -38,6 +38,17 @@ ru:
             title: "Название"
             created_at: "Дата создания"
             state: "Статус"
+      nominations:
+        index:
+          title: "Список номинаций"
+          confirm_destroy_msg: "Вы уверены что хотите удалить номинацию?"
+          actions:
+            create: "Создать новую номинацию"
+            edit: "Редактировать"
+            destroy: "Удалить"
+          model:
+            title: "Название"
+            state: "Статус"
   layouts:
     headers:
       default: 

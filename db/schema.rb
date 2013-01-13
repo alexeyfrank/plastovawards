@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130112124351) do
+ActiveRecord::Schema.define(:version => 20130113101416) do
 
   create_table "bid_states", :force => true do |t|
     t.string   "name"
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(:version => 20130112124351) do
     t.integer  "bid_state_id"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
+    t.integer  "nomination_id"
   end
 
   add_index "members", ["bid_state_id"], :name => "index_members_on_bid_state_id"
@@ -140,6 +141,24 @@ ActiveRecord::Schema.define(:version => 20130112124351) do
 
   add_index "news_translations", ["locale"], :name => "index_news_translations_on_locale"
   add_index "news_translations", ["news_id"], :name => "index_news_translations_on_news_id"
+
+  create_table "nomination_translations", :force => true do |t|
+    t.integer  "nomination_id"
+    t.string   "locale"
+    t.string   "name"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "nomination_translations", ["locale"], :name => "index_nomination_translations_on_locale"
+  add_index "nomination_translations", ["nomination_id"], :name => "index_nomination_translations_on_nomination_id"
+
+  create_table "nominations", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "state"
+  end
 
   create_table "page_translations", :force => true do |t|
     t.integer  "page_id"

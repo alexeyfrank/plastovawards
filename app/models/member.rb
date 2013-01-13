@@ -2,7 +2,7 @@ class Member < ActiveRecord::Base
   
   before_create :set_default_states
   
-  attr_accessible :bid_state_id, :birth_year, :city, :competition_state_id, :country, :email, :first_name, :last_name, :phone, :pictures_attributes
+  attr_accessible :bid_state_id, :nomination_id, :birth_year, :city, :competition_state_id, :country, :email, :first_name, :last_name, :phone, :pictures_attributes
 
   validates :birth_year, presence: true
   validates :city, presence: true
@@ -14,6 +14,8 @@ class Member < ActiveRecord::Base
 
   belongs_to :bid_state
   belongs_to :competition_state
+  belongs_to :nomination
+  
 
   has_many :pictures, class_name: "MemberPicture", dependent: :destroy
   

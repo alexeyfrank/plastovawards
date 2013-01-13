@@ -1,5 +1,4 @@
 Masterit::Application.routes.draw do
-
   mount Ckeditor::Engine => '/ckeditor'
 
   scope "(:locale)", :locale => /ru|en|de/ do
@@ -31,6 +30,7 @@ Masterit::Application.routes.draw do
         end
         
         resources :members
+        resources :nominations
         resources :news
         resources :news_categories
       end
