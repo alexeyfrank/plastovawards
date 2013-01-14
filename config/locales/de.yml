@@ -152,8 +152,18 @@ de:
           title: "Редактирование страницы"
 
   activerecord:
+    state_machines:
+      news:
+        published: "Опубликована"
+        unpublished: "Неопубликована"
     models:
       user: "пользователя"
+      menu_item: "элемент меню"
+      page: "страницу"
+      news_category: "категорию новостей"
+      news: "новость"
+      member: "участника"
+      nomination: "номинацию"
     attributes:
       user:
         first_name: "Имя"
@@ -164,3 +174,47 @@ de:
         content: "Содержимое"
         author: "Автор"
         slug: "УРЛ"
+        tag_list: "Список тегов"
+        is_home_page: "Домашняя страница"
+      menu_item:
+        name: "Название"
+        slug: "SLUG"
+        parent_id: "Родительский элемент"
+        position: "Сортировка"
+      news_category:
+        title: "Название"
+        state_event: "Действие"
+      news:
+        title: "Название"
+        content: "Содержимое"
+        category_id: "Категория"
+        state_event: "Действие"
+      member:
+        first_name: "Фамилия"
+        last_name: "Имя"
+        city: "Город"
+        country: "Страна"
+        email: "E-mail"
+        phone: "Телефон"
+        state: "Статус"
+        year: "Год подачи заявки"
+        birth_year: "Год рождения"
+        nomination_id: "Номинация"
+        state_event: "Действие"
+        pictures_count: "Количество работ"
+      member_picture:
+        description: "Описание"
+        create_year: "Дата создания"
+        size: "Размер"
+        technique: "Техника исполнения"
+        width: "Ширина"
+        height: "Высота"
+        file: "Файл"
+      nomination: 
+        name: "Название"
+        state: "Статус"
+        state_event: "Действие"
+      feedback:
+        email: "E-mail"
+        phone: "Телефон"
+        text: "Сообщение"

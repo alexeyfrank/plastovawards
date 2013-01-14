@@ -8,8 +8,7 @@
   = f.input :vkontakte_url, input_html: { value: @settings[:vkontakte_url] }, label: false, placeholder: 'Ссылка на страницу Vkontakte'
   = f.input :facebook_url, input_html: { value: @settings[:facebook_url] }, label: false, placeholder: 'Ссылка на группу Facebook'
   = f.input :twitter_url, input_html: { value: @settings[:twitter_url] }, label: false, placeholder: 'Ссылка на ленту Twitter'
-  
-  
+
   / %img{ :src => "/#{@settings[:logo]}" }
   / = f.input :logo, input_html: { value: @settings[:logo] }, as: :file
   / 

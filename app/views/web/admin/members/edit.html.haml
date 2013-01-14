@@ -15,7 +15,7 @@
   
   = f.simple_fields_for :pictures do |p|
     %h4 Работа
-    = p.input :description, input_html: { rows: 5, cols: 60 }
+    = p.input :description, as: :string
     = p.input :create_year
     = p.input :size
     = p.input :technique
