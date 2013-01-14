@@ -18,6 +18,7 @@ group :development, :test do
   gem 'factory_girl_rails'
 end
 
+gem 'taps'
 gem 'nested_form'
 gem 'country_select'
 gem "recaptcha", :require => "recaptcha/rails"

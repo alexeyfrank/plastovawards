@@ -80,7 +80,6 @@
 %section.wrap-forms  
   = simple_nested_form_for(@member) do |f|
     .web-form.web-form-register
-      .load-photo
       %h2 Регистрация участника
       = f.input :first_name, label: false, placeholder: "Фамилия", wrapper_html: { class: "form-line" }, input_html: { class: "input-name" }
       = f.input :last_name, label: false, placeholder: "Имя", wrapper_html: { class: "form-line" }, input_html: { class: "input-lastname" }
@@ -100,14 +99,17 @@
           %span.load-photo-preview
           %span.load-photo-preview
           %span.load-photo-preview
+
+        .form-line.form-line-load-photo
+          .load-photo
+
       = f.simple_fields_for :pictures do |picture_form|
-        %h4 Новая работа
-        = picture_form.input :description
-        = picture_form.input :create_year
-        = picture_form.input :size
-        = picture_form.input :technique
-        = picture_form.input :file
-        = picture_form.link_to_remove "Remove picture"
+        = picture_form.input :description, label: false, placeholder: "Описание картины", wrapper_html: { class: "form-line" }
+        = picture_form.input :create_year, label: false, placeholder: "Дата создания", wrapper_html: { class: "form-line" }, input_html: { class: "input-year-create" } 
+        = picture_form.input :size, label: false, placeholder: "Размер картины (см)", wrapper_html: { class: "form-line" }, input_html: { class: "input-year-size" } 
+        = picture_form.input :technique, label: false, placeholder: "Техника исполнения", wrapper_html: { class: "form-line" }, input_html: { class: "input-technics" } 
+        = picture_form.input :file, as: :file
+        /= picture_form.link_to_remove "Remove picture"
       
     / = f.link_to_add "Add picture", :pictures
     .wrap-button-register

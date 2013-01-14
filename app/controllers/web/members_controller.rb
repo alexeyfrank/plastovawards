@@ -4,7 +4,7 @@ class Web::MembersController < Web::ApplicationController
     header_img :participation
     @years = Member.years
     @nominations = Nomination.published.all
-    @q = Member.search(params[:q])
+    @q = Member.includes(:pictures).search(params[:q])
     @members = @q.result
   end
   

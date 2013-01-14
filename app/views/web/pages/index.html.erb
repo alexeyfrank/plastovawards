@@ -9,9 +9,9 @@
         <% if !@pictures_group1.blank? %>
           <% @pictures_group1.each_with_index do |p, i| %>
             <% if !p.blank? %>
-            <div class="b-laureate b-laureate<%= i + 1 %>">
+            <div class="b-laureate b-laureate<%= p.main_page_type %>">
               <div class="b-laureate-frame">
-                <img src="<%= p.file.url %>" width="<%= p.width %>" height="<%= p.height %>" alt="" title="" />
+                <img src="<%= p.file.main_page.url %>" width="<%= p.main_page_width %>" height="<%= p.main_page_height %>" alt="" title="" />
                 <div class="b-laureate-desc">
                   <span class="b-laureate-desc-author"><%= p.member.fio %>,</span>
                   <span class="b-laureate-desc-city"><%= p.member.city %></span>
@@ -27,16 +27,16 @@
         <% if !@pictures_group2.blank? %>
           <% @pictures_group2.each_with_index do |p, i| %>
             <% if !p.blank? %>
-            <div class="b-laureate b-laureate<%= i + 1 %>">
+            <div class="b-laureate b-laureate<%= p.main_page_type %>">
               <div class="b-laureate-frame">
-                <img src="<%= p.file.url %>" width="<%= p.width %>" height="<%= p.height %>" alt="" title="" />
+                <img src="<%= p.file.main_page.url %>" width="<%= p.main_page_width %>" height="<%= p.main_page_height %>" alt="" title="" />
                 <div class="b-laureate-desc">
                   <span class="b-laureate-desc-author"><%= p.member.fio %>,</span>
                   <span class="b-laureate-desc-city"><%= p.member.city %></span>
                   <span class="b-laureate-desc-picture"><%= p.description %></span>
                 </div>
               </div>
-            </div>      
+            </div>          
             <% end %>
           <% end %>
         <% end %>

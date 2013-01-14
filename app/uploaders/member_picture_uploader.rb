@@ -1,21 +1,21 @@
 # encoding: utf-8
 
 class MemberPictureUploader < CarrierWave::Uploader::Base
+  include CarrierWave::MiniMagick
 
-  # Include RMagick or MiniMagick support:
-  # include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
+  permissions 0777
 
   # Include the Sprockets helpers for Rails 3.1+ asset pipeline compatibility:
   # include Sprockets::Helpers::RailsHelper
   # include Sprockets::Helpers::IsolatedHelper
 
-  # Choose what kind of storage to use for this uploader:
   storage :file
-  # storage :fog
+  
 
-  # Override the directory where uploaded files will be stored.
-  # This is a sensible default for uploaders that are meant to be mounted:
+  def cache_dir
+    '/tmp/projectname-cache'
+  end
+
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
@@ -28,28 +28,47 @@ class MemberPictureUploader < CarrierWave::Uploader::Base
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end
 
-  # Process files as they are uploaded:
-  # process :scale => [200, 300]
-  #
-  # def scale(width, height)
-  #   # do something
-  # end
-
   # Create different versions of your uploaded files:
   # version :thumb do
   #   process :scale => [50, 50]
   # end
+  
+  def self.get_random_gallery_type(orientation)
+    MemberPicture.gallery_types[orientation].sample
+  end
+  
+  def self.get_random_main_page_type(orientation)
+    MemberPicture.main_page_types[orientation].sample
+  end
+  
+  
+  version :main_page do
+    process :prepare_to_main_page
+  end
+  
+  def prepare_to_main_page
+    orientation = model.get_orientation
+    type = MemberPictureUploader.get_random_main_page_type orientation
+    model.main_page_type = type[:id]
+    model.main_page_width = type[:width]
+    model.main_page_height = type[:height]
+    resize_to_fill type[:width], type[:height]
+  end
+  
+  version :gallery do
+    process :prepare_to_gallery
+  end
+  
+  def prepare_to_gallery
+    orientation = model.get_orientation
+    type = MemberPictureUploader.get_random_gallery_type orientation
+    model.gallery_type = type[:id]
+    model.gallery_width = type[:width]
+    model.gallery_height = type[:height]
+    resize_to_fill type[:width], type[:height]
+  end
 
-  # Add a white list of extensions which are allowed to be uploaded.
-  # For images you might use something like this:
   def extension_white_list
     %w(jpg jpeg png)
   end
-
-  # Override the filename of the uploaded files:
-  # Avoid using model.id or version_name here, see uploader/store.rb for details.
-  # def filename
-  #   "something.jpg" if original_filename
-  # end
-
 end

@@ -1,6 +1,6 @@
 <section class="wrap-filter-work">
   <div class="wrap overflow">
-  	<h1>ЛАУРЕАТЫ 2012 ГОДА</h1>
+  	<h1>Галерея  участников</h1>
   	<button class="button-toggle-filter"><span>Фильтр</span></button>
   </div>
   <div class="filter-work">
@@ -43,10 +43,10 @@
   <% @members.each do |m| %>
   	<section class="b-stat-work">
       <% m.pictures.each_with_index do |p, i| %>
-  		<ul class="b-stat-work<%= i + 1 %>">
+  		<ul class="b-stat-work<%= p.gallery_type %>">
   			<li class="b-stat-work-picture">
   				<span class="b-stat-work-frame"></span>
-  				<img src="<%= p.file.url %>" width="<%= p.width %>" height="<%= p.height %>" alt="" title="">
+  				<img src="<%= p.file.gallery.url %>" width="<%= p.gallery_width %>" height="<%= p.gallery_height %>" alt="" title="">
   			</li>
   			<li class="b-stat-work-picture-name"><%= p.description %></li>
   			<li class="b-stat-work-author"><a href="#"><%= m.fio %>,</a></li>
