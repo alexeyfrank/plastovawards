@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130113181338) do
+ActiveRecord::Schema.define(:version => 20130114032030) do
 
   create_table "bid_states", :force => true do |t|
     t.string   "name"
@@ -58,6 +58,8 @@ ActiveRecord::Schema.define(:version => 20130113181338) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "file"
+    t.integer  "width"
+    t.integer  "height"
   end
 
   create_table "members", :force => true do |t|
@@ -68,16 +70,12 @@ ActiveRecord::Schema.define(:version => 20130113181338) do
     t.string   "city"
     t.string   "phone"
     t.string   "email"
-    t.integer  "competition_state_id"
-    t.integer  "bid_state_id"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
     t.integer  "nomination_id"
     t.integer  "year"
+    t.string   "state"
   end
-
-  add_index "members", ["bid_state_id"], :name => "index_members_on_bid_state_id"
-  add_index "members", ["competition_state_id"], :name => "index_members_on_competition_state_id"
 
   create_table "menu_item_translations", :force => true do |t|
     t.integer  "menu_item_id"

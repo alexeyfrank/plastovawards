@@ -1,5 +1,5 @@
 class MemberPicture < ActiveRecord::Base
-  attr_accessible :create_year, :description, :member, :size, :technique, :file
+  attr_accessible :create_year, :description, :member, :size, :technique, :file, :width, :height
   
   
   validates :create_year, presence: true

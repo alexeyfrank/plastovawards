@@ -3,16 +3,14 @@
 = simple_nested_form_for(@member, url: admin_member_path(@member)) do |f|
   = f.input :first_name
   = f.input :last_name
-  = f.input :country
+  = f.input :country, as: :string
   = f.input :city
   = f.input :email
   = f.input :phone
   = f.input :year
   = f.input :birth_year
   = f.input :nomination_id, as: :select, collection: Nomination.published, include_blank: false
-  = f.input :bid_state_id, as: :select, collection: @bid_states, include_blank: false
-  = f.input :competition_state_id, as: :select, collection: @competition_states, include_blank: false
-  
+  = f.input :state_event, as: :select, collection: @member.state_events
   %h3 Работы
   
   = f.simple_fields_for :pictures do |p|

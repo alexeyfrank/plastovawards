@@ -77,10 +77,10 @@
 %section.wrap
   %h1 Подать заявку на участие
   %p Для участия в премии Вам необходимо отправить фото ваших картин.
-  
 %section.wrap-forms  
   = simple_nested_form_for(@member) do |f|
     .web-form.web-form-register
+      .load-photo
       %h2 Регистрация участника
       = f.input :first_name, label: false, placeholder: "Фамилия", wrapper_html: { class: "form-line" }, input_html: { class: "input-name" }
       = f.input :last_name, label: false, placeholder: "Имя", wrapper_html: { class: "form-line" }, input_html: { class: "input-lastname" }
@@ -110,4 +110,5 @@
         = picture_form.link_to_remove "Remove picture"
       
     / = f.link_to_add "Add picture", :pictures
-    = f.submit
+    .wrap-button-register
+      = f.submit "Зарегистрироваться", class: "button button-register" 

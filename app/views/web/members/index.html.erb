@@ -1,0 +1,58 @@
+<section class="wrap-filter-work">
+  <div class="wrap overflow">
+  	<h1>ЛАУРЕАТЫ 2012 ГОДА</h1>
+  	<button class="button-toggle-filter"><span>Фильтр</span></button>
+  </div>
+  <div class="filter-work">
+    <%= search_form_for (@q) do |f| %>
+  		<div class="filter-work-nominations">
+      <h2>Номинации</h2>
+        <ul>
+        <% @nominations.each do |n| %>
+          <li>
+            <%= check_box_tag 'q[nomination_id_in][]', n.id %>
+            <%= f.label n.name %>
+          </li>
+        <% end %>
+        </ul>
+      </div>
+  		<div class="filter-work-years">
+  			<h2>Года:</h2>
+        <ul>
+          <% @years.each do |y| %>
+          <li>
+            <%= check_box_tag "q[year_in][]", y %>
+            <%= f.label y %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+  		<div class="filter-work-authors">
+  			<h2>Авторы:</h2>
+  			<div class="filter-live-search">
+          <%= f.text_field :first_name_or_last_name_cont %>
+  			</div>
+  		</div>
+      
+  		<input type="submit" class="button button-filter" value="Отфильтровать">
+  		<input type="submit" class="button button-show-all" value="Показать все">
+    <% end %>
+  </div>
+  </section>
+  <section class="wrap">
+  <% @members.each do |m| %>
+  	<section class="b-stat-work">
+      <% m.pictures.each_with_index do |p, i| %>
+  		<ul class="b-stat-work<%= i + 1 %>">
+  			<li class="b-stat-work-picture">
+  				<span class="b-stat-work-frame"></span>
+  				<img src="<%= p.file.url %>" width="<%= p.width %>" height="<%= p.height %>" alt="" title="">
+  			</li>
+  			<li class="b-stat-work-picture-name"><%= p.description %></li>
+  			<li class="b-stat-work-author"><a href="#"><%= m.fio %>,</a></li>
+  			<li><%= m.city %></li>
+  		</ul>
+      <% end %>
+    </section>
+  <% end %>
+</section>

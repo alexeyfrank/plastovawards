@@ -9,15 +9,17 @@
       %th= t('activerecord.attributes.member.fio')
       %th= t('activerecord.attributes.member.city')
       %th= t('activerecord.attributes.member.email')
+      %th= t('activerecord.attributes.member.state')
       %th= t('activerecord.attributes.member.pictures_count')
       %th.actions-col
   %tbody
     - @members.each do |m|
       %tr
         %td.id-col= m.id
-        %td= link_to "#{m.first_name} #{m.last_name}", edit_admin_member_path(m)
+        %td= link_to m.fio, edit_admin_member_path(m)
         %td= m.city
         %td= m.email
+        %td= m.human_state_name
         %td= m.pictures.count
         %td.actions-col
           = link_to t('views.admin.members.index.edit'), edit_admin_member_path(m), class: 'btn btn-info'

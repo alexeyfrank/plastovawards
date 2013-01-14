@@ -2,13 +2,16 @@ class Web::MembersController < Web::ApplicationController
   
   def index
     header_img :participation
-    @members = Member.all
+    @years = Member.years
+    @nominations = Nomination.published.all
+    @q = Member.search(params[:q])
+    @members = @q.result
   end
   
   def new
     header_img :participation
     @member = Member.new
-    4.times { @member.pictures.build }
+    @member.pictures.build
   end
 
   def create
