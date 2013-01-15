@@ -7,7 +7,7 @@ class Web::FeedbackController < Web::ApplicationController
   def create
     header_img 'ask-question'
     @feed = Feedback.new params[:feedback]
-    if verify_recaptcha(model: @feed, message: "Invalid code!") && @feed.save 
+    if @feed.save 
       flash[:notice] = "Thank for your question!"
     else
       flash[:notice] = "Got some errors!"

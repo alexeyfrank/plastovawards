@@ -1,12 +1,11 @@
 <section class="wrap-forms">
   <h3><%= flash[:notice] %></h3>
-  <section class="web-form web-form-register">
+  <section class="web-form web-form-register" style="float:none; margin:0 auto;">
     <h2>Обратная связь</h2>
     <%= simple_form_for @feed, url: feedback_index_path do |f| %>
     <%= f.input :email, as: :string, label: false, placeholder: "E-mail", wrapper_html: { class: "form-line" }, input_html: { class: "input-email" } %>
       <%= f.input :phone, as: :string, label: false, placeholder: "Телефон", wrapper_html: { class: "form-line" }, input_html: { class: "input-phone" } %>
-      <%= f.input :text, as: :text, label: false, placeholder: "Вопрос", wrapper_html: { class: "form-line" }, input_html: { class: "input-name" } %>
-      <%= recaptcha_tags %>
+      <%= f.input :text, as: :text, label: false, placeholder: "Вопрос", wrapper_html: { class: "form-line" }, input_html: { class: "input-description", style: "width: 265px; height:220px; background-image: none;"} %>
       <%= f.submit "Отправить", class: "button button-register"  %>
     <% end %>
 </section>
