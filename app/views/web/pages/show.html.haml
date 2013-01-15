@@ -1,2 +1,5 @@
-%section.wrap
+- if @page.slug != 'award-condition'
+  %section.wrap
+    = @page.content.html_safe
+- else
   = @page.content.html_safe

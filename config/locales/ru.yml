@@ -55,12 +55,14 @@ ru:
         src: '/img/titles/default.png'
         width: '1082'
         height: '324'
-        body_class: ''
+        body_class: 'page-home'
       about-plastov: &about-plastov 
         src: '/img/titles/about.png'
         width: '995'
         height: '307'
         body_class: 'page-about'
+      bio:
+        <<: *about-plastov
       gallery:
         <<: *about-plastov
       expositions:
@@ -90,7 +92,7 @@ ru:
         src: '/img/titles/participation.png'
         width: '872'
         height: '357'
-        body_class: ''
+        body_class: 'page-participation'
       how-to-join:
         <<: *participation
       contacts:
@@ -100,7 +102,7 @@ ru:
         src: '/img/titles/news.png'
         width: '871'
         height: '363'
-        body_class: ''
+        body_class: 'page-news'
       smi:
         <<: *news
         
@@ -108,13 +110,13 @@ ru:
         src: '/img/titles/gallery.png'
         width: '963'
         height: '360'
-        body_class: ''
+        body_class: 'page-personal'
         
       ask-question:
         src: '/img/titles/ask-question.png'
         width: '1095'
         height: '388'
-        body_class: ''
+        body_class: 'page-question'
         
   views:
 

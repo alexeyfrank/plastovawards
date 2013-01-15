@@ -11,7 +11,9 @@
             <% if !p.blank? %>
             <div class="b-laureate b-laureate<%= p.main_page_type %>">
               <div class="b-laureate-frame">
-                <img src="<%= p.file.main_page.url %>" width="<%= p.main_page_width %>" height="<%= p.main_page_height %>" alt="" title="" />
+								<a class="fancybox" rel="group" href="<%= p.file.url %>">
+                  <img src="<%= p.file.main_page.url %>" width="<%= p.main_page_width %>" height="<%= p.main_page_height %>" alt="" title="" />
+                </a>
                 <div class="b-laureate-desc">
                   <span class="b-laureate-desc-author"><%= p.member.fio %>,</span>
                   <span class="b-laureate-desc-city"><%= p.member.city %></span>
@@ -29,7 +31,9 @@
             <% if !p.blank? %>
             <div class="b-laureate b-laureate<%= p.main_page_type %>">
               <div class="b-laureate-frame">
-                <img src="<%= p.file.main_page.url %>" width="<%= p.main_page_width %>" height="<%= p.main_page_height %>" alt="" title="" />
+								<a class="fancybox" rel="group" href="<%= p.file.url %>">
+                  <img src="<%= p.file.main_page.url %>" width="<%= p.main_page_width %>" height="<%= p.main_page_height %>" alt="" title="" />
+                </a>
                 <div class="b-laureate-desc">
                   <span class="b-laureate-desc-author"><%= p.member.fio %>,</span>
                   <span class="b-laureate-desc-city"><%= p.member.city %></span>

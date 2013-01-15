@@ -40,19 +40,19 @@
   </div>
   </section>
   <section class="wrap">
-  <% @members.each do |m| %>
   	<section class="b-stat-work">
-      <% m.pictures.each_with_index do |p, i| %>
-  		<ul class="b-stat-work<%= p.gallery_type %>">
-  			<li class="b-stat-work-picture">
-  				<span class="b-stat-work-frame"></span>
-  				<img src="<%= p.file.gallery.url %>" width="<%= p.gallery_width %>" height="<%= p.gallery_height %>" alt="" title="">
-  			</li>
-  			<li class="b-stat-work-picture-name"><%= p.description %></li>
-  			<li class="b-stat-work-author"><a href="#"><%= m.fio %>,</a></li>
-  			<li><%= m.city %></li>
-  		</ul>
+      <% @members.each do |m| %>
+          <% m.pictures.each_with_index do |p, i| %>
+      		<ul class="b-stat-work<%= p.gallery_type %>">
+      			<li class="b-stat-work-picture">
+      				<span class="b-stat-work-frame"></span>
+      				<img src="<%= p.file.gallery.url %>" width="<%= p.gallery_width %>" height="<%= p.gallery_height %>" alt="" title="">
+      			</li>
+      			<li class="b-stat-work-picture-name"><%= p.description %></li>
+      			<li class="b-stat-work-author"><a href="#"><%= m.fio %>,</a></li>
+      			<li><%= m.city %></li>
+      		</ul>
+          <% end %>
       <% end %>
-    </section>
-  <% end %>
+  </section>
 </section>

@@ -12,6 +12,9 @@
 
 	<link rel="stylesheet" href="/css/normalize.css">
 	<link rel="stylesheet" href="/css/jquery.jscrollpane.css">
+	<link rel="stylesheet" href="/css/jquery.fancybox.css">
+	<link rel="stylesheet" href="/css/cusel.css">
+	<link rel="stylesheet" href="/css/fineuploader.css">
 	<link rel="stylesheet" href="/css/main.css">
 	<script src="/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
@@ -22,6 +25,9 @@
 <div class="parallax2">
 	<img class="parallax" src="/img/parallax/parallax2.png">
 </div>
+<div class="parallax3">
+	<img class="parallax" src="/img/parallax/parallax3.png">
+</div>
 
 <div id="wrapper">
 
@@ -29,14 +35,14 @@
 		<section class="header-top">
 			<div class="wrap">
 				<ul class="service-menu">
-					<li><a href="/" class="service-main-page"></a></li>
+					<li class="<%= 'active' if current_page?(root_path) %>"><a href="/" class="service-main-page"></a></li>
 					<li><a href="#" class="service-mail"></a></li>
 					<li><a href="#" class="service-map"></a></li>
 				</ul>
 				<ul class="select-lang">
-					<li><a href="<%= url_for(locale: :ru) %>" class="lang-rus <%= 'active' if locale == :ru %>"></a></li>
-					<li><a href="<%= url_for(locale: :en) %>" class="lang-en <%= 'active' if locale == :en %>"></a></li>
-					<li><a href="<%= url_for(locale: :de) %>" class="lang-de <%= 'active' if locale == :de %>"></a></li>
+					<li class="<%= 'active' if locale == :ru %>">><a href="<%= url_for(locale: :ru) %>" class="lang-rus <%= 'active' if locale == :ru %>"></a></li>
+					<li class="<%= 'active' if locale == :en %>"><a href="<%= url_for(locale: :en) %>" class="lang-en <%= 'active' if locale == :en %>"></a></li>
+					<li class="<%= 'active' if locale == :de %>"><a href="<%= url_for(locale: :de) %>" class="lang-de <%= 'active' if locale == :de %>"></a></li>
 				</ul>
 				<ul class="social-networks">
 					<li><a href="<%= Settings.twitter_url %>" target="_blank"><img src="/img/icon-twitter.png" width="8" height="13" alt="" title="" /></a></li>
@@ -122,6 +128,8 @@
 <script type="text/javascript" src="/js/fineuploader/dnd.js"></script>
 <script type="text/javascript" src="/js/fineuploader/uploader.js"></script>
 <script type="text/javascript" src="/js/fineuploader/jquery-plugin.js"></script>
+
+<script type="text/javascript" src="/js/jquery.fancybox.pack.js"></script>
 
 <script type="text/javascript" src="/js/main.js"></script>
 </body>
