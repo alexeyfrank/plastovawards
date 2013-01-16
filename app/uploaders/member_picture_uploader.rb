@@ -9,14 +9,11 @@ class MemberPictureUploader < CarrierWave::Uploader::Base
   # include Sprockets::Helpers::RailsHelper
   # include Sprockets::Helpers::IsolatedHelper
 
-  storage :file
+  # storage :file
+  storage :fog
   
-  def cache_dir
-    "#{Rails.root}/tmp/uploads"
-  end
-
   def store_dir
-    "#{Rails.root}/tmp/uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
