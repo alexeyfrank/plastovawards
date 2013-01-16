@@ -11,13 +11,12 @@ class MemberPictureUploader < CarrierWave::Uploader::Base
 
   storage :file
   
-
   def cache_dir
-    '/tmp/projectname-cache'
+    "#{Rails.root}/tmp/uploads"
   end
 
   def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    "#{Rails.root}/tmp/uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
