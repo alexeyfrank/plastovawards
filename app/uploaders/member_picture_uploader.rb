@@ -9,13 +9,9 @@ class MemberPictureUploader < CarrierWave::Uploader::Base
   # include Sprockets::Helpers::RailsHelper
   # include Sprockets::Helpers::IsolatedHelper
 
-  storage :file
+  # storage :file
+  storage :fog
   
-
-  def cache_dir
-    '/tmp/projectname-cache'
-  end
-
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end

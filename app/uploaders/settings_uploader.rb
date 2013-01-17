@@ -17,7 +17,11 @@ class SettingsUploader < CarrierWave::Uploader::Base
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    "public/uploads/settings"
+    "#{Rails.root}/tmp/uploads/settings"
+  end
+  
+  def cache_dir
+    "#{Rails.root}/tmp/uploads"
   end
 
   def extension_white_list
