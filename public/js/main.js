@@ -14,7 +14,15 @@ $(document).ready(function(){
 
 initParallax = function() {
 	$('.parallax').plaxify({"xRange":100,"yRange":0});
-	$.plax.enable()
+	$.plax.enable();
+
+	var heightWrapper = $('#wrapper').height();
+	var parallax2 = $('.parallax2');
+	var heightParallax2 = parallax2.height() + parallax2.position().top;
+
+	if(heightParallax2 >= heightWrapper) {
+		parallax2.css('top','300px');
+	}
 };
 
 initReplaceCursorIphone = function() {
