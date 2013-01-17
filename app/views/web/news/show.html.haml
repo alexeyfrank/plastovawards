@@ -2,7 +2,8 @@
   = link_to t("views.news.back_btn"), news_category_path(@news.category_id), style: "float:right"
   %h1= @news.title
   
-  = @news.content.html_safe
+  - if !@news.content.blank?
+    = @news.content.html_safe
   
   %p{ style: "text-align:right" }
     = link_to t("views.news.back_btn"), news_category_path(@news.category_id)
