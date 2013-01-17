@@ -4,4 +4,5 @@
   
   = @news.content.html_safe
   
-  = link_to t("views.news.back_btn"), news_category_path(@news.category_id), style: "float:right"
+  %p{ style: "text-align:right" }
+    = link_to t("views.news.back_btn"), news_category_path(@news.category_id)
