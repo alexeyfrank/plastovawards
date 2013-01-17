@@ -153,10 +153,6 @@ h3 {
 
 }
 
-h4 {
-	margin: 0 0 15px;
-}
-
 p {
 	margin: 0 0 15px;
 }
@@ -2317,6 +2313,10 @@ blockquote.blockquote-nas {
 
 .web-form-load-pictures .jspDrag {
 	background: url(../img/jspDragPhoto.png) no-repeat;
+}
+
+.list-news h4 {
+	margin: 0 0 25px;
 }
 
 .list-news h4 a {
