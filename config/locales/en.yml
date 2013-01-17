@@ -164,6 +164,13 @@ en:
           title: "Редактирование страницы"
 
   activerecord:
+    errors:
+      models:
+        feedback:
+          attributes:
+            email:
+              email: "E-mail not valid"
+
     state_machines:
       news:
         published: "Опубликована"
