@@ -8,9 +8,9 @@ class Web::FeedbackController < Web::ApplicationController
     header_img 'ask-question'
     @feed = Feedback.new params[:feedback]
     if @feed.save 
+      flash[:notice] = t 'views.feedback.success_message'
       redirect_to new_feedback_path
     else
-      flash[:notice] = "Got some errors!"
       render :new
     end
   end

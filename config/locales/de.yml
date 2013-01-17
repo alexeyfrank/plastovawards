@@ -141,6 +141,8 @@ de:
       phone: "Phone"
       question: "Question"
       send_btn: "Send"
+      success_message: "Message has been sent!"
+      ask_new_question: "Ask new question!"
       
     sessions:
       user_successfully_logged_in: "Аутентификация прошла успешно!"

@@ -138,6 +138,8 @@ ru:
       phone: "Телефон"
       question: "Вопрос"
       send_btn: "Отправить"
+      success_message: "Сообщение успешно отправлено!"
+      ask_new_question: "Задать еще вопрос!"
 
     admin:
       users:
