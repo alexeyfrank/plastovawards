@@ -3,6 +3,7 @@ $(document).ready(function(){
 	initMainMenu();
 	initEvents();
 	initPopUp();
+	initFancybox();
 	initPolozhenie();
 	initLaureate();
 	initFilter();
@@ -20,7 +21,32 @@ initReplaceCursorIphone = function() {
 	var deviceAgent = navigator.userAgent.toLowerCase();
 	var agentID = deviceAgent.match(/(iphone|ipod|ipad)/);
 	if (agentID) {
+		var fl = 0;
+		$('body').bind('tapone',function(el,ev){
+			var pageX = ev.originalEvent.pageX;
+			var pageY = ev.originalEvent.pageY;
 
+			$('body').prepend('<div class="blot"></div>');
+			var blot = $('.blot');
+			if(fl == 1) {
+				blot.addClass('yellow');
+			}
+
+			blot.css({
+				'left' : pageX - blot.width()/2,
+				'top' : pageY - blot.height()/2
+			});
+
+			setTimeout(function(){
+				blot.remove();
+				if(fl == 1) {
+					fl = 0;
+				}
+				else {
+					fl = 1;
+				}
+			}, 100)
+		});
 	}
 };
 
@@ -59,7 +85,19 @@ initForms = function() {
 		cuSel(params);
 	}
 
-	$('.web-form-register .load-photo').fineUploader({
+	/* Form Register */
+	initFormRegister();
+
+	/* Form Load Pictures */
+	initFormLoadPictures();
+};
+
+initFormRegister = function() {
+	var formRegister = $('.web-form-register');
+	if(!formRegister.length) {
+		return false;
+	}
+	formRegister.find('.load-photo').fineUploader({
 		request: {
 			endpoint: '/uploads/success.html'
 		},
@@ -78,39 +116,43 @@ initForms = function() {
 	})
 	.on('complete', function(event, id, filename, responseJSON){
 		if (responseJSON.success) {
-			$('.web-form-register .load-photo-preview').html('<img src="/img/picture/picture1.jpg" alt="' + filename + '"><span class="delete-photo"></span>');
+			formRegister.find('.load-photo-preview').html('<img src="/img/picture/picture1.jpg" alt="' + filename + '"><span class="delete-photo"></span>');
 		}
 	});
 
-	$('.web-form-register .delete-photo').live('click',function(){
+	formRegister.find('.delete-photo').live('click',function(){
 		$(this).parent().html('');
 	});
+};
 
+initFormLoadPictures = function() {
+	var formLoadPictures = $('.web-form-load-pictures');
+	if(!formLoadPictures.length) {
+		return false;
+	}
 	var addedFiles = 0;
 	var fileCount = 3;
 	var fileLimit = 10;
 
 	widthScrollPane = function() {
-		$('.web-form-load-pictures .form-line-photo').width(
-			($('.web-form-load-pictures .load-photo-preview').length*90)-5
+		formLoadPictures.find('.form-line-photo').width(
+			(formLoadPictures.find('.load-photo-preview').length*90)-5
 		);
 	};
-
-	var scroll_pane = $('.web-form-load-pictures .scroll-pane');
 	widthScrollPane();
+	var scroll_pane = formLoadPictures.find('.scroll-pane');
 	var scroll = scroll_pane.jScrollPane({
 		showArrows: false,
 		horizontalDragMaxWidth: 23,
 		autoReinitialise: true,
 		autoReinitialiseDelay: 100
 	}).data('jsp');
-
 	setInterval(function() {
 		widthScrollPane();
 		scroll.reinitialise();
 	}, 100);
 
-	$('.web-form-load-pictures .load-photo').fineUploader({
+	formLoadPictures.find('.load-photo').fineUploader({
 		request: {
 			endpoint: '/uploads/success.html'
 		},
@@ -131,9 +173,10 @@ initForms = function() {
 		if (responseJSON.success) {
 			addedFiles ++;
 
-			var photo_active = $('.web-form-load-pictures .load-photo-preview.active');
+			var photo_active = formLoadPictures.find('.load-photo-preview.active');
 			if(addedFiles >= fileCount) {
 				photo_active.after('<span class="load-photo-preview"></span>');
+				//scroll.getContentPane().find('form-line-photo').append('<span class="load-photo-preview"></span>');
 			}
 
 			photo_active
@@ -144,11 +187,13 @@ initForms = function() {
 		}
 	});
 
-	$('.web-form-load-pictures .delete-photo').live('click',function(){
-		$(this).parent().remove();
+	formLoadPictures.find('.delete-photo').live('click',function(){
+		$(this)
+			.parent()
+			.remove();
 		if(addedFiles < fileCount) {
-			$('.web-form-load-pictures .load-photo-preview.active')
-				.after('<span class="load-photo-preview"></span>');
+			formLoadPictures.find('.load-photo-preview.active').after('<span class="load-photo-preview"></span>');
+			//scroll.getContentPane().append('<span class="load-photo-preview"></span>');
 		}
 		addedFiles --;
 	});
@@ -160,7 +205,7 @@ initLaureate = function() {
 		return false;
 	}
 
-	laureate.width($('.b-laureate-item').length*978);
+	laureate.width($('.b-laureate-item').length * 978);
 	var scroll = $('.scroll-pane').jScrollPane({
 		showArrows: false,
 		horizontalDragMaxWidth: 190,
@@ -187,13 +232,30 @@ initLaureate = function() {
 
 	$('.jspTrack').prepend('<div class="jspTrackColor"></div>');
 
-	$('.b-laureate-frame').hover(
-		function(){
-			$(this)
-				.find('.b-laureate-desc')
-				.toggle();
+	$('.b-laureate-frame').hover(function(){
+		$(this).find('.b-laureate-desc').toggle();
+	});
+};
+
+initFancybox = function() {
+	var fancybox = $(".fancybox");
+	if(!fancybox.length) {
+		return false;
+	}
+
+	fancybox.fancybox({
+		padding: 20,
+		tpl: {
+			closeBtn : '<a title="Закрыть" class="fancybox-item fancybox-close" href="javascript:;"></a>',
+			next     : '<a title="Вперед" class="fancybox-nav fancybox-next" href="javascript:;"><span></span></a>',
+			prev     : '<a title="Назад" class="fancybox-nav fancybox-prev" href="javascript:;"><span></span></a>'
 		}
-	);
+	});
+
+	$('.b-laureate-desc').click(function(){
+		$(this).prev().click();
+		return false;
+	});
 };
 
 initPopUp = function() {
@@ -213,7 +275,7 @@ initPopUp = function() {
 			.show()
 			.css({
 				'left' : offset.left,
-				'top'  : offset.top - pop_up.outerHeight() + 10
+				'top'  : offset.top - pop_up.outerHeight() - 20
 			});
 		return false;
 	});
@@ -287,7 +349,7 @@ initPolozhenie = function() {
 		return false;
 	}
 
-	$('.next-top,.next-bottom,.prev-top,.prev-bottom').click(function(){
+	$('.next-top.active,.next-bottom.active,.prev-top.active,.prev-bottom.active').click(function(){
 		$('html, body').animate({scrollTop:0},'slow');
 	});
 
@@ -297,10 +359,10 @@ initPolozhenie = function() {
 			fx: 'crossfade'
 		},
 		next : {
-			button: $('.next-top,.next-bottom')
+			button: $('.next-top.active,.next-bottom.active')
 		},
 		prev : {
-			button: $('.prev-top,.prev-bottom')
+			button: $('.prev-top.active,.prev-bottom.active')
 		}
 	});
 };

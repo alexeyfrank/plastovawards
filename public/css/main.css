@@ -992,7 +992,7 @@ ul, ol {
 }
 
 /* Events */
-.page-home .caroufredsel_wrapper {
+.wrap-b-events .caroufredsel_wrapper {
 	width: 1004px !important;
 	margin: 0 auto !important;
 }
@@ -1229,6 +1229,11 @@ ul, ol {
 	font: 24px/21px "siemens_slabbold";
 }
 
+.b-events-en .b-event5-date span,
+.b-events-de .b-event5-date span {
+	left: 63px;
+}
+
 .b-event5-date span b {
 	font-size: 18px;
 }
@@ -1237,7 +1242,6 @@ ul, ol {
 	width: 160px;
 	float: right;
 }
-
 
 /* Laureate */
 .wrap-laureate {
@@ -1798,7 +1802,32 @@ blockquote.blockquote-nas {
 	display: inline-block;
 	width: 62px;
 	height: 50px;
+	cursor: default;
+	background: url(../img/arrows-poloz.png) no-repeat;
+}
+
+.polozhenie span.active {
 	cursor: pointer;
+}
+
+.polozhenie .next-top,
+.polozhenie .next-bottom {
+	background-position: -62px 0;
+}
+
+.polozhenie .next-top.active,
+.polozhenie .next-bottom.active {
+	background-position: -62px -50px;
+}
+
+.polozhenie .prev-top,
+.polozhenie .prev-bottom {
+	background-position: 0 0;
+}
+
+.polozhenie .prev-top.active,
+.polozhenie .prev-bottom.active {
+	background-position: 0 -50px;
 }
 
 .polozhenie .prev-top {
@@ -1817,23 +1846,8 @@ blockquote.blockquote-nas {
 }
 
 .polozhenie .next-bottom {
-	left: 968px;
+	left: 975px;
 	bottom: 78px;
-}
-
-.polozhenie .polozhenie2 .next-bottom {
-	left: 988px;
-	bottom: 73px;
-}
-
-.polozhenie .polozhenie2 .prev-bottom {
-	left: 912px;
-	bottom: 73px;
-}
-
-.polozhenie .polozhenie3 .prev-bottom {
-	left: 906px;
-	bottom: 49px;
 }
 
 /* Page Sort */
