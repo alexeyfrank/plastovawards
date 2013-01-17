@@ -123,7 +123,10 @@ en:
   views:
 
     subscribers:
-      success_subscribe: 'Спасибо за вашу подписку!'
+      success_subscribe: 'Спасибо за вашу подписку!'    
+
+    news:
+      back_btn: "Back"
       
     sessions:
       user_successfully_logged_in: "Аутентификация прошла успешно!"

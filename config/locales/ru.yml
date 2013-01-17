@@ -128,6 +128,9 @@ ru:
       invalid_email_or_password: "Неверное имя пользователя или пароль!"
       new:
         title: "Вход"
+    
+    news:
+      back_btn: "Назад к списку новостей"
 
     admin:
       users:
