@@ -56,13 +56,13 @@ de:
         src: '/img/titles/de-default.png'
         width: '1010'
         height: '280'
-        body_class: 'page-home'
+        body_class: 'page-home-de'
         
       about-plastov: &about-plastov 
         src: '/img/titles/de-about.png'
         width: '1003'
         height: '263'
-        body_class: 'page-about'
+        body_class: 'page-about-de'
       bio:
         <<: *about-plastov
       gallery:
@@ -76,7 +76,7 @@ de:
         src: '/img/titles/de-about-award.png'
         width: '1046'
         height: '252'
-        body_class: 'page-about-award'
+        body_class: 'page-about-award-de'
       award-info:
         <<: *about-award
       governor-order:
@@ -94,7 +94,7 @@ de:
         src: '/img/titles/de-participation.png'
         width: '1050'
         height: '258'
-        body_class: 'page-participation'
+        body_class: 'page-participation-de'
       how-to-join:
         <<: *participation
       contacts:
@@ -104,7 +104,7 @@ de:
         src: '/img/titles/de-news.png'
         width: '1136'
         height: '377'
-        body_class: 'page-news'
+        body_class: 'page-news-de'
       smi:
         <<: *news
         
@@ -112,13 +112,13 @@ de:
         src: '/img/titles/de-gallery.png'
         width: '1077'
         height: '293'
-        body_class: 'page-personal'
+        body_class: 'page-personal-de'
         
       ask-question:
         src: '/img/titles/ask-question.png'
         width: '1095'
         height: '388'
-        body_class: 'page-question'
+        body_class: 'page-question-de'
         
   views:
 
