@@ -131,6 +131,13 @@ ru:
     
     news:
       back_btn: "Назад к списку новостей"
+      
+    feedback:
+      title: "Задать вопрос"
+      email: "E-mail"
+      phone: "Телефон"
+      question: "Вопрос"
+      send_btn: "Отправить"
 
     admin:
       users:

@@ -115,10 +115,10 @@ de:
         body_class: 'page-personal-de'
         
       ask-question:
-        src: '/img/titles/ask-question.png'
-        width: '1095'
-        height: '388'
-        body_class: 'page-question-de'
+        src: '/img/titles/de-participation.png'
+        width: '1050'
+        height: '258'
+        body_class: 'page-participation-de'
         
   views:
 
@@ -127,6 +127,20 @@ de:
       
     news:
       back_btn: "Rückwärts"
+      
+    feedback:
+      title: "Ask a question"
+      email: "E-mail"
+      phone: "Phone"
+      question: "Question"
+      send_btn: "Send"
+      
+    feedback:
+      title: "Ask a question"
+      email: "E-mail"
+      phone: "Phone"
+      question: "Question"
+      send_btn: "Send"
       
     sessions:
       user_successfully_logged_in: "Аутентификация прошла успешно!"

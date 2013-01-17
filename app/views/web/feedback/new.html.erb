@@ -1,12 +1,11 @@
 <section class="wrap">
-  <h3><%= flash[:notice] %></h3>
   <section class="web-form web-form-register" style="float:none; margin:0 auto;">
-    <h2>Обратная связь</h2>
+    <h2><%= t("views.feedback.title") %></h2>
     <%= simple_form_for @feed, url: feedback_index_path do |f| %>
-    <%= f.input :email, as: :string, label: false, placeholder: "E-mail", wrapper_html: { class: "form-line" }, input_html: { class: "input-email" } %>
-      <%= f.input :phone, as: :string, label: false, placeholder: "Телефон", wrapper_html: { class: "form-line" }, input_html: { class: "input-phone" } %>
-      <%= f.input :text, as: :text, label: false, placeholder: "Вопрос", wrapper_html: { class: "form-line" }, input_html: { class: "input-description" } %>
-      <%= f.submit "Отправить", class: "button button-register"  %>
+    <%= f.input :email, as: :string, label: false, placeholder: t("views.feedback.email"), wrapper_html: { class: "form-line" }, input_html: { class: "input-email" } %>
+      <%= f.input :phone, as: :string, label: false, placeholder: t("views.feedback.phone"), wrapper_html: { class: "form-line" }, input_html: { class: "input-phone" } %>
+      <%= f.input :text, as: :text, label: false, placeholder: t("views.feedback.question"), wrapper_html: { class: "form-line" }, input_html: { class: "input-description" } %>
+      <%= f.submit t("views.feedback.send_btn"), class: "button button-register"  %>
     <% end %>
 </section>
 </section>

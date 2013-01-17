@@ -115,10 +115,10 @@ en:
         body_class: 'page-personal-en'
         
       ask-question:
-        src: '/img/titles/ask-question.png'
-        width: '1095'
-        height: '388'
-        body_class: 'page-question-en'
+        src: '/img/titles/en-participation.png'
+        width: '1051'
+        height: '236'
+        body_class: 'page-participation-en'
         
   views:
 
@@ -127,6 +127,13 @@ en:
 
     news:
       back_btn: "Back"
+      
+    feedback:
+      title: "Ask a question"
+      email: "E-mail"
+      phone: "Phone"
+      question: "Question"
+      send_btn: "Send"
       
     sessions:
       user_successfully_logged_in: "Аутентификация прошла успешно!"
