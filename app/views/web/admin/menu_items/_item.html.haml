@@ -16,5 +16,5 @@
       = link_to "Удалить", admin_menu_menu_item_path(@menu.id, item.id), class: 'delete-menu-item-btn', method: :delete
   - if item.has_children?
     %ul
-      - item.children.each do |child|
+      - item.children.order(:position).each do |child|
         = render 'item', item: child    
