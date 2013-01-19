@@ -33,7 +33,7 @@ class News < ActiveRecord::Base
     end
   end
   
-  scope :published_all, -> { where(state: :published) }
+  scope :ordered, -> { order("created_at DESC") }
   def self.published
     news = Arel::Table.new(:news)
     case I18n.locale

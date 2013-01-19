@@ -1,6 +1,6 @@
 class Web::Admin::NewsController < Web::Admin::ApplicationController
   def index
-    @news = News.all
+    @news = News.ordered.all
   end
 
   def new
@@ -36,5 +36,6 @@ class Web::Admin::NewsController < Web::Admin::ApplicationController
     @news = News.find params[:id]
     @news.delete 
     flash[:notice] = "News has successfully destroyed"
+    redirect_to admin_news_index_path
   end
 end

@@ -2,5 +2,5 @@
   %h1= @category.title
 
   .list-news
-    - @category.news.published.each do |news|
+    - @category.news.ordered.published.each do |news|
       %h4= link_to news.title, news_category_news_path(@category, news)
