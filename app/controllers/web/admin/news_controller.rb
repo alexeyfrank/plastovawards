@@ -28,7 +28,7 @@ class Web::Admin::NewsController < Web::Admin::ApplicationController
       redirect_to admin_news_index_path
     else
       flash[:error] = "Got some errors"
-      render edit
+      render :edit
     end
   end
 

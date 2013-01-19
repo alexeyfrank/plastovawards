@@ -15,10 +15,31 @@ class News < ActiveRecord::Base
     event :publish do
       transition :unpublished => :published
     end
+    
+    event :publish_on_ru do
+      transition all - :published_on_ru => :published_on_ru
+    end
+    
+    event :publish_on_en do
+      transition all - :published_on_en => :published_on_en
+    end
+    
+    event :publish_on_de do
+      transition all - :published_on_de => :published_on_de
+    end
+    
     event :unpublish do
       transition :published => :unpublished
     end
   end
   
-  scope :published, -> { where(state: :published) }
+  scope :published_all, -> { where(state: :published) }
+  scope :published, -> {
+    case I18n.locale
+      when :ru then where('"news"."state" = "published" OR "news"."state" = "published_on_ru"')
+      when :en then where('"news"."state" = "published" OR "news"."state" = "published_on_en"')
+      when :de then where('"news"."state" = "published" OR "news"."state" = "published_on_de"')
+    end
+  }
+  
 end
