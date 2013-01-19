@@ -12,6 +12,7 @@ class News < ActiveRecord::Base
   translates :title, :content, :fallbacks_for_empty_translations => true
   
   state_machine :state, initial: :unpublished do
+    
     event :publish do
       transition :unpublished => :published
     end
@@ -20,8 +21,20 @@ class News < ActiveRecord::Base
       transition all - :published_on_ru => :published_on_ru
     end
     
+    event :publish_on_ru_and_en do
+      transition all - :published_on_ru_and_en => :published_on_ru_and_en
+    end
+    
+    event :publish_on_ru_and_de do
+      transition all - :published_on_ru_and_de => :published_on_ru_and_de
+    end
+    
     event :publish_on_en do
       transition all - :published_on_en => :published_on_en
+    end
+    
+    event :publish_on_en_and_de do
+      transition all - :published_on_en_and_de => :published_on_en_and_de
     end
     
     event :publish_on_de do
@@ -29,7 +42,7 @@ class News < ActiveRecord::Base
     end
     
     event :unpublish do
-      transition :published => :unpublished
+      transition all - :unpublished => :unpublished
     end
   end
   
@@ -37,9 +50,9 @@ class News < ActiveRecord::Base
   def self.published
     news = Arel::Table.new(:news)
     case I18n.locale
-      when :ru then where(state: [:published, :published_on_ru])
-      when :en then where(state: [:published, :published_on_en])
-      when :de then where(state: [:published, :published_on_de])
+      when :ru then where(state: [:published, :published_on_ru, :published_on_ru_and_en, :published_on_ru_and_de ])
+      when :en then where(state: [:published, :published_on_en, :published_on_ru_and_en, :published_on_en_and_de ])
+      when :de then where(state: [:published, :published_on_de, :published_on_ru_and_de, :published_on_en_and_de ])
       # when :en then where(news.where(news[:state].eq(:published).or(news[:state].eq :published_on_en )))
       # when :de then where(news.where(news[:state].eq(:published).or(news[:state].eq :published_on_de )))
     end
