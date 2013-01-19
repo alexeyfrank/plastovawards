@@ -42,7 +42,9 @@
 				<ul class="select-lang">
 					<li class="<%= 'active' if locale == :ru %>">><a href="<%= url_for(locale: :ru) %>" class="lang-rus <%= 'active' if locale == :ru %>"></a></li>
 					<li class="<%= 'active' if locale == :en %>"><a href="<%= url_for(locale: :en) %>" class="lang-en <%= 'active' if locale == :en %>"></a></li>
+          <% if false %>
 					<li class="<%= 'active' if locale == :de %>"><a href="<%= url_for(locale: :de) %>" class="lang-de <%= 'active' if locale == :de %>"></a></li>
+          <% end %>
 				</ul>
 				<ul class="social-networks">
 					<li><a href="<%= Settings.twitter_url %>" target="_blank"><img src="/img/icon-twitter.png" width="8" height="13" alt="" title="" /></a></li>
@@ -81,7 +83,7 @@
 	<div class="wrap">
 		<div class="copyright"><%= t 'views.main.copyright' %></div>
 		<ul class="footer-logo">
-			<li><a href="http://www.shr.su/" target="_blank"><img src="/img/logo-footer1.jpg" alt="" title="" width="101" height="67" /></a></li>
+			<li><a href="http://www.shr.su/" target="_blank"><img src="<%= t 'views.main.logo_footer' %>" alt="" title="" width="101" height="67" /></a></li>
 			<li><a href="http://ulgov.ru/" target="_blank"><img src="/img/logo-footer2.png" alt="" title="" width="93" height="78" /></a></li>
 		</ul>
 	</div>

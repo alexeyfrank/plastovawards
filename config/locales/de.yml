@@ -122,11 +122,12 @@ de:
         
   views:
     main:
-      copyright: "Copyright © 2013 II Международная Ассамблея Художников «Пластовская осень»"
+      copyright: "Copyright © 2013 II International Assembly of Artists “Plastovskaya osen”"
       governor_review: |
-        Ассамблеи художников «Пластовская осень» является одним из центральных событий Международного культурного форума.  Это еще один шаг на пути к популяризации творческого наследия великого живописца, сохранения уникальной творческой среды, которая питала талант Аркадия Пластова. Международная выставка художников «Пластовская осень»  и вручение Пластовской премии решают одну из  важнейших государственных задач - это  сохранение традиций великой русской художественной школы. Пластовская премия приобрела статус международной и стала весомее, и это еще раз подчеркивает наше стремление к культурному сотрудничеству со странами СНГ, Европы и Мира. Под эгидой «Премии Пластова»  на родине мастера собираются его последователи, чтобы подчеркнуть – традиции реалистичного искусства живы и не имеют национальных границ. Убеждены, что премия им.А.А.Пластова может стать своего рода «Нобелевской премией для живописи»
-      governor_footer: "Губернатор Ульяновской области:  Сергей Морозов."
-
+        The Artists Assembly “Plastovskaya osen” (Plastov’s Autumn) is one of the central events of the International Cultural Forum. This is one more step on the road to promote the art heritage of the great painter, to preserve the unique creative environment that encouraged Plastov’s talent. The International Artists Exhibition “Plastovskaya osen”, as well as awarding prizes by the name of Plastov, solve one of the most important national issues, such as the preservation of traditions of the great Russian art school. “Plastov’s Award” has become a significant event with an international status. It’s one more emphasis on the intention on cultural cooperation with the CIS, Europe and World countries. “Plastov’s Award” brings together followers of the Master at his homeland to accentuate, that realistic art traditions are alive and have no national boundaries. There is no doubt about that “Plastov’s Award” can become a sort of “Nobel Prize for Painting”. 
+      governor_footer: "Governer of the Ulyanovsk region, Sergey Morozov"
+      logo_footer: '/img/logo-footer1_en.png'
+      
     subscribers:
       success_subscribe: 'Спасибо за вашу подписку!'
       
