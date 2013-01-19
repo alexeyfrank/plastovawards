@@ -18,11 +18,13 @@ initParallax = function() {
 
 	var heightWrapper = $('#wrapper').height();
 	var parallax2 = $('.parallax2');
-	var heightParallax2 = parallax2.height() + parallax2.position().top;
+  if (parallax2.length > 0) {
+  	var heightParallax2 = parallax2.height() + parallax2.position().top;
 
-	if(heightParallax2 >= heightWrapper) {
-		parallax2.css('top','300px');
-	}
+  	if(heightParallax2 >= heightWrapper) {
+  		parallax2.css('top','300px');
+  	}
+  }
 };
 
 initReplaceCursorIphone = function() {

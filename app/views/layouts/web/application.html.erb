@@ -23,7 +23,7 @@
 <div class="parallax1">
 	<img class="parallax" src="/img/parallax/parallax1.png">
 </div>
-<% if current_page?(root_path) %>
+<% if !@page.blank? && @page.is_home_page %>
 <div class="parallax2">
 	<img class="parallax" src="/img/parallax/parallax2.png">
 </div>
@@ -81,8 +81,8 @@
 	<div class="wrap">
 		<div class="copyright"><%= t 'views.main.copyright' %></div>
 		<ul class="footer-logo">
-			<li><a href="#" target="_blank"><img src="/img/logo-footer1.jpg" alt="" title="" width="101" height="67" /></a></li>
-			<li><a href="#" target="_blank"><img src="/img/logo-footer2.png" alt="" title="" width="93" height="78" /></a></li>
+			<li><a href="http://www.shr.su/" target="_blank"><img src="/img/logo-footer1.jpg" alt="" title="" width="101" height="67" /></a></li>
+			<li><a href="http://ulgov.ru/" target="_blank"><img src="/img/logo-footer2.png" alt="" title="" width="93" height="78" /></a></li>
 		</ul>
 	</div>
 </footer><!-- #footer -->
@@ -100,8 +100,7 @@
 			<%= t 'views.main.governor_review' %>
       <span class="pop-up-quote-right"></span>
 		</p>
-		<footer><%= t 'views.main.governor_title' %></footer>
-	</div>
+		<footer><%= t 'views.main.governor_footer' %></footer>
 </div>
 
 
