@@ -952,7 +952,7 @@ ul, ol {
 	width: 1023px;
 	height: 467px;
 	background: url(../img/about-main.png) no-repeat;
-	margin: 0 auto;
+	margin: -50px auto 0 auto;
 }
 
 .about-plastov h1 {
@@ -1068,6 +1068,11 @@ ul, ol {
 }
 
 /* Events */
+.wrap-b-events {
+	position: relative;
+	z-index: 10;
+}
+
 .wrap-b-events .caroufredsel_wrapper {
 	width: 1004px !important;
 	margin: 0 auto !important;
@@ -2321,6 +2326,12 @@ blockquote.blockquote-nas {
 
 .list-news h4 a {
 	color: #000000;
+}
+
+.wrap-members-gallery img {
+	-webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
 /* Footer
