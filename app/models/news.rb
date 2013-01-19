@@ -34,12 +34,15 @@ class News < ActiveRecord::Base
   end
   
   scope :published_all, -> { where(state: :published) }
-  scope :published, -> {
+  def self.published
+    news = Arel::Table.new(:news)
     case I18n.locale
-      when :ru then where('"news"."state"="published" OR "news"."state"="published_on_ru"')
-      when :en then where('"news"."state"="published" OR "news"."state"="published_on_en"')
-      when :de then where('"news"."state"="published" OR "news"."state"="published_on_de"')
+      when :ru then where(state: [:published, :published_on_ru])
+      when :en then where(state: [:published, :published_on_en])
+      when :de then where(state: [:published, :published_on_de])
+      # when :en then where(news.where(news[:state].eq(:published).or(news[:state].eq :published_on_en )))
+      # when :de then where(news.where(news[:state].eq(:published).or(news[:state].eq :published_on_de )))
     end
-  }
+  end
   
 end

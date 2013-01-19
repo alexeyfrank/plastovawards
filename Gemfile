@@ -18,6 +18,7 @@ group :development, :test do
   gem 'factory_girl_rails'
 end
 
+gem 'arel'
 gem 'fog'
 gem 'taps'
 gem 'nested_form'
