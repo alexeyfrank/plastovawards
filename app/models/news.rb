@@ -36,9 +36,9 @@ class News < ActiveRecord::Base
   scope :published_all, -> { where(state: :published) }
   scope :published, -> {
     case I18n.locale
-      when :ru then where('"news"."state" = "published" OR "news"."state" = "published_on_ru"')
-      when :en then where('"news"."state" = "published" OR "news"."state" = "published_on_en"')
-      when :de then where('"news"."state" = "published" OR "news"."state" = "published_on_de"')
+      when :ru then where('"news"."state"="published" OR "news"."state"="published_on_ru"')
+      when :en then where('"news"."state"="published" OR "news"."state"="published_on_en"')
+      when :de then where('"news"."state"="published" OR "news"."state"="published_on_de"')
     end
   }
   
