@@ -23,9 +23,11 @@
 <div class="parallax1">
 	<img class="parallax" src="/img/parallax/parallax1.png">
 </div>
+<% if current_page?(root_path) %>
 <div class="parallax2">
 	<img class="parallax" src="/img/parallax/parallax2.png">
 </div>
+<% end %>
 
 <div id="wrapper">
 
@@ -77,7 +79,7 @@
 
 <footer id="footer">
 	<div class="wrap">
-		<div class="copyright">Copyright © 2013 II Международная Ассамблея Художников «Пластовская осень»</div>
+		<div class="copyright"><%= t 'views.main.copyright' %></div>
 		<ul class="footer-logo">
 			<li><a href="#" target="_blank"><img src="/img/logo-footer1.jpg" alt="" title="" width="101" height="67" /></a></li>
 			<li><a href="#" target="_blank"><img src="/img/logo-footer2.png" alt="" title="" width="93" height="78" /></a></li>
@@ -95,13 +97,10 @@
 	<div class="pop-up-body">
 		<p>
 			<span class="pop-up-quote-left"></span>
-			Ассамблеи художников «Пластовская осень» является одним из центральных событий Международного культурного форума.  Это еще один шаг на пути к популяризации творческого наследия великого живописца, сохранения уникальной творческой среды, которая питала талант Аркадия Пластова.
-			Международная выставка художников «Пластовская осень»  и вручение Пластовской премии решают одну из  важнейших государственных задач - это  сохранение традиций великой русской художественной школы.
-			Пластовская премия приобрела статус международной и стала весомее, и это еще раз подчеркивает наше стремление к культурному сотрудничеству со странами СНГ, Европы и Мира. Под эгидой «Премии Пластова»  на родине мастера собираются его последователи, чтобы подчеркнуть – традиции реалистичного искусства живы и не имеют национальных границ.
-			Убеждены, что премия им.А.А.Пластова может стать своего рода «Нобелевской премией для живописи»
-			<span class="pop-up-quote-right"></span>
+			<%= t 'views.main.governor_review' %>
+      <span class="pop-up-quote-right"></span>
 		</p>
-		<footer>Губернатор Ульяновской области:  Сергей Морозов.</footer>
+		<footer><%= t 'views.main.governor_title' %></footer>
 	</div>
 </div>
 
