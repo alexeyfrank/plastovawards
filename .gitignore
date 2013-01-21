@@ -12,6 +12,8 @@
 /db/*.sqlite3
 
 # Ignore all logfiles and tempfiles.
-/log/*.log
-/tmp/cache
-/tmp/pids
+/log
+/tmp
+#/log/*.log
+#/tmp/cache
+#/tmp/pids
