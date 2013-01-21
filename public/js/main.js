@@ -34,7 +34,7 @@ initReplaceCursorIphone = function() {
 		var fl = 0;
 
 		$('body').on('tap', function (event) {
-			event.preventDefault();
+			//event.preventDefault();
 
 			$(this).prepend('<div class="blot"></div>');
 			var blot = $('.blot');
