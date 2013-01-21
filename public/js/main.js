@@ -9,7 +9,7 @@ $(document).ready(function(){
 	initFilter();
 	initElementsForm();
 	initForms();
-	//initReplaceCursorIphone();
+	initReplaceCursorIphone();
 });
 
 initParallax = function() {
@@ -30,18 +30,18 @@ initParallax = function() {
 };
 
 initReplaceCursorIphone = function() {
-	//if (Modernizr.touch){
+	if (Modernizr.touch){
 		var fl = 0;
-		$('body').bind('tapone',function(el,ev) {
-			var pageX = ev.originalEvent.pageX;
-			var pageY = ev.originalEvent.pageY;
 
-			$('body').prepend('<div class="blot"></div>');
+		$('body').on('tap', function (event) {
+			event.preventDefault();
+
+			$(this).prepend('<div class="blot"></div>');
 			var blot = $('.blot');
 
 			blot.css({
-				'left' : pageX - blot.width()/2,
-				'top' : pageY - blot.height()/2
+				'left' : parseInt(event.originalEvent.pageX - blot.width()/2),
+				'top' : parseInt(event.originalEvent.pageY - blot.height()/2)
 			});
 
 			if(fl == 1) {
@@ -58,7 +58,7 @@ initReplaceCursorIphone = function() {
 				}
 			}, 100);
 		});
-	//}
+	}
 };
 
 initFilter = function() {
