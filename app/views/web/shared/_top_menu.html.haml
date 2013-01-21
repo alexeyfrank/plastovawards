@@ -2,7 +2,7 @@
   - @items.each_with_index do |item, i|
     - if item.has_children?
       %li{ :class => "item#{i + 1} sub-menu" }
-        = link_to page_path(locale: locale, slug: item.slug) do
+        = link_to '#' do  #page_path(locale: locale, slug: item.slug) do
           %span
             = item.name
         %ul
