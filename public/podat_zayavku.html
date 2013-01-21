@@ -126,44 +126,56 @@
 					<span class="load-photo-preview active"></span>
 					<div class="load-photo"></div>
 				</div>
+				<!--
 				<div class="form-line">
 					<input class="button button-save" type="submit" value="Сохранить" />
 				</div>
+				-->
 			</div>
-
-			<div class="web-form web-form-load-pictures">
-				<h2>Загрузить картины</h2>
-				<div class="scroll-pane horizontal-only">
-					<div class="form-line form-line-photo">
-						<span class="load-photo-preview active"></span>
-						<span class="load-photo-preview"></span>
-						<span class="load-photo-preview"></span>
-						<span class="load-photo-preview"></span>
+			<form id="form-apply" action="/form.php" method="POST">
+				<div class="web-form web-form-load-pictures">
+					<h2>Загрузить картины</h2>
+					<div class="scroll-pane horizontal-only">
+						<div class="form-line form-line-photo">
+							<span class="load-photo-preview active next"></span>
+							<span class="load-photo-preview"></span>
+							<span class="load-photo-preview"></span>
+							<span class="load-photo-preview"></span>
+						</div>
 					</div>
+					<div class="form-line form-line-load-photo">
+						<div class="load-photo"></div>
+					</div>
+					<div class="form-line">
+						<textarea class="input-desc-picture" title="Описание картины" placeholder="Описание картины"></textarea>
+					</div>
+					<div class="form-line">
+						<input type="text" class="input-year-create" title="Год создания" placeholder="Год создания" />
+					</div>
+					<div class="form-line">
+						<input type="text" class="input-year-size" title="Размер картины (см)" placeholder="Размер картины (см)" />
+					</div>
+					<!--
+					<div class="form-line">
+						<input type="text" class="" placeholder="" />
+					</div>
+					-->
+					<!--
+					<div class="form-line input-technics">
+						<select>
+							<option value="1">Техника исполнения</option>
+							<option value="2">Натюрморт</option>
+							<option value="3">Пейзаж</option>
+						</select>
+					</div>
+					-->
+					<!--
+					<div class="form-line">
+						<input class="button button-save" type="submit" value="Загрузить" />
+					</div>
+					-->
 				</div>
-				<div class="form-line form-line-load-photo">
-					<div class="load-photo"></div>
-				</div>
-				<div class="form-line">
-					<textarea placeholder="Описание картины"></textarea>
-				</div>
-				<div class="form-line">
-					<input type="text" class="input-year-create" placeholder="Год создания" />
-				</div>
-				<div class="form-line">
-					<input type="text" class="input-year-size" placeholder="Размер картины (см)" />
-				</div>
-				<div class="form-line input-technics">
-					<select>
-						<option value="1">Техника исполнения</option>
-						<option value="2">Натюрморт</option>
-						<option value="3">Пейзаж</option>
-					</select>
-				</div>
-				<div class="form-line">
-					<input class="button button-save" type="submit" value="Загрузить" />
-				</div>
-			</div>
+			</form>
 
 			<div class="wrap-button-register">
 				<input class="button button-register" type="submit" value="Зарегистрироваться" />
