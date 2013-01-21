@@ -20,6 +20,7 @@ textarea {
 }
 
 html,body {
+	width: 100%;
 	height: 100%;
 }
 
@@ -322,6 +323,8 @@ ul, ol {
 	width: 63px;
 	height: 47px;
 	background: url(../img/blots.png) 0 0 no-repeat;
+	left: 0;
+	top: 0;
 }
 
 .blot.yellow {
@@ -2130,23 +2133,18 @@ blockquote.blockquote-nas {
 }
 
 .web-form .form-line.form-line-photo {
-	overflow: hidden;
+	overflow: auto;
 	margin-bottom: 22px;
 }
 
-.web-form input[type="text"] {
+.web-form input[type="text"],
+.web-form textarea {
+	background: url(../img/icons-personal.png) #fef102 no-repeat;
 	font: 12px "Trebuchet MS";
 	font-style: italic;
-	width: 253px;
-	padding: 0 7px 0 36px;
-	height: 27px;
-	line-height: 27px;
-	background-color: #FEF102;
-	background-image: url(../img/icons-personal.png);
-	background-repeat: no-repeat;
 	outline: none;
 	color: #000000;
-	border: 5px solid white;
+	border: 5px solid #ffffff;
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
 	border-radius: 8px;
@@ -2155,27 +2153,20 @@ blockquote.blockquote-nas {
 	box-shadow: inset 0 1px 5px 1px rgba(0, 0, 0, 0.3);
 }
 
+.web-form input[type="text"] {
+	width: 253px;
+	height: 27px;
+	line-height: 27px;
+	padding: 0 7px 0 36px;
+}
+
 .web-form textarea {
+	padding: 6px 0 6px 35px;
 	width: 201px;
-	height: 81px;
-	padding: 7px 0 0 35px;
-	background-color: #FEF102;
-	background-image: url(../img/icons-personal.png);
+	height: 75px;
 	background-position: 8px -1004px;
-	background-repeat: no-repeat;
-	outline: none;
-	font: 12px "Trebuchet MS";
-	font-style: italic;
-	color: #000000;
-	border: 5px solid white;
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
-	border-radius: 8px;
 	resize: none;
 	overflow: hidden;
-	-webkit-box-shadow: inset 0 1px 5px 1px rgba(0, 0, 0, 0.3);
-	-moz-box-shadow: inset 0 1px 5px 1px rgba(0, 0, 0, 0.3);
-	box-shadow: inset 0 1px 5px 1px rgba(0, 0, 0, 0.3);
 }
 
 ::-webkit-input-placeholder {
@@ -2211,6 +2202,12 @@ blockquote.blockquote-nas {
 	background-position: 8px -733px;
 }
 
+.web-form .input-technics .cusel {
+	background-image: url(../img/icons-personal.png);
+	background-repeat: no-repeat;
+	background-position: 9px -1143px;
+}
+
 .web-form .load-photo-preview {
 	width: 84px;
 	height: 84px;
@@ -2220,24 +2217,27 @@ blockquote.blockquote-nas {
 	display: inline-block;
 }
 
-.web-form .load-photo-preview.active {
-	background: url(../img/bg-load-photo.png) 0 -84px no-repeat;
-}
-
 .web-form .load-photo-preview img {
 	width: 84px;
 	height: 84px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-right: 5px;
+	opacity: 0.5;
+	filter: alpha(opacity = 50);
+}
+
+.web-form .load-photo-preview.active img {
+	opacity: 1;
+	filter: none;
 }
 
 .web-form .load-photo-preview .delete-photo {
+	width: 19px;
+	height: 20px;
 	position: absolute;
 	display: inline-block;
 	background: url(../img/delete-photo.png) no-repeat;
-	width: 19px;
-	height: 20px;
 	cursor: pointer;
 	z-index: 99;
 	right: -2px;
@@ -2318,6 +2318,14 @@ blockquote.blockquote-nas {
 
 .web-form-load-pictures .jspDrag {
 	background: url(../img/jspDragPhoto.png) no-repeat;
+}
+
+.web-form-load-pictures .cusel {
+	width: 236px !important;
+}
+
+.web-form .load-photo-preview.next {
+	background: url(../img/bg-load-photo.png) 0 -84px no-repeat;
 }
 
 .list-news h4 {

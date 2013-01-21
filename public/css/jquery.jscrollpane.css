@@ -54,6 +54,14 @@
 	left: 84px;
 }
 
+.jspHorizontalBar .jspTrack .jspTrackPhotoColor {
+	background: url(../img/jspTrackPhotoColor.png) left no-repeat;
+	position: absolute;
+	width: 0;
+	height: 6px;
+	left: 0;
+}
+
 .jspDrag {
 	background: url(../img/jspDrag.png) center no-repeat;
 	height: 23px;

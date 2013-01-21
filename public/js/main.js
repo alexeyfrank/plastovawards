@@ -9,43 +9,44 @@ $(document).ready(function(){
 	initFilter();
 	initElementsForm();
 	initForms();
-	initReplaceCursorIphone();
+	//initReplaceCursorIphone();
 });
 
 initParallax = function() {
 	$('.parallax').plaxify({"xRange":100,"yRange":0});
 	$.plax.enable();
 
-	var heightWrapper = $('#wrapper').height();
 	var parallax2 = $('.parallax2');
-  if (parallax2.length > 0) {
-  	var heightParallax2 = parallax2.height() + parallax2.position().top;
-
-  	if(heightParallax2 >= heightWrapper) {
-  		parallax2.css('top','300px');
-  	}
-  }
+	if(!parallax2.length) {
+		return false;
+	}
+	else {
+		var heightWrapper = $('#wrapper').height();
+		var heightParallax2 = parallax2.height() + parallax2.position().top;
+		if(heightParallax2 >= heightWrapper) {
+			parallax2.css('top','300px');
+		}
+	}
 };
 
 initReplaceCursorIphone = function() {
-	var deviceAgent = navigator.userAgent.toLowerCase();
-	var agentID = deviceAgent.match(/(iphone|ipod|ipad)/);
-	if (agentID) {
+	//if (Modernizr.touch){
 		var fl = 0;
-		$('body').bind('tapone',function(el,ev){
+		$('body').bind('tapone',function(el,ev) {
 			var pageX = ev.originalEvent.pageX;
 			var pageY = ev.originalEvent.pageY;
 
 			$('body').prepend('<div class="blot"></div>');
 			var blot = $('.blot');
-			if(fl == 1) {
-				blot.addClass('yellow');
-			}
 
 			blot.css({
 				'left' : pageX - blot.width()/2,
 				'top' : pageY - blot.height()/2
 			});
+
+			if(fl == 1) {
+				blot.addClass('yellow');
+			}
 
 			setTimeout(function(){
 				blot.remove();
@@ -55,9 +56,9 @@ initReplaceCursorIphone = function() {
 				else {
 					fl = 1;
 				}
-			}, 100)
+			}, 100);
 		});
-	}
+	//}
 };
 
 initFilter = function() {
@@ -74,6 +75,10 @@ initElementsForm = function() {
 		checkbox.ezMark();
 	}
 
+	initPlaceholder();
+};
+
+initPlaceholder = function() {
 	var placeholder = $('input[placeholder], textarea[placeholder]');
 	if(placeholder.length) {
 		placeholder.placeholder();
@@ -142,7 +147,6 @@ initFormLoadPictures = function() {
 	}
 	var addedFiles = 0;
 	var fileCount = 3;
-	var fileLimit = 10;
 
 	widthScrollPane = function() {
 		formLoadPictures.find('.form-line-photo').width(
@@ -155,12 +159,23 @@ initFormLoadPictures = function() {
 		showArrows: false,
 		horizontalDragMaxWidth: 23,
 		autoReinitialise: true,
-		autoReinitialiseDelay: 100
-	}).data('jsp');
+		autoReinitialiseDelay: 50
+	}).bind(
+		'jsp-scroll-x',
+		function() {
+			setTimeout(function() {
+				$('.jspTrackPhotoColor').width(parseInt($('.jspDrag').css('left'))+10);
+			},50);
+		}
+	).data('jsp');
+
 	setInterval(function() {
 		widthScrollPane();
-		scroll.reinitialise();
-	}, 100);
+		var jspTrack = $('.jspTrack');
+		if(jspTrack.length && !$('.jspTrackPhotoColor').length) {
+			jspTrack.prepend('<div class="jspTrackPhotoColor"></div>');
+		}
+	}, 50);
 
 	formLoadPictures.find('.load-photo').fineUploader({
 		request: {
@@ -183,29 +198,106 @@ initFormLoadPictures = function() {
 		if (responseJSON.success) {
 			addedFiles ++;
 
-			var photo_active = formLoadPictures.find('.load-photo-preview.active');
 			if(addedFiles >= fileCount) {
-				photo_active.after('<span class="load-photo-preview"></span>');
-				//scroll.getContentPane().find('form-line-photo').append('<span class="load-photo-preview"></span>');
+				scroll
+					.getContentPane()
+					.find('.form-line-photo')
+					.append('<span class="load-photo-preview"></span>');
 			}
 
-			photo_active
-				.html('<img src="/img/picture/picture1.jpg" alt="' + filename + '"><span class="delete-photo"></span>')
-				.removeClass('active')
+			setHiddenValue();
+			removeClassActive();
+
+			formLoadPictures.find('.load-photo-preview.next')
+				.html('' +
+					'<img src="/img/picture/picture1.jpg" alt="' + filename + '" />' +
+					'<input type="hidden" class="photo-path" name="photo-path[]" value="'+ filename +'" />' +
+					'<input type="hidden" class="photo-desc" name="photo-desc[]" value="" />' +
+					'<input type="hidden" class="photo-create" name="photo-create[]" value="" />' +
+					'<input type="hidden" class="photo-size" name="photo-size[]" value="" />' +
+					'<span class="delete-photo"></span>' +
+				'')
+				.removeClass('next')
+				.addClass('active')
 				.next()
-				.addClass('active');
+				.addClass('next');
+
+			formLoadPictures
+				.find('input[type="text"],textarea')
+				.val('');
+
+			modernizrPlaceholder();
 		}
 	});
 
-	formLoadPictures.find('.delete-photo').live('click',function(){
+	formLoadPictures
+		.find('.delete-photo')
+		.live('click',function() {
+			var thisParent = $(this).parent().parent();
+
+			scroll
+				.getContentPane()
+				.find($(this))
+				.parent()
+				.remove();
+
+			removeClassActive();
+			thisParent
+				.find('.next')
+				.prev()
+				.addClass('active');
+			loadHiddenValue();
+
+			if(addedFiles < fileCount) {
+				scroll
+					.getContentPane()
+					.find('.form-line-photo')
+					.append('<span class="load-photo-preview"></span>');
+			}
+			addedFiles --;
+	});
+
+	removeClassActive = function() {
+		formLoadPictures
+			.find('.load-photo-preview')
+			.removeClass('active');
+	};
+
+	setHiddenValue = function() {
+		var activepPhoto = $('.load-photo-preview.active');
+		activepPhoto.find('.photo-desc').val($('.input-desc-picture').val());
+		activepPhoto.find('.photo-create').val($('.input-year-create').val());
+		activepPhoto.find('.photo-size').val($('.input-year-size').val());
+	};
+
+	loadHiddenValue = function() {
+		var activepPhoto = $('.load-photo-preview.active');
+		$('.input-desc-picture').val(activepPhoto.find('.photo-desc').val());
+		$('.input-year-create').val(activepPhoto.find('.photo-create').val());
+		$('.input-year-size').val(activepPhoto.find('.photo-size').val());
+
+		modernizrPlaceholder();
+	};
+
+	modernizrPlaceholder = function() {
+		if(!Modernizr.placeholder){
+			initPlaceholder();
+		}
+	};
+
+	$('.load-photo-preview img').live('click', function() {
+		setHiddenValue();
+		removeClassActive();
 		$(this)
 			.parent()
-			.remove();
-		if(addedFiles < fileCount) {
-			formLoadPictures.find('.load-photo-preview.active').after('<span class="load-photo-preview"></span>');
-			//scroll.getContentPane().append('<span class="load-photo-preview"></span>');
-		}
-		addedFiles --;
+			.addClass('active');
+		loadHiddenValue();
+	});
+
+	$('.button-register').click(function(e){
+		e.preventDefault();
+		setHiddenValue();
+		$('#form-apply').submit();
 	});
 };
 
@@ -243,7 +335,9 @@ initLaureate = function() {
 	$('.jspTrack').prepend('<div class="jspTrackColor"></div>');
 
 	$('.b-laureate-frame').hover(function(){
-		$(this).find('.b-laureate-desc').toggle();
+		$(this)
+			.find('.b-laureate-desc')
+			.toggle();
 	});
 };
 
