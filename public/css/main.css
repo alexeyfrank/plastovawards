@@ -171,7 +171,7 @@ blockquote {
 }
 
 #wrapper {
-	width: 100%;
+	min-width: 1280px;
 	min-height: 100%;
 	height: auto !important;
 	height: 100%;
@@ -2345,6 +2345,7 @@ blockquote.blockquote-nas {
 /* Footer
 -----------------------------------------------------------------------------*/
 #footer {
+	min-width: 1280px;
 	background: url(../img/bg-footer.png) center no-repeat;
 	margin: -249px auto 0;
 	height: 249px;
