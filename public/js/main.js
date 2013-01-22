@@ -9,7 +9,7 @@ $(document).ready(function(){
 	initFilter();
 	initElementsForm();
 	initForms();
-	initReplaceCursorIphone();
+	//initReplaceCursorIphone();
 });
 
 initParallax = function() {
@@ -33,7 +33,7 @@ initReplaceCursorIphone = function() {
 	if (Modernizr.touch){
 		var fl = 0;
 
-		$('body').on('tap', function (event) {
+		$('body').bind('tap', function (event) {
 			//event.preventDefault();
 
 			$(this).prepend('<div class="blot"></div>');
