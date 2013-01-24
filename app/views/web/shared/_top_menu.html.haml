@@ -1,6 +1,6 @@
 %ul
   - @items.each_with_index do |(k, v), i|
-    - if v.is_a? Hash
+    - if v.count > 0
       %li{ :class => "item#{i + 1} sub-menu" }
         = link_to '#' do  #page_path(locale: locale, slug: item.slug) do
           %span
