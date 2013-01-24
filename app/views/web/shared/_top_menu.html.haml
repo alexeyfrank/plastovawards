@@ -1,15 +1,30 @@
 %ul
-  - @items.each_with_index do |item, i|
-    - if item.has_children?
+  - @items.each_with_index do |(k, v), i|
+    - if v.is_a? Hash
       %li{ :class => "item#{i + 1} sub-menu" }
         = link_to '#' do  #page_path(locale: locale, slug: item.slug) do
           %span
-            = item.name
+            = k.name
         %ul
-          - item.children.order(:position).each do |child|
+          - v.each do |k, v|
             %li
-              = link_to child.name, page_path(locale: locale, slug: child.slug)
+              = link_to k.name, page_path(locale: locale, slug: k.slug)
     - else
       %li{ :class => "item#{i + 1}" }
         %span
-          = link_to item.name, page_path(locale: locale, slug: item.slug)
+          = link_to k.name, page_path(locale: locale, slug: k.slug)
+/ %ul
+/   - @items.each_with_index do |item, i|
+/     - if item.has_children?
+/       %li{ :class => "item#{i + 1} sub-menu" }
+/         = link_to '#' do  #page_path(locale: locale, slug: item.slug) do
+/           %span
+/             = item.name
+/         %ul
+/           - item.children.includes(:translations).order(:position).each do |child|
+/             %li
+/               = link_to child.name, page_path(locale: locale, slug: child.slug)
+/     - else
+/       %li{ :class => "item#{i + 1}" }
+/         %span
+/           = link_to item.name, page_path(locale: locale, slug: item.slug)

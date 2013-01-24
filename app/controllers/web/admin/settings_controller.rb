@@ -1,5 +1,5 @@
 class Web::Admin::SettingsController < Web::Admin::ApplicationController
-  include Web::Admin::SettingsHelper
+  # include Web::SettingsHelper
   
   def new
     @settings = Settings.all
