@@ -14,6 +14,14 @@ ru:
         upload_picture_title: "Загрузить картины"
         select_picture_btn: "ВЫБРАТЬ КАРТИНУ"
         register_btn: "ЗАРЕГИСТРИРОВАТЬСЯ"
+      index:
+        title: 'Галерея  участников'
+        filter: 'Фильтр'
+        nominations: 'Номинации'
+        years: 'Года'
+        authors: 'Авторы'
+        filter_btn: 'Отфильтровать'
+        show_all_btn: 'Показать все'
         
     
     admin:

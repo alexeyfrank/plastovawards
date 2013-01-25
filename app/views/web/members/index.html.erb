@@ -1,12 +1,12 @@
 <section class="wrap-filter-work">
   <div class="wrap overflow">
-  	<h1>Галерея  участников</h1>
-  	<button class="button-toggle-filter"><span>Фильтр</span></button>
+  	<h1><%= t l_title %></h1>
+  	<button class="button-toggle-filter"><span><%= t 'web.members.index.filter' %></span></button>
   </div>
   <div class="filter-work">
     <%= search_form_for (@q) do |f| %>
   		<div class="filter-work-nominations">
-      <h2>Номинации</h2>
+        <h2><%= t 'web.members.index.nominations' %></h2>
         <ul>
         <% @nominations.each do |n| %>
           <li>
@@ -17,7 +17,7 @@
         </ul>
       </div>
   		<div class="filter-work-years">
-  			<h2>Года:</h2>
+  			<h2><%= t 'web.members.index.years' %></h2>
         <ul>
           <% @years.each do |y| %>
           <li>
@@ -28,14 +28,15 @@
         </ul>
       </div>
   		<div class="filter-work-authors">
-  			<h2>Авторы:</h2>
+  			<h2><%= t 'web.members.index.authors' %></h2>
   			<div class="filter-live-search">
           <%= f.text_field :first_name_or_last_name_cont %>
   			</div>
   		</div>
       
-  		<input type="submit" class="button button-filter" value="Отфильтровать">
-  		<input type="submit" class="button button-show-all" value="Показать все">
+  		<input type="submit" class="button button-filter" value="<%= t 'web.members.index.filter_btn' %>">
+      <!-- <%= link_to t('web.members.index.show_all_btn'), members_path, class: 'button button-show-all' %> -->
+      <!-- <input type="submit" class="button button-show-all" value="Показать все"> -->
     <% end %>
   </div>
   </section>
@@ -43,15 +44,19 @@
   	<section class="b-stat-work">
       <% @members.each do |m| %>
           <% m.pictures.each_with_index do |p, i| %>
-      		<ul class="b-stat-work<%= p.gallery_type %>">
-      			<li class="b-stat-work-picture">
-      				<span class="b-stat-work-frame"></span>
-      				<img src="<%= p.file.gallery.url %>" width="<%= p.gallery_width %>" height="<%= p.gallery_height %>" alt="" title="">
-      			</li>
-      			<li class="b-stat-work-picture-name"><%= p.description %></li>
-      			<li class="b-stat-work-author"><a href="#"><%= m.fio %>,</a></li>
-      			<li><%= m.city %></li>
-      		</ul>
+            <% if p.file.url %>
+        		<ul class="b-stat-work<%= p.gallery_type %>">
+        			<li class="b-stat-work-picture">
+        				<span class="b-stat-work-frame"></span>
+                <a class="fancybox" rel="group" href="<%= p.file.url %>">
+          				<img src="<%= p.file.gallery.url %>" width="<%= p.gallery_width %>" height="<%= p.gallery_height %>" alt="" title="">
+              </a>
+        			</li>
+        			<li class="b-stat-work-picture-name"><%= p.description %></li>
+        			<li class="b-stat-work-author"><a href="#"><%= m.fio %>,</a></li>
+        			<li><%= m.city %></li>
+        		</ul>
+            <% end %>
           <% end %>
       <% end %>
   </section>

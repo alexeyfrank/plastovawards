@@ -14,6 +14,15 @@ en:
         upload_picture_title: "Upload pictures"
         select_picture_btn: "SELECT FILE"
         register_btn: "REGISTER"
+      index:
+        title: 'Gallery'
+        filter: 'Filter'
+        nominations: 'Nominations'
+        years: 'Years'
+        authors: 'Authors'
+        filter_btn: 'Search'
+        show_all_btn: 'Show all'
+  
     admin:
       pages:
         index:
