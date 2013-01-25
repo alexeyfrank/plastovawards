@@ -3,6 +3,17 @@
 
 en:
   web:
+    base_title: "International Annual Prize in Fine Arts named after Arkady Plastov."
+    
+    members:
+      new_member_success_msg: "Thanks for your entry!"
+      new:
+        title: "APPLY FOR PARTICIPATION IN THE AWARD"
+        sub_title: "To participate in the prize you have to send photos of your paintings."
+        member_registration_title: "Member registration"
+        upload_picture_title: "Upload pictures"
+        select_picture_btn: "SELECT FILE"
+        register_btn: "REGISTER"
     admin:
       pages:
         index:
@@ -217,23 +228,23 @@ en:
         category_id: "Категория"
         state_event: "Действие"
       member:
-        first_name: "Фамилия"
-        last_name: "Имя"
-        city: "Город"
-        country: "Страна"
+        first_name: "Last Name"
+        last_name: "First Name"
+        city: "City"
+        country: "Country"
         email: "E-mail"
-        phone: "Телефон"
-        state: "Статус"
+        phone: "Phone"
+        state: "State"
         year: "Год подачи заявки"
-        birth_year: "Год рождения"
-        nomination_id: "Номинация"
+        birth_year: "Birth year"
+        nomination_id: "Nomination"
         state_event: "Действие"
         pictures_count: "Количество работ"
       member_picture:
-        description: "Описание"
-        create_year: "Дата создания"
-        size: "Размер"
-        technique: "Техника исполнения"
+        description: "Description"
+        create_year: "Creation date"
+        size: "Size"
+        technique: "Technique"
         width: "Ширина"
         height: "Высота"
         file: "Файл"

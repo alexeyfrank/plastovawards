@@ -2,7 +2,7 @@
   <%= @page.content.html_safe %>
 <% end %>
 
-<% if false %>
+<% if settings[:show_main_page_gallery] && settings[:show_main_page_gallery] == 'yes' %>
 <section class="wrap wrap-laureate">
   <h1>ЛАУРЕАТЫ 2012 ГОДА</h1>
   <span class="prev-laureate"></span>

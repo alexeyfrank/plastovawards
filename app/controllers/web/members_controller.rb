@@ -18,11 +18,34 @@ class Web::MembersController < Web::ApplicationController
     header_img "members-gallery"
     @member = Member.new params[:member]
     if @member.save
-      flash[:notice] = "Thank for your request!"
+      flash[:notice] = t('web.members.new_member_success_msg')
       redirect_to new_member_path
     else
-      flash[:notice] = "Got some errors!"
       render :new
+    end
+  end
+  
+  def upload
+    file = params[:qqfile].is_a?(ActionDispatch::Http::UploadedFile) ? params[:qqfile] : params[:file]
+    picture = MemberPicture.new file: file
+    if picture.save
+      respond_to do |format|
+        format.json { render :json => {
+            success: true, 
+            picture: {
+              id: picture.id,
+              path: picture.file.url
+            }
+          }
+        }
+      end
+    else
+      respond_to do |format|
+        format.json { render :json => {
+            error: true
+          }
+        }    
+      end
     end
   end
 end

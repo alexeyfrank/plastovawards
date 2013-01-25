@@ -18,6 +18,7 @@ group :development, :test do
   gem 'factory_girl_rails'
 end
 
+gem 'rack-raw-upload'
 gem 'arel'
 gem 'fog'
 gem 'taps'

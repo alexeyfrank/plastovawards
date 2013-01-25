@@ -7,7 +7,11 @@ Masterit::Application.routes.draw do
       resources :feedback
       resource :session
       resources :subscribers
-      resources :members
+      
+      post '/members/upload' => 'members#upload'
+      resources :members do
+        # post :upload
+      end
       resources :news_categories do
         resources :news
       end

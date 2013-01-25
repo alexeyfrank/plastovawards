@@ -5,11 +5,11 @@ class MemberPicture < ActiveRecord::Base
                   :gallery_type, :gallery_width, :gallery_height
   
   
-  validates :create_year, presence: true
-  validates :description, presence: true
+  #validates :create_year, presence: true
+  #validates :description, presence: true
   #validates :member, presence: true
-  validates :size, presence: true
-  validates :technique, presence: true
+  #validates :size, presence: true
+  #validates :technique, presence: true
 
   mount_uploader :file, MemberPictureUploader
   
@@ -22,42 +22,37 @@ class MemberPicture < ActiveRecord::Base
   end
   
   def self.main_page_types
-    { 
-      portrait: [
-        {
-          id: 1,
-          width: 139,
-          height: 194
-        }, {
-          id: 4,
-          width: 107,
-          height: 146
-        },
-      ],
-      landscape: [ 
-        {
-          id: 2,
-          width: 173,
-          height: 117
-        }, {
-          id: 3,
-          width: 195,
-          height: 141
-        }, {
-          id: 5,
-          width: 166,
-          height: 120
-        }, {
-          id: 6,
-          width: 112,
-          height: 80
-        }, {
-          id: 7,
-          width: 164,
-          height: 118
-        }
-      ]
-    }
+    [
+      {
+        id: 1,
+        width: 139,
+        height: 194
+      }, {
+        id: 4,
+        width: 107,
+        height: 146
+      }, {
+        id: 2,
+        width: 173,
+        height: 117
+      }, {
+        id: 3,
+        width: 195,
+        height: 141
+      }, {
+        id: 5,
+        width: 166,
+        height: 120
+      }, {
+        id: 6,
+        width: 112,
+        height: 80
+      }, {
+        id: 7,
+        width: 164,
+        height: 118
+      }
+    ]
   end
   
   def self.gallery_types

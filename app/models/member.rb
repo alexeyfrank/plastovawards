@@ -1,6 +1,6 @@
 class Member < ActiveRecord::Base
   
-  # before_create :set_default_states
+  before_create :set_current_year
   
   attr_accessible :nomination_id, :birth_year, :city, :country, :email, :first_name, :last_name, :phone, :pictures_attributes, :state_event, :year
 
@@ -20,11 +20,6 @@ class Member < ActiveRecord::Base
   has_many :pictures, class_name: "MemberPicture", dependent: :destroy
   
   accepts_nested_attributes_for :pictures
-    # 
-    # def set_default_states
-    #   self.bid_state = BidState.find 1
-    #   self.competition_state = CompetitionState.find 1
-    # end
   
   def fio
     "#{ self.first_name } #{ self.last_name }"
@@ -47,6 +42,11 @@ class Member < ActiveRecord::Base
     event :unpublish do
       transition all - :unpublished => :unpublished
     end
+  end
+  
+    
+  def set_current_year
+    self.year = Time.now.year
   end
   
 end

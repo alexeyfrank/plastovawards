@@ -73,44 +73,48 @@
 / 
 / </section>
 	
-
-%section.wrap
-  %h1 Подать заявку на участие
-  %p Для участия в премии Вам необходимо отправить фото ваших картин.
-%section.wrap-forms  
-  = simple_nested_form_for(@member) do |f|
-    .web-form.web-form-register
-      %h2 Регистрация участника
-      = f.input :first_name, label: false, placeholder: "Фамилия", wrapper_html: { class: "form-line" }, input_html: { class: "input-name" }
-      = f.input :last_name, label: false, placeholder: "Имя", wrapper_html: { class: "form-line" }, input_html: { class: "input-lastname" }
-      = f.input :birth_year, label: false, placeholder: "Год рождения", wrapper_html: { class: "form-line" }, input_html: { class: "input-birthday" }
-      = f.input :country, as: :string, label: false, placeholder: "Страна", wrapper_html: { class: "form-line" }, input_html: { class: "input-country" }
-      = f.input :city, label: false, placeholder: "Город", wrapper_html: { class: "form-line" }, input_html: { class: "input-city" } 
-      = f.input :phone, as: :string, label: false, placeholder: "Телефон", wrapper_html: { class: "form-line" }, input_html: { class: "input-phone" }
-      = f.input :email, as: :string, label: false, placeholder: "E-mail", wrapper_html: { class: "form-line" }, input_html: { class: "input-email" }
-      = f.input :nomination_id, as: :select, collection: Nomination.published, label: false, include_blank: false, wrapper_html: { class: "form-line input-technics" }
+- if flash[:notice]
+  %section.wrap
+    %h1= t l_title
+    %p= flash[:notice]
+- else
+  %section.wrap
+    %h1= t l_title
+    %p= t l_sub_title
+  %section.wrap-forms  
+    = simple_nested_form_for(@member, html: { id: 'form-apply' } ) do |f|
+      .web-form.web-form-register
+        %h2= t "#{l_route_key}.member_registration_title"
+        = f.input :first_name, label: false, placeholder: t_new_member_field(:first_name), wrapper_html: { class: "form-line" }, input_html: { class: "input-name" }
+        = f.input :last_name, label: false, placeholder: t_new_member_field(:last_name), wrapper_html: { class: "form-line" }, input_html: { class: "input-lastname" }
+        = f.input :birth_year, label: false, placeholder: t_new_member_field(:birth_year), wrapper_html: { class: "form-line" }, input_html: { class: "input-birthday" }
+        = f.input :country, as: :string, label: false, placeholder: t_new_member_field(:country), wrapper_html: { class: "form-line" }, input_html: { class: "input-country" }
+        = f.input :city, label: false, placeholder: t_new_member_field(:city), wrapper_html: { class: "form-line" }, input_html: { class: "input-city" } 
+        = f.input :phone, as: :string, label: false, placeholder: t_new_member_field(:phone), wrapper_html: { class: "form-line" }, input_html: { class: "input-phone" }
+        = f.input :email, as: :string, label: false, placeholder: t_new_member_field(:email), wrapper_html: { class: "form-line" }, input_html: { class: "input-email" }
+        = f.input :nomination_id, as: :select, collection: Nomination.published, label: false, include_blank: false, wrapper_html: { class: "form-line" }
     
     
-    .web-form.web-form-load-pictures
-      %h2 Загрузить картины
-      .scroll-pane.horizontal-only.form-line.form-line-photo
-        .form-line.form-line-photo
-          %span.load-photo-preview.active
-          %span.load-photo-preview
-          %span.load-photo-preview
-          %span.load-photo-preview
+      .web-form.web-form-load-pictures
+        %h2= t "#{l_route_key}.upload_picture_title"
+        .scroll-pane.horizontal-only
+          .form-line.form-line-photo
+            %span.load-photo-preview.active.next
+            %span.load-photo-preview
+            %span.load-photo-preview
+            %span.load-photo-preview
 
         .form-line.form-line-load-photo
-          .load-photo
+          .load-photo{ :"data-title" => t("#{l_route_key}.select_picture_btn") }
 
-      = f.simple_fields_for :pictures do |picture_form|
-        = picture_form.input :description, label: false, placeholder: "Описание картины", wrapper_html: { class: "form-line" }
-        = picture_form.input :create_year, label: false, placeholder: "Дата создания", wrapper_html: { class: "form-line" }, input_html: { class: "input-year-create" } 
-        = picture_form.input :size, label: false, placeholder: "Размер картины (см)", wrapper_html: { class: "form-line" }, input_html: { class: "input-year-size" } 
-        = picture_form.input :technique, label: false, placeholder: "Техника исполнения", wrapper_html: { class: "form-line" }, input_html: { class: "input-technics" } 
-        = picture_form.input :file, as: :file
-        /= picture_form.link_to_remove "Remove picture"
+        = f.simple_fields_for :pictures do |picture_form|
+          = picture_form.input :description, label: false, placeholder: t_new_member_picture_field(:description), wrapper_html: { class: "form-line" }, input_html: { class: 'input-desc-picture' }
+          = picture_form.input :create_year, label: false, placeholder: t_new_member_picture_field(:create_year), wrapper_html: { class: "form-line" }, input_html: { class: "input-year-create" } 
+          = picture_form.input :size, label: false, placeholder: t_new_member_picture_field(:size), wrapper_html: { class: "form-line" }, input_html: { class: "input-year-size" } 
+          = picture_form.input :technique, label: false, placeholder: t_new_member_picture_field(:technique), wrapper_html: { class: "form-line" }, input_html: { class: "input-technics" } 
+          /= picture_form.input :file, as: :file
+          /= picture_form.link_to_remove "Remove picture"
       
-    / = f.link_to_add "Add picture", :pictures
-    .wrap-button-register
-      = f.submit "Зарегистрироваться", class: "button button-register" 
+      / = f.link_to_add "Add picture", :pictures
+      .wrap-button-register
+        = f.submit t("#{l_route_key}.register_btn"), class: "button button-register" 

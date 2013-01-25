@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130114191520) do
+ActiveRecord::Schema.define(:version => 20130125174455) do
 
   create_table "bid_states", :force => true do |t|
     t.string   "name"
@@ -133,6 +133,17 @@ ActiveRecord::Schema.define(:version => 20130114191520) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "news_category_translations", :force => true do |t|
+    t.integer  "news_category_id"
+    t.string   "locale"
+    t.string   "title"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  add_index "news_category_translations", ["locale"], :name => "index_news_category_translations_on_locale"
+  add_index "news_category_translations", ["news_category_id"], :name => "index_news_category_translations_on_news_category_id"
+
   create_table "news_translations", :force => true do |t|
     t.integer  "news_id"
     t.string   "locale"
@@ -180,16 +191,21 @@ ActiveRecord::Schema.define(:version => 20130114191520) do
     t.string   "title"
     t.text     "content"
     t.string   "state"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "slug"
     t.boolean  "is_home_page"
   end
 
-  add_index "pages", ["author_id"], :name => "index_pages_on_author_id"
-  add_index "pages", ["slug"], :name => "index_pages_on_slug"
-  add_index "pages", ["state"], :name => "index_pages_on_state"
-  add_index "pages", ["title"], :name => "index_pages_on_title"
+  create_table "pictures", :force => true do |t|
+    t.text     "description"
+    t.date     "create_year"
+    t.string   "size"
+    t.string   "technique"
+    t.integer  "member_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "settings", :force => true do |t|
     t.string   "var",                       :null => false

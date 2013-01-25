@@ -5,6 +5,8 @@ class NewsCategory < ActiveRecord::Base
   
   validates :title, presence: true
   
+  translates :title
+  
   state_machine :state, initial: :unpublished do
   
     event :publish do

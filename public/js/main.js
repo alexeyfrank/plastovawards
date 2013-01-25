@@ -179,20 +179,21 @@ initFormLoadPictures = function() {
 
 	formLoadPictures.find('.load-photo').fineUploader({
 		request: {
-			endpoint: '/uploads/success.html'
+			endpoint: '/members/upload.json'
 		},
 		multiple: false,
 		validation: {
 			allowedExtensions: ['jpeg', 'jpg', 'gif', 'png'],
-			sizeLimit: 51200
+			sizeLimit: 512000 * 4
 		},
 		text: {
-			uploadButton: 'Выбрать картину'
+			uploadButton: $('.load-photo').data('title') //'Выбрать картину'
 		},
-		debug: false
+		debug: true
 	})
 	.on('error', function(event, id, filename, reason) {
 		alert('Ошибка загрузки!');
+    console.log(reason);
 	})
 	.on('complete', function(event, id, filename, responseJSON){
 		if (responseJSON.success) {
@@ -208,13 +209,16 @@ initFormLoadPictures = function() {
 			setHiddenValue();
 			removeClassActive();
 
+      var pic_id = responseJSON.picture.id;
 			formLoadPictures.find('.load-photo-preview.next')
 				.html('' +
-					'<img src="/img/picture/picture1.jpg" alt="' + filename + '" />' +
-					'<input type="hidden" class="photo-path" name="photo-path[]" value="'+ filename +'" />' +
-					'<input type="hidden" class="photo-desc" name="photo-desc[]" value="" />' +
-					'<input type="hidden" class="photo-create" name="photo-create[]" value="" />' +
-					'<input type="hidden" class="photo-size" name="photo-size[]" value="" />' +
+					'<img src="' + responseJSON.picture.path + '" alt="' + filename + '" />' +
+					//'<input type="hidden" class="photo-path" name="pictures[][file]" value="'+ filename +'" />' +
+					'<input type="hidden" name="member[pictures_attributes]['+ pic_id +'][id]" value="' + pic_id + '" />' +
+					'<input type="hidden" class="photo-desc" name="member[pictures_attributes]['+pic_id+'][description]" />' +
+					'<input type="hidden" class="photo-create" name="member[pictures_attributes]['+pic_id+'][create_year]" />' +
+					'<input type="hidden" class="photo-size" name="member[pictures_attributes]['+pic_id+'][size]" />' +
+					'<input type="hidden" class="photo-technics" name="member[pictures_attributes]['+pic_id+'][technique]" />' +
 					'<span class="delete-photo"></span>' +
 				'')
 				.removeClass('next')
@@ -268,6 +272,7 @@ initFormLoadPictures = function() {
 		activepPhoto.find('.photo-desc').val($('.input-desc-picture').val());
 		activepPhoto.find('.photo-create').val($('.input-year-create').val());
 		activepPhoto.find('.photo-size').val($('.input-year-size').val());
+		activepPhoto.find('.photo-technics').val($('.input-technics').val());
 	};
 
 	loadHiddenValue = function() {
@@ -275,6 +280,7 @@ initFormLoadPictures = function() {
 		$('.input-desc-picture').val(activepPhoto.find('.photo-desc').val());
 		$('.input-year-create').val(activepPhoto.find('.photo-create').val());
 		$('.input-year-size').val(activepPhoto.find('.photo-size').val());
+		$('.input-technics').val(activepPhoto.find('.photo-technics').val());
 
 		modernizrPlaceholder();
 	};
@@ -296,7 +302,9 @@ initFormLoadPictures = function() {
 
 	$('.button-register').click(function(e){
 		e.preventDefault();
-		setHiddenValue();
+    if ($('.load-photo-preview.active img').length > 0) {
+		  setHiddenValue();
+    }
 		$('#form-apply').submit();
 	});
 };

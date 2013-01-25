@@ -14,8 +14,14 @@ class Web::ApplicationController < ApplicationController
     logger.debug "default_url_options is passed options: #{options.inspect}\n"
     { :locale => I18n.locale }
   end
+  
+  def layout_title 
+    return l_layout_title(@page.title) if @page.present?
+    return l_layout_title(@layout_title) if @layout_title.present?
+    return l_layout_title('')
+  end
 
-  helper_method :current_user, :signed_in?
+  helper_method :current_user, :signed_in?, :layout_title
   
   private
     def header_img(type)

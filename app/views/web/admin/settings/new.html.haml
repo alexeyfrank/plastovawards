@@ -1,13 +1,14 @@
 %h1 Редактирование настроек сайта
 = simple_form_for(:settings, url: admin_settings_path, multipart: true) do |f|
-  = f.input :site_name, input_html: { value: @settings[:site_name] }, label: false, placeholder: 'Название сайта'
+  = f.input :site_name, input_html: { class:'input-xxlarge', value: @settings[:site_name] }, label: false, placeholder: 'Название сайта'
 
-  = f.input :phone, input_html: { value: @settings[:phone] }, as: :tel, label: false, placeholder: 'Телефон'
-  = f.input :email, input_html: { value: @settings[:email] }, as: :email, label: false, placeholder: 'Email'
+  = f.input :phone, input_html: { class:'input-xxlarge', value: @settings[:phone] }, as: :tel, label: false, placeholder: 'Телефон'
+  = f.input :email, input_html: { class:'input-xxlarge', value: @settings[:email] }, as: :email, label: false, placeholder: 'Email'
   
-  = f.input :vkontakte_url, input_html: { value: @settings[:vkontakte_url] }, label: false, placeholder: 'Ссылка на страницу Vkontakte'
-  = f.input :facebook_url, input_html: { value: @settings[:facebook_url] }, label: false, placeholder: 'Ссылка на группу Facebook'
-  = f.input :twitter_url, input_html: { value: @settings[:twitter_url] }, label: false, placeholder: 'Ссылка на ленту Twitter'
+  = f.input :vkontakte_url, input_html: { class:'input-xxlarge', value: @settings[:vkontakte_url] }, label: false, placeholder: 'Ссылка на страницу Vkontakte'
+  = f.input :facebook_url, input_html: { class:'input-xxlarge', value: @settings[:facebook_url] }, label: false, placeholder: 'Ссылка на группу Facebook'
+  = f.input :twitter_url, input_html: { class:'input-xxlarge', value: @settings[:twitter_url] }, label: false, placeholder: 'Ссылка на ленту Twitter'
+  = f.input :show_main_page_gallery, input_html: { class:'input-xxlarge', value: @settings[:show_main_page_gallery] }, label: false, placeholder: 'Показывать галерею на главной странице? (yes/no)'
 
   / %img{ :src => "/#{@settings[:logo]}" }
   / = f.input :logo, input_html: { value: @settings[:logo] }, as: :file

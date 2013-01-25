@@ -3,6 +3,19 @@
 
 ru:
   web:
+    base_title: "Международная ежегодная премия в области изобразительного искусства им. А. Пластова."
+    
+    members:
+      new_member_success_msg: "Спасибо за вашу заявку!"
+      new:
+        title: "ПОДАТЬ ЗАЯВКУ НА УЧАСТИЕ"
+        sub_title: "Для участия в премии Вам необходимо отправить фото ваших картин."
+        member_registration_title: "Регистрация участника"
+        upload_picture_title: "Загрузить картины"
+        select_picture_btn: "ВЫБРАТЬ КАРТИНУ"
+        register_btn: "ЗАРЕГИСТРИРОВАТЬСЯ"
+        
+    
     admin:
       pages:
         index:
@@ -231,7 +244,7 @@ ru:
       member_picture:
         description: "Описание"
         create_year: "Дата создания"
-        size: "Размер"
+        size: "Размер картины (см)"
         technique: "Техника исполнения"
         width: "Ширина"
         height: "Высота"
