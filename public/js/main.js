@@ -368,6 +368,11 @@ initFancybox = function() {
 		$(this).prev().click();
 		return false;
 	});
+
+	$('.b-stat-work .b-stat-work-frame').click(function(){
+		$(this).next().click();
+		return false;
+	});
 };
 
 initPopUp = function() {
