@@ -3,6 +3,6 @@ class FeedbackMailer < ActionMailer::Base
   
   def info_email(feed)
     @feed = feed
-    mail to: feed.email, subject: "Thank you for question!"
+    mail to: Settings.email, subject: "Got a new question from PlastovAwards.com!"
   end
 end

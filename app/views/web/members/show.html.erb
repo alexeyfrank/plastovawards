@@ -1,0 +1,71 @@
+<section class="wrap">
+	<h1><%= @member.fio %> <%= link_to t('web.members.show.back_to_index_btn'), members_path %></h1>
+	<section class="info-personal">
+		<div class="info-personal-left">
+			<div class="info-personal-photo-wrap">
+				<div class="info-personal-photo rotate">
+					<img src="<%= @member.avatar %>" width="268" height="316" alt="" title="" />
+				</div>
+				<div class="info-personal-photo">
+					<img src="<%= @member.avatar %>" width="268" height="316" alt="" title="" />
+				</div>
+				<span class="clip"></span>
+			</div>
+		</div>
+		<div class="info-personal-right">
+			<h2><%= t 'web.members.show.title' %></h2>
+			<table>
+				<tr>
+					<td><span class="user-lastname"><%= t 'activerecord.attributes.member.first_name' %></span></td>
+					<td><%= @member.first_name %></td>
+				</tr>
+				<tr>
+					<td><span class="user-name"><%= t 'activerecord.attributes.member.last_name' %></span></td>
+					<td><%= @member.last_name %></td>
+				</tr>
+				<tr>
+					<td><span class="user-date-birth"><%= t 'activerecord.attributes.member.birth_year' %></span></td>
+					<td><%= @member.birth_year %> год</td>
+				</tr>
+				<tr>
+					<td><span class="user-country"><%= t 'activerecord.attributes.member.country' %></span></td>
+					<td><%= @member.country %></td>
+				</tr>
+				<tr>
+					<td><span class="user-city"><%= t 'activerecord.attributes.member.city' %></span></td>
+					<td><%= @member.city %></td>
+				</tr>
+				<tr>
+					<td><span class="user-phone"><%= t 'activerecord.attributes.member.phone' %></span></td>
+					<td><%= @member.phone %></td>
+				</tr>
+				<tr>
+					<td><span class="user-email"><%= t 'activerecord.attributes.member.email' %></span></td>
+					<td><a href="#"><%= @member.email %></a></td>
+				</tr>
+			</table>
+		</div>
+	</section>
+
+	<div class="clear"></div>
+
+	<h2><%= t('web.members.show.pictures_list')%></h2>
+	<section class="b-stat-work">
+    <% @member.pictures.each do |p| %>
+      <% if p.file.url %>
+    		<ul class="b-stat-work<%= p.gallery_type %>">
+    			<li class="b-stat-work-picture">
+    				<span class="b-stat-work-frame"></span>
+            <a class="fancybox" rel="group" href="<%= p.file.url %>">
+      				<img src="<%= p.file.gallery.url %>" width="<%= p.gallery_width %>" height="<%= p.gallery_height %>" alt="" title="">
+          </a>
+    			</li>
+    			<li class="b-stat-work-title"><%= p.description %></li>
+    			<li class="b-stat-work-year"><%= p.create_year %> год</li>
+    			<li class="b-stat-work-size"><%= p.size %></li>
+    			<li class="b-stat-work-genre"><%= p.technique %></li>
+    		</ul>
+      <% end %>
+    <% end %>
+	</section>
+</section>

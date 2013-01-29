@@ -1,7 +1,8 @@
 module Web::LocalizationHelper
   
   def l_layout_title(title)
-    "#{title} #{ I18n.t 'web.base_title' }"
+    return "#{title} - #{ I18n.t 'web.base_title' }" if title.present?
+    "#{ I18n.t 'web.base_title' }"
   end
   
   def l_route_key 

@@ -13,6 +13,7 @@ ru:
         member_registration_title: "Регистрация участника"
         upload_picture_title: "Загрузить картины"
         select_picture_btn: "ВЫБРАТЬ КАРТИНУ"
+        upload_avatar_btn: 'Загрузить фото'
         register_btn: "ЗАРЕГИСТРИРОВАТЬСЯ"
       index:
         title: 'Галерея  участников'
@@ -22,6 +23,10 @@ ru:
         authors: 'Авторы'
         filter_btn: 'Отфильтровать'
         show_all_btn: 'Показать все'
+      show:
+        title: 'Информация об участнике'
+        back_to_index_btn: 'Назад к галерее работ'
+        pictures_list: 'Заявленные работы'
         
     
     admin:
@@ -195,6 +200,10 @@ ru:
     errors:
       models:
         feedback:
+          attributes:
+            email:
+              email: "Введен некорректный E-mail"
+        member:
           attributes:
             email:
               email: "Введен некорректный E-mail"

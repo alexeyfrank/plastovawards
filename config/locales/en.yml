@@ -13,6 +13,7 @@ en:
         member_registration_title: "Member registration"
         upload_picture_title: "Upload pictures"
         select_picture_btn: "SELECT FILE"
+        upload_avatar_btn: 'Upload photo'
         register_btn: "REGISTER"
       index:
         title: 'Gallery'
@@ -22,6 +23,10 @@ en:
         authors: 'Authors'
         filter_btn: 'Search'
         show_all_btn: 'Show all'
+      show:
+        title: 'Member information'
+        back_to_index_btn: 'Back to gallery'
+        pictures_list: 'Pictures list'
   
     admin:
       pages:
@@ -195,6 +200,10 @@ en:
     errors:
       models:
         feedback:
+          attributes:
+            email:
+              email: "E-mail not valid"
+        member:
           attributes:
             email:
               email: "E-mail not valid"

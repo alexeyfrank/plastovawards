@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130125174455) do
+ActiveRecord::Schema.define(:version => 20130129170510) do
 
   create_table "bid_states", :force => true do |t|
     t.string   "name"
@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(:version => 20130125174455) do
     t.integer  "nomination_id"
     t.integer  "year"
     t.string   "state"
+    t.string   "avatar"
   end
 
   create_table "menu_item_translations", :force => true do |t|

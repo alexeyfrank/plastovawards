@@ -93,7 +93,9 @@
         = f.input :phone, as: :string, label: false, placeholder: t_new_member_field(:phone), wrapper_html: { class: "form-line" }, input_html: { class: "input-phone" }
         = f.input :email, as: :string, label: false, placeholder: t_new_member_field(:email), wrapper_html: { class: "form-line" }, input_html: { class: "input-email" }
         = f.input :nomination_id, as: :select, collection: Nomination.published, label: false, include_blank: false, wrapper_html: { class: "form-line" }
-    
+        .form-line.form-line-photo
+          %span.load-photo-preview.active
+          .load-photo{ :"data-title" => t("#{l_route_key}.upload_avatar_btn") }
     
       .web-form.web-form-load-pictures
         %h2= t "#{l_route_key}.upload_picture_title"

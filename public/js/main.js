@@ -114,15 +114,15 @@ initFormRegister = function() {
 	}
 	formRegister.find('.load-photo').fineUploader({
 		request: {
-			endpoint: '/uploads/success.html'
+			endpoint: '/members/upload-avatar.json'
 		},
 		multiple: false,
 		validation: {
 			allowedExtensions: ['jpeg', 'jpg', 'gif', 'png'],
-			sizeLimit: 51200
+			sizeLimit: 512000 * 4
 		},
 		text: {
-			uploadButton: 'Загрузить фото'
+			uploadButton: formRegister.find('.load-photo').data('title')
 		},
 		debug: false
 	})
@@ -131,7 +131,10 @@ initFormRegister = function() {
 	})
 	.on('complete', function(event, id, filename, responseJSON){
 		if (responseJSON.success) {
-			formRegister.find('.load-photo-preview').html('<img src="/img/picture/picture1.jpg" alt="' + filename + '"><span class="delete-photo"></span>');
+			formRegister.find('.load-photo-preview').html(
+        '<img src="'+ responseJSON.file +'" alt="' + filename + '"><span class="delete-photo"></span>' + 
+        '<input type="hidden" name="member[avatar]" value="' + responseJSON.file + '" />'
+      );
 		}
 	});
 
@@ -187,7 +190,7 @@ initFormLoadPictures = function() {
 			sizeLimit: 512000 * 4
 		},
 		text: {
-			uploadButton: $('.load-photo').data('title') //'Выбрать картину'
+			uploadButton: formLoadPictures.find('.load-photo').data('title') //'Выбрать картину'
 		},
 		debug: true
 	})

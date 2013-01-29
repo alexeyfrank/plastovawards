@@ -9,6 +9,7 @@ Masterit::Application.routes.draw do
       resources :subscribers
       
       post '/members/upload' => 'members#upload'
+      post '/members/upload-avatar' => 'members#upload_avatar'
       resources :members do
         # post :upload
       end

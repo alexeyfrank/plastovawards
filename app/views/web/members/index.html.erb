@@ -53,7 +53,7 @@
               </a>
         			</li>
         			<li class="b-stat-work-picture-name"><%= p.description %></li>
-        			<li class="b-stat-work-author"><a href="#"><%= m.fio %>,</a></li>
+        			<li class="b-stat-work-author"><%= link_to m.fio, member_path(m) %></li>
         			<li><%= m.city %></li>
         		</ul>
             <% end %>
