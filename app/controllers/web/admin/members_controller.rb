@@ -1,6 +1,6 @@
 class Web::Admin::MembersController < Web::Admin::ApplicationController
   def index
-    @members = Member.all
+    @members = Member.includes(:pictures).all
   end
 
   def show
@@ -8,9 +8,14 @@ class Web::Admin::MembersController < Web::Admin::ApplicationController
   end
 
   def edit
-    @bid_states = BidState.all
-    @competition_states = CompetitionState.all
-    @member = Member.find params[:id]
+    # @bid_states = BidState.all
+    # @competition_states = CompetitionState.all
+    @member = Member.includes(:pictures).find params[:id]
+    @member.pictures.each do |p|
+      if p.file.url.blank?
+        p.delete
+      end
+    end
   end
 
   def update
