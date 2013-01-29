@@ -1807,6 +1807,10 @@ blockquote.blockquote-nas {
 	font-size: 14px;
 }
 
+.b-stat-work ul li.b-stat-work-picture {
+	cursor: pointer;
+}
+
 .b-stat-work ul li.b-stat-work-author {
 	margin-bottom: 7px;
 }
